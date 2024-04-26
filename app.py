@@ -25,14 +25,42 @@ navbar = dbc.Navbar(
 )
 
 app.layout = html.Div([
+    # NAVBAR
     navbar,
     
     html.Div([
         html.P('Dash converts Python classes into HTML'),
         html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
     ],style = {
-    'backgroundColor' : "#FFFFFF"
+    'backgroundColor' : "#FFFFFF",
+    'height':"300px",
+    'margin':"20px",
+    # 'paddingBottom':"20px",
 }),
+    
+    html.Div([
+        html.P('Dash converts Python classes into HTML'),
+        html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
+    ],style = {
+    'backgroundColor' : "#FFFFFF",
+    'height':"300px",
+    'margin':"20px",
+    # 'paddingTop':"20px",
+    # 'paddingBottom':"20px",
+}),
+    
+    html.Div([
+        html.P('Dash converts Python classes into HTML'),
+        html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
+    ],style = {
+    'backgroundColor' : "#FFFFFF",
+    'height':"300px",
+    'margin':"20px",
+    # 'paddingTop':"20px",
+    # 'paddingBottom':"20px",
+}),
+    
+    # FOOTER
     html.Footer([
         html.Div([
             html.P('國立臺北商業大學校務研究中心', 
@@ -48,10 +76,13 @@ app.layout = html.Div([
         })
 ], style = {
     'textAlign' : "center",
+    'bottom':"0px"
     }),
     
+    
 ],style = {
-    'backgroundColor' : "#F9F9F9",
+    # 'backgroundColor' : "#F9F9F9",
+    'backgroundColor' : "grey",
     'height':"1000px"
 })
 
