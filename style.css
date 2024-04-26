@@ -1,0 +1,135 @@
+*{
+    margin: 0px;
+    /* padding: 0px; */
+}
+
+body{
+    background-color: #F9F9F9;
+    /* margin: 0px; */
+}
+
+header{
+    padding: 1px;
+    background-color: #5B005C;
+}
+
+header h1{
+    background-color: #800080;
+    color: white;
+    padding-left: 20px;
+}
+
+header nav ul{
+    display: flex;
+    margin-left: 90%;
+    list-style: none;
+    color: white;
+    padding: 0px;
+}
+
+header nav ul li{
+    padding-left: 5px;
+}
+
+.logoContainer{
+    background-color: white;
+    padding: 10px 0;
+}
+
+#logo{
+    height: 90px;
+    width: 300px;
+}
+
+.sectionOne{
+    display: flex;
+    justify-content: center;
+}
+
+.containerOne{
+    /* width: auto; */
+    width: 35%;
+    height: 500px;
+    float: left;
+    background-color: white;
+    margin: 20px;
+    margin-right: 10px;
+}
+
+.containerOne h3{
+    font-family: 'Helvetica';
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.yearSnbrt{
+    padding-left: 10px;
+}
+
+#snbrts{
+    height: 420px;
+    width: 420px;
+    padding-left: 10%;
+}
+ /*-----this part is for blocker-----*/
+#blck{
+    background-color: white;
+    height: 20px;
+    width: 100%;
+    z-index: 2;
+    position: relative;
+}
+
+#bbb{
+    background-color: white;
+    height: 20px;
+    width: 100%;
+    /* padding-left: 10px; */
+    z-index: 2;
+    position: relative;
+}
+/* -------------------------------- */
+
+.containerTwo{
+    width: 65%;
+    height: 500px;
+    float: right;
+    background-color: white;
+    margin: 20px;
+    margin-left: 10px;
+}
+
+.sectionTwo{
+    width: auto;
+    height: 500px;
+    background-color: white;
+    margin: 0px 20px 20px 20px; /*top right left bottom*/
+}
+
+footer{
+    line-height: 30px;
+    text-align: center;
+    background-color: #800080;
+    vertical-align: bottom;
+    height: 100px;
+}
+
+.ftDtl{
+    color: white;
+    top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px){
+    .row {   
+      flex-direction: column;
+    }
+}
+  
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px){
+    .navbar a {
+      float: none;
+      width: 100%;
+    }
+}

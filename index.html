@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>School Sustainability Development Center</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+        <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+        <script src="https://cdn.amcharts.com/lib/4/plugins/sunburst.js"></script>
+        <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+        <!-- <script src="script.js"></script> -->
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <nav>
+                <ul>
+                <li><a>繁體中文</a></li>
+                <li><a>|</a></li>
+                <li><a>English</a></li>
+                </ul>
+            </nav>
+            <h1>校務永續發展中心</h1>
+        </header>
+        <div class="logoContainer">
+            <img src="./assets/ntub_logo.png" alt="NTUB_logo" id="logo">
+        </div>
+        <!-- MAIN -->
+        <main>
+        <section>
+            <div class="sectionOne">
+                <div class="containerOne">
+                    <h3>按學年、教育類型和學位劃分的學生分佈</h3> <!--- Student Distribution by Academic Year, Education Type, and Degree --->
+                    <!-- <h3>Student Distribution for Academic Year</h3> -->
+                    <div class="yearSnbrt">
+                    <select onchange="selectDataset(this.options[this.selectedIndex].value);" id="sunburstYearSelect">
+                        <option value="111">111</option>
+                        <option value="110">110</option>
+                        <option value="109">109</option>
+                        <option value="108">108</option>
+                        <option value="107">107</option>
+                        <option value="106">106</option>
+                        <option value="105">105</option>
+                        <option value="104">104</option>
+                        <option value="103">103</option>
+                        <option value="102">102</option>
+                        <option value="101">101</option>
+                        <option value="100">100</option>
+                        <option value="99">99</option>
+                        <option value="98">98</option>
+                        <option value="97">97</option>
+                        <option value="96">96</option>
+                        <option value="95">95</option>
+                      </select>
+                      <!-- <button onclick="getOption()"> Generate </button> -->
+                    </div>
+                    <div id="snbrts"></div>
+                </div>
+                <div class="containerTwo">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="sectionTwo"></div>
+        </section>
+        </main>
+        <!-- FOOTER -->
+        <footer>
+            <div class="ftDtl">
+                <p>國立臺北商業大學校務研究中心</p>
+                <p>校址：100 臺北市中正區濟南路一段321號　 總機：(02)3322-2777</p>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+        <!-- javascript datas -->
+        <script src="./datas/sunburn/sunburst_data.js"></script>
+        <script src="./datas/sunburn/sunburst_data_eng.js"></script>
+    </body>
+</html>
