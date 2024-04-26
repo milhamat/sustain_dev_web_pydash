@@ -22,7 +22,6 @@ navbar = dbc.Navbar(
     color="#800080",
     dark=True,
     className="mb-5",
-    # height="50px"
 )
 
 app.layout = html.Div([
@@ -33,9 +32,27 @@ app.layout = html.Div([
         html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
     ],style = {
     'backgroundColor' : "#FFFFFF"
-})
+}),
+    html.Footer([
+        html.Div([
+            html.P('國立臺北商業大學校務研究中心', 
+                   style = {
+                       'color':"white",
+                       }),
+            html.P('校址：100 臺北市中正區濟南路一段321號　 總機：(02)3322-2777',
+                   style = {
+                       'color':"white",
+                       }),
+        ], style = {
+        'backgroundColor' : "#800080",
+        })
+], style = {
+    'textAlign' : "center",
+    }),
+    
 ],style = {
     'backgroundColor' : "#F9F9F9",
+    'height':"1000px"
 })
 
 if __name__ == '__main__':
