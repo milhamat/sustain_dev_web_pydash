@@ -2,15 +2,16 @@
 
 import pandas as pd
 import plotly.express as px
+import dash_bootstrap_components as dbc
 from dash import Dash, dcc, html, Input, Output
 
 # df = pd.read_excel('./datas/102_111StdInfo1Acdm.xlsx')
 df = pd.read_csv('./datas/sunburst.csv')
 
-app = Dash(__name__)
+app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 app.layout = html.Div([
-    # NAVBAR
+    # NAVBAR ################################################
     html.Div([
         html.Div([], style={
             'height':"25px",
@@ -38,7 +39,7 @@ app.layout = html.Div([
             'marginBottom':"20px",
         }),
     
-    # BODY
+    # BODY ################################################
     html.Div([
         html.Div([
             # html.P('Student Distribution'),
@@ -98,7 +99,7 @@ app.layout = html.Div([
     'margin':"20px",
 }),
     
-    # FOOTER
+    # FOOTER ################################################
     html.Footer([
         html.Div([
             html.P('國立臺北商業大學校務研究中心', 
