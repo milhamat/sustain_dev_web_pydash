@@ -32,7 +32,33 @@ navbar = dbc.Navbar(
 
 app.layout = html.Div([
     # NAVBAR
-    navbar,
+    # navbar,
+    html.Div([
+        html.Div([], style={
+            'height':"25px",
+            'backgroundColor' : "#5B005C",
+            }),
+        html.Div([
+            html.P('校務永續發展中心',
+                   style={
+                       'color':"white",
+                       'fontSize':"40px",
+                       'fontWeight': "bold",
+                   })
+            ], style={
+            'height':"70px",
+            'backgroundColor' : "#800080",
+            }),
+        html.Img(src=app.get_asset_url("logo.png"),
+                 style={
+                     'height':"90px",
+                     'width':"300px",
+                     }),
+        ],style={
+            'height':"200px",
+            'backgroundColor' : "#FFFFFF",
+            'marginBottom':"20px",
+        }),
     
     # BODY
     html.Div([
@@ -42,7 +68,10 @@ app.layout = html.Div([
                 id='year-dropdown',
                 options=[{'label': year, 'value': year} for year in df['學年度'].unique()],
                 value=df['學年度'].unique()[0],
-                clearable=False
+                clearable=False,
+                style={
+                    'marginBottom':"8px",
+                }
             ),
             dcc.Graph(id="sunburst-chart", style={
                 'height':"450px",}),
@@ -71,6 +100,7 @@ app.layout = html.Div([
     ],style = {
     'backgroundColor' : "#F9F9F9",
     'display' : "flex",
+    # 'marginTop':"50px",
     # 'height':"500px",
     # 'margin':"20px",
     # 'paddingBottom':"20px",
@@ -114,7 +144,10 @@ app.layout = html.Div([
         })
 ], style = {
     'textAlign' : "center",
-    'bottom':"0px"
+    'bottom':"0",
+    'marginBottom':"0",
+    'height': "100px",
+    'backgroundColor' : "#800080",
     }),
     
     
@@ -136,6 +169,9 @@ def AcademicYearChart(selected_year):
     fig = px.sunburst(student_counts, path=['學制', '學制/系科'], values='Count',
                       title=f'Student Distribution for Academic Year {selected_year}'
                       )
+    fig.update_layout(
+        margin = dict(t=25, l=25, r=25, b=10)
+    )
     return fig
 #########################################################
 
