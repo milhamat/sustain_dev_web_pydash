@@ -2,37 +2,15 @@
 
 import pandas as pd
 import plotly.express as px
-import dash_bootstrap_components as dbc
 from dash import Dash, dcc, html, Input, Output
 
 # df = pd.read_excel('./datas/102_111StdInfo1Acdm.xlsx')
 df = pd.read_csv('./datas/sunburst.csv')
 
-app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
-
-WEB_LOGO = "./assets/logo.png"
-
-navbar = dbc.Navbar(
-    dbc.Container(
-        [   
-         dbc.Row(
-            [
-                dbc.Col(html.Img(src=WEB_LOGO, height="60px")),
-                dbc.Col(dbc.NavbarBrand("校務永續發展中心", className="ms-2")),
-            ],
-            align="center",
-            className="g-0",
-         ),
-        ],
-    ),
-    color="#800080",
-    dark=True,
-    className="mb-5",
-)
+app = Dash(__name__)
 
 app.layout = html.Div([
     # NAVBAR
-    # navbar,
     html.Div([
         html.Div([], style={
             'height':"25px",
@@ -100,10 +78,6 @@ app.layout = html.Div([
     ],style = {
     'backgroundColor' : "#F9F9F9",
     'display' : "flex",
-    # 'marginTop':"50px",
-    # 'height':"500px",
-    # 'margin':"20px",
-    # 'paddingBottom':"20px",
 }),
     
     html.Div([
@@ -113,8 +87,6 @@ app.layout = html.Div([
     'backgroundColor' : "#FFFFFF",
     'height':"500px",
     'margin':"20px",
-    # 'paddingTop':"20px",
-    # 'paddingBottom':"20px",
 }),
     
     html.Div([
@@ -124,8 +96,6 @@ app.layout = html.Div([
     'backgroundColor' : "#FFFFFF",
     'height':"500px",
     'margin':"20px",
-    # 'paddingTop':"20px",
-    # 'paddingBottom':"20px",
 }),
     
     # FOOTER
@@ -153,8 +123,6 @@ app.layout = html.Div([
     
 ],style = {
     'backgroundColor' : "#F9F9F9",
-    # 'backgroundColor' : "grey",
-    # 'height':"1000px",
 })
 
 ##########################SUNBURST###############################
