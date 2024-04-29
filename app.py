@@ -6,7 +6,7 @@ import dash_bootstrap_components as dbc
 from dash import Dash, dcc, html, Input, Output
 
 # df = pd.read_excel('./datas/102_111StdInfo1Acdm.xlsx')
-df = pd.read_excel('./datas/sunburst.xlsx')
+df = pd.read_csv('./datas/sunburst.csv')
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -37,14 +37,15 @@ app.layout = html.Div([
     # BODY
     html.Div([
         html.Div([
-            html.P('Student Distribution'),
+            # html.P('Student Distribution'),
             dcc.Dropdown(
                 id='year-dropdown',
                 options=[{'label': year, 'value': year} for year in df['學年度'].unique()],
                 value=df['學年度'].unique()[0],
                 clearable=False
             ),
-            dcc.Graph(id="sunburst-chart"),
+            dcc.Graph(id="sunburst-chart", style={
+                'height':"450px",}),
         ],style={
             'width': "50%",
             'height':"500px",
