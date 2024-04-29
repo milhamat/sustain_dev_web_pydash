@@ -1,17 +1,23 @@
 # https://dash.plotly.com/tutorial
-from dash import Dash, html
+
+import pandas as pd
+import plotly.express as px
 import dash_bootstrap_components as dbc
+from dash import Dash, dcc, html, Input, Output
+
+# df = pd.read_excel('./datas/102_111StdInfo1Acdm.xlsx')
+df = pd.read_excel('./datas/sunburst.xlsx')
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
-PLOTLY_LOGO = "./assets/logo.png"
+WEB_LOGO = "./assets/logo.png"
 
 navbar = dbc.Navbar(
     dbc.Container(
         [   
          dbc.Row(
             [
-                dbc.Col(html.Img(src=PLOTLY_LOGO, height="60px")),
+                dbc.Col(html.Img(src=WEB_LOGO, height="60px")),
                 dbc.Col(dbc.NavbarBrand("校務永續發展中心", className="ms-2")),
             ],
             align="center",
@@ -28,19 +34,50 @@ app.layout = html.Div([
     # NAVBAR
     navbar,
     
+    # BODY
     html.Div([
-        html.P('Dash converts Python classes into HTML'),
-        html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
+        html.Div([
+            html.P('Student Distribution'),
+            dcc.Dropdown(
+                id='year-dropdown',
+                options=[{'label': year, 'value': year} for year in df['學年度'].unique()],
+                value=df['學年度'].unique()[0],
+                clearable=False
+            ),
+            dcc.Graph(id="sunburst-chart"),
+        ],style={
+            'width': "50%",
+            'height':"500px",
+            'float':"left",
+            'backgroundColor' : "#FFFFFF",
+            'marginLeft':"20px",
+            'marginRight':"10px",
+            
+        }),
+        
+        html.Div([
+            html.P('Dash converts Python classes into HTML'),
+        ],style={
+            'width': "50%",
+            'height':"500px",
+            'float':"right",
+            'backgroundColor' : "#FFFFFF",
+            'marginRight':"20px",
+            'marginLeft':"10px",
+            
+        }),
+        # html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
     ],style = {
-    'backgroundColor' : "#FFFFFF",
-    'height':"500px",
-    'margin':"20px",
+    'backgroundColor' : "#F9F9F9",
+    'display' : "flex",
+    # 'height':"500px",
+    # 'margin':"20px",
     # 'paddingBottom':"20px",
 }),
     
     html.Div([
-        html.P('Dash converts Python classes into HTML'),
-        html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
+        # html.P('Dash converts Python classes into HTML'),
+        # html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
     ],style = {
     'backgroundColor' : "#FFFFFF",
     'height':"500px",
@@ -50,8 +87,8 @@ app.layout = html.Div([
 }),
     
     html.Div([
-        html.P('Dash converts Python classes into HTML'),
-        html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
+        # html.P('Dash converts Python classes into HTML'),
+        # html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
     ],style = {
     'backgroundColor' : "#FFFFFF",
     'height':"500px",
@@ -85,6 +122,21 @@ app.layout = html.Div([
     # 'backgroundColor' : "grey",
     # 'height':"1000px",
 })
+
+##########################SUNBURST###############################
+@app.callback(
+    Output("sunburst-chart", "figure"), 
+    [Input("year-dropdown", "value")])
+
+
+def AcademicYearChart(selected_year):
+    filtered_df = df[df['學年度'] == selected_year]
+    student_counts = filtered_df.groupby(['學制', '學制/系科']).size().reset_index(name='Count')
+    fig = px.sunburst(student_counts, path=['學制', '學制/系科'], values='Count',
+                      title=f'Student Distribution for Academic Year {selected_year}'
+                      )
+    return fig
+#########################################################
 
 if __name__ == '__main__':
     app.run(debug=True)
