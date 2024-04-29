@@ -33,7 +33,7 @@ app.layout = html.Div([
         html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
     ],style = {
     'backgroundColor' : "#FFFFFF",
-    'height':"300px",
+    'height':"500px",
     'margin':"20px",
     # 'paddingBottom':"20px",
 }),
@@ -43,7 +43,7 @@ app.layout = html.Div([
         html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
     ],style = {
     'backgroundColor' : "#FFFFFF",
-    'height':"300px",
+    'height':"500px",
     'margin':"20px",
     # 'paddingTop':"20px",
     # 'paddingBottom':"20px",
@@ -54,7 +54,7 @@ app.layout = html.Div([
         html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
     ],style = {
     'backgroundColor' : "#FFFFFF",
-    'height':"300px",
+    'height':"500px",
     'margin':"20px",
     # 'paddingTop':"20px",
     # 'paddingBottom':"20px",
@@ -81,9 +81,9 @@ app.layout = html.Div([
     
     
 ],style = {
-    # 'backgroundColor' : "#F9F9F9",
-    'backgroundColor' : "grey",
-    'height':"1000px"
+    'backgroundColor' : "#F9F9F9",
+    # 'backgroundColor' : "grey",
+    # 'height':"1000px",
 })
 
 if __name__ == '__main__':
