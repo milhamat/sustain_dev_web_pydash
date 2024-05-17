@@ -6,7 +6,9 @@ import dash_bootstrap_components as dbc
 from dash import Dash, dcc, html, Input, Output
 
 # df = pd.read_excel('./datas/102_111StdInfo1Acdm.xlsx')
-df = pd.read_csv('./datas/sunburst.csv')
+url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/sunburst.csv'
+# df = pd.read_csv('./datas/sunburst.csv')
+df = pd.read_csv(url)
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -99,24 +101,6 @@ app.layout = html.Div([
     'margin':"20px",
 }),
     
-    html.Div([
-        # html.P('Dash converts Python classes into HTML'),
-        # html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
-    ],style = {
-    'backgroundColor' : "#FFFFFF",
-    'height':"500px",
-    'margin':"20px",
-}),
-    
-    html.Div([
-        # html.P('Dash converts Python classes into HTML'),
-        # html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
-    ],style = {
-    'backgroundColor' : "#FFFFFF",
-    'height':"500px",
-    'margin':"20px",
-}),
-    
     # FOOTER ################################################
     html.Footer([
         html.Div([
@@ -144,7 +128,7 @@ app.layout = html.Div([
     'backgroundColor' : "#F9F9F9",
 })
 
-##########################SUNBURST FUNCTION###############################
+##########################SUNBURST###############################
 @app.callback(
     Output("sunburst-chart", "figure"), 
     [Input("year-dropdown", "value")])
