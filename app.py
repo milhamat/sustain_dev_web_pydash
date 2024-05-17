@@ -40,6 +40,7 @@ app.layout = html.Div([
         }),
     
     # BODY ################################################
+    #### CONTAINER 1 ###########
     html.Div([
         html.Div([
             # html.P('Student Distribution'),
@@ -80,7 +81,7 @@ app.layout = html.Div([
     'backgroundColor' : "#F9F9F9",
     'display' : "flex",
 }),
-    
+    #### CONTAINER 2 ###########
     html.Div([
         # html.P('Dash converts Python classes into HTML'),
         # html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
@@ -89,7 +90,7 @@ app.layout = html.Div([
     'height':"500px",
     'margin':"20px",
 }),
-    
+    #### CONTAINER 3 ###########
     html.Div([
         # html.P('Dash converts Python classes into HTML'),
         # html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
@@ -98,7 +99,7 @@ app.layout = html.Div([
     'height':"500px",
     'margin':"20px",
 }),
-    
+    #### CONTAINER 4 ###########
     html.Div([
         # html.P('Dash converts Python classes into HTML'),
         # html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
@@ -107,7 +108,7 @@ app.layout = html.Div([
     'height':"500px",
     'margin':"20px",
 }),
-    
+    #### CONTAINER 5 ###########
     html.Div([
         # html.P('Dash converts Python classes into HTML'),
         # html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
