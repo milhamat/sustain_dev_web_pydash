@@ -62,7 +62,6 @@ app.layout = html.Div([
             'backgroundColor' : "#FFFFFF",
             'marginLeft':"20px",
             'marginRight':"10px",
-            
         }),
         
         html.Div([
@@ -74,7 +73,6 @@ app.layout = html.Div([
             'backgroundColor' : "#FFFFFF",
             'marginRight':"20px",
             'marginLeft':"10px",
-            
         }),
         # html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
     ],style = {
@@ -155,7 +153,8 @@ def AcademicYearChart(selected_year):
     filtered_df = df[df['學年度'] == selected_year]
     student_counts = filtered_df.groupby(['學制', '學制/系科']).size().reset_index(name='Count')
     fig = px.sunburst(student_counts, path=['學制', '學制/系科'], values='Count',
-                      title=f'Student Distribution for Academic Year {selected_year}'
+                      title=f'{selected_year} 學年學生分佈'
+                    #   title=f'Student Distribution for Academic Year {selected_year}' 
                       )
     fig.update_layout(
         margin = dict(t=25, l=25, r=25, b=10)
