@@ -5,10 +5,7 @@ import plotly.express as px
 import dash_bootstrap_components as dbc
 from dash import Dash, dcc, html, Input, Output
 
-# df = pd.read_excel('./datas/102_111StdInfo1Acdm.xlsx')
-df = pd.read_csv('./datas/sunburst.csv')
-
-app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 app.layout = html.Div([
     # NAVBAR ################################################
@@ -40,11 +37,11 @@ app.layout = html.Div([
         }),
     
     # BODY ################################################
-    #### CONTAINER 1 ###########
+    # CONTAINER 1 ###########
     html.Div([
         html.Div([
             html.Div([
-                
+                dash.page_container,
             ]),
         ],style={
             'width': "100%",
