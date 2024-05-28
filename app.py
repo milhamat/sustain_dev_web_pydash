@@ -43,31 +43,21 @@ app.layout = html.Div([
     #### CONTAINER 1 ###########
     html.Div([
         html.Div([
-            
+            html.Div([
+                
+            ]),
         ],style={
-            'width': "50%",
-            'height':"500px",
-            'float':"left",
+            'width': "100%",
+            'height':"600px",
             'backgroundColor' : "#FFFFFF",
             'marginLeft':"20px",
-            'marginRight':"10px",
-        }),
-        
-        html.Div([
-            # html.P('Dash converts Python classes into HTML'),
-        ],style={
-            'width': "50%",
-            'height':"500px",
-            'float':"right",
-            'backgroundColor' : "#FFFFFF",
             'marginRight':"20px",
-            'marginLeft':"10px",
+            'marginBottom':"20px",
         }),
-        # html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
     ],style = {
     'backgroundColor' : "#F9F9F9",
     'display' : "flex",
-}),
+        }),
     # FOOTER ################################################
     html.Footer([
         html.Div([
