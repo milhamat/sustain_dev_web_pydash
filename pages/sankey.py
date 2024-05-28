@@ -4,8 +4,7 @@ import plotly.express as px
 from dash import callback, dcc, html
 from dash.dependencies import Input, Output
 
-file_path = './datas/sankey_enroll.csv'
-df = pd.read_csv(file_path)
+df = pd.read_csv('./datas/sankey_enroll.csv')
 
 # 獲取所有學年度(Get all academic years)
 available_years = df['End_Year'].unique().tolist()
@@ -14,6 +13,16 @@ dash.register_page(__name__)
 
 # 設定佈局 (Set layout)
 layout = html.Div([
+    dcc.Link(html.Button("Home",
+                             style={
+                                 'backgroundColor':"#800080",
+                                 'color':"white",
+                                 'marginBottom':"20px",
+                                 'borderRadius':"8px",
+                                 'borderWidth': "thin",
+                                 'borderStyle':"solid",
+                                 'borderColor':"#C6C4C4",
+                                 }), href="/", refresh=True),
     html.H1("入學管道、性別與學院之間的桑基圖"),  # Sankey Diagram between Entry Path, Gender, and Institute
     html.H2("Sankey Diagram between Entry Path, Gender, and College"),  # 英文標題 (English Title)
     html.H4("來源資料:畢業流向問卷"),
@@ -38,10 +47,11 @@ layout = html.Div([
 ])
 
 # 設置回調函數 (Set callback function)
-callback(
+@callback(
     Output('parallel-categories-graph', 'figure'),
     [Input('year-dropdown', 'value'), Input('top-entry-select', 'value')]
 )
+
 def update_parallel_categories(selected_year, top_n):
     # 根據選定的學年度過濾資料 (Filter data based on selected academic year)
     filtered_df = df[df['End_Year'] == selected_year]

@@ -32,37 +32,35 @@ def render_content(tab):
     if tab == 'schafr':
         return html.Div([
             html.Div([
+                ###### Container 1
                 html.Div([
-                    html.H1('學年學生分佈', # Student Distribution for Academic Year 
-                        style={
-                            # 'textAlign':"center",
-                            'fontSize':"28px",
+                    html.Div([
+                        html.H1('學年學生分佈', # Student Distribution for Academic Year 
+                            style={
+                                # 'textAlign':"center",
+                                'fontSize':"28px",
+                                }),
+                        ], style={
+                            # 'backgroundColor':"gray", # for debuging
+                            'marginTop':"10px",
+                            'marginLeft':"10px",
+                            'height':"125px",
+                            'width':"325px",
                             }),
-                    ], style={
-                        # 'backgroundColor':"gray", # for debuging
-                        'marginTop':"10px",
-                        'marginLeft':"10px",
-                        'height':"125px",
-                        'width':"325px",
-                        }),
-                html.Div([
-                    dcc.Link(html.Button("Detail", 
-                                     style={
-                                         'backgroundColor':"#800080",
-                                         'color':"white",
-                                        #  'marginTop':"5px",
-                                         'marginLeft':"80%",
-                                         'borderRadius':"8px",
-                                         'borderWidth': "thin",
-                                         'borderStyle':"solid",
-                                         'borderColor':"#C6C4C4",
-                             }), href="/sunburst", refresh=True,),
-                    ], style={
-                        # 'width':"350px",
-                        # 'borderWidth': "thin",
-                        # 'borderStyle':"solid",
-                        # 'borderColor':"#C6C4C4",
-                        }),
+                    html.Div([
+                        dcc.Link(html.Button("Detail", 
+                                        style={
+                                            'backgroundColor':"#800080",
+                                            'color':"white",
+                                            #  'marginTop':"5px",
+                                            'marginLeft':"80%",
+                                            'borderRadius':"8px",
+                                            'borderWidth': "thin",
+                                            'borderStyle':"solid",
+                                            'borderColor':"#C6C4C4",
+                                }), href="/sunburst", refresh=True,),
+                        ], style={
+                            }),
                 
             ], style={
                 'backgroundColor':"white",
@@ -74,7 +72,53 @@ def render_content(tab):
                 'borderWidth': "thin",
                 'borderStyle':"solid",
                 'borderColor':"#C6C4C4",
-            })
+            }),
+               ###### Container 2
+                html.Div([
+                    html.Div([
+                        html.H1('Sankey Enrollment', # Student Distribution for Academic Year 
+                            style={
+                                # 'textAlign':"center",
+                                'fontSize':"28px",
+                                }),
+                        ], style={
+                            # 'backgroundColor':"gray", # for debuging
+                            'marginTop':"10px",
+                            'marginLeft':"10px",
+                            'height':"125px",
+                            'width':"325px",
+                            }),
+                    html.Div([
+                        dcc.Link(html.Button("Detail", 
+                                        style={
+                                            'backgroundColor':"#800080",
+                                            'color':"white",
+                                            #  'marginTop':"5px",
+                                            'marginLeft':"80%",
+                                            'borderRadius':"8px",
+                                            'borderWidth': "thin",
+                                            'borderStyle':"solid",
+                                            'borderColor':"#C6C4C4",
+                                }), href="/sankey", refresh=True,),
+                        ], style={
+                            }),
+                
+            ], style={
+                'backgroundColor':"white",
+                'height':"180px",
+                'width':"350px",
+                'marginTop':"40px",
+                'marginLeft':"20px",
+                'borderRadius':"8px",
+                'borderWidth': "thin",
+                'borderStyle':"solid",
+                'borderColor':"#C6C4C4",
+            }),
+            ##########
+               
+        ], style={
+            
+            }),
         ])
         ##############################FACULTY################
     elif tab == "facult":
