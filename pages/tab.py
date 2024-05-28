@@ -33,13 +33,23 @@ def render_content(tab):
     if tab == 'schafr':
         return html.Div([
             html.Div([
-                html.H1('學年學生分佈 Student Distribution for Academic Year ', 
+                html.Div([
+                    html.H1('學年學生分佈', # Student Distribution for Academic Year 
                         style={
+                            # 'textAlign':"center",
                             'fontSize':"28px",
                             }),
+                    ], style={
+                        'backgroundColor':"gray", # for debuging
+                        'marginTop':"10px",
+                        'marginLeft':"10px",
+                        'height':"100px",
+                        'width':"325px",
+                        }),
                 dcc.Link(html.Button("Detail", 
                                      style={
-                                         'backgroundColor':"white",
+                                         'backgroundColor':"#800080",
+                                         'color':"white",
                                          'marginTop':"40px",
                                          'marginLeft':"70%",
                                          'borderRadius':"8px",
