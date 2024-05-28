@@ -1,8 +1,7 @@
 import dash
-import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
-from dash import Dash, callback, dcc, html, Input, Output
+from dash import callback, dcc, html, Input, Output
 
 dash.register_page(__name__, path='/')
 
@@ -40,23 +39,31 @@ def render_content(tab):
                             'fontSize':"28px",
                             }),
                     ], style={
-                        'backgroundColor':"gray", # for debuging
+                        # 'backgroundColor':"gray", # for debuging
                         'marginTop':"10px",
                         'marginLeft':"10px",
-                        'height':"100px",
+                        'height':"125px",
                         'width':"325px",
                         }),
-                dcc.Link(html.Button("Detail", 
+                html.Div([
+                    dcc.Link(html.Button("Detail", 
                                      style={
                                          'backgroundColor':"#800080",
                                          'color':"white",
-                                         'marginTop':"40px",
-                                         'marginLeft':"70%",
+                                        #  'marginTop':"5px",
+                                         'marginLeft':"80%",
                                          'borderRadius':"8px",
                                          'borderWidth': "thin",
                                          'borderStyle':"solid",
                                          'borderColor':"#C6C4C4",
                              }), href="/sunburst", refresh=True,),
+                    ], style={
+                        # 'width':"350px",
+                        # 'borderWidth': "thin",
+                        # 'borderStyle':"solid",
+                        # 'borderColor':"#C6C4C4",
+                        }),
+                
             ], style={
                 'backgroundColor':"white",
                 'height':"180px",
@@ -73,19 +80,38 @@ def render_content(tab):
     elif tab == "facult":
         return html.Div([
             html.Div([
-                html.H1('FACULTY ', 
+                html.Div([
+                    html.H1('FACULTY', # Student Distribution for Academic Year 
                         style={
-                        'fontSize':"28px",}),
-                dcc.Link(html.Button("Detail", 
+                            # 'textAlign':"center",
+                            'fontSize':"28px",
+                            }),
+                    ], style={
+                        # 'backgroundColor':"gray", # for debuging
+                        'marginTop':"10px",
+                        'marginLeft':"10px",
+                        'height':"125px",
+                        'width':"325px",
+                        }),
+                html.Div([
+                    dcc.Link(html.Button("Detail", 
                                      style={
-                                         'backgroundColor':"white",
-                                         'marginTop':"40px",
-                                         'marginLeft':"70%",
+                                         'backgroundColor':"#800080",
+                                         'color':"white",
+                                        #  'marginTop':"5px",
+                                         'marginLeft':"80%",
                                          'borderRadius':"8px",
                                          'borderWidth': "thin",
                                          'borderStyle':"solid",
                                          'borderColor':"#C6C4C4",
                              }), href="/sunburst", refresh=True,),
+                    ], style={
+                        # 'width':"350px",
+                        # 'borderWidth': "thin",
+                        # 'borderStyle':"solid",
+                        # 'borderColor':"#C6C4C4",
+                        }),
+                
             ], style={
                 'backgroundColor':"white",
                 'height':"180px",
@@ -102,19 +128,38 @@ def render_content(tab):
     elif tab == "stdent":
         return html.Div([
             html.Div([
-                html.H1('STUDENT ', 
+                html.Div([
+                    html.H1('STUDENT', # Student Distribution for Academic Year 
                         style={
-                        'fontSize':"28px",}),
-                dcc.Link(html.Button("Detail", 
+                            # 'textAlign':"center",
+                            'fontSize':"28px",
+                            }),
+                    ], style={
+                        # 'backgroundColor':"gray", # for debuging
+                        'marginTop':"10px",
+                        'marginLeft':"10px",
+                        'height':"125px",
+                        'width':"325px",
+                        }),
+                html.Div([
+                    dcc.Link(html.Button("Detail", 
                                      style={
-                                         'backgroundColor':"white",
-                                         'marginTop':"40px",
-                                         'marginLeft':"70%",
+                                         'backgroundColor':"#800080",
+                                         'color':"white",
+                                        #  'marginTop':"5px",
+                                         'marginLeft':"80%",
                                          'borderRadius':"8px",
                                          'borderWidth': "thin",
                                          'borderStyle':"solid",
                                          'borderColor':"#C6C4C4",
                              }), href="/sunburst", refresh=True,),
+                    ], style={
+                        # 'width':"350px",
+                        # 'borderWidth': "thin",
+                        # 'borderStyle':"solid",
+                        # 'borderColor':"#C6C4C4",
+                        }),
+                
             ], style={
                 'backgroundColor':"white",
                 'height':"180px",

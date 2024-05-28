@@ -66,7 +66,7 @@ app.layout = html.Div([
                        'color':"white",
                        }),
         ], style = {
-        'backgroundColor' : "#800080",
+            'backgroundColor' : "#800080",
         })
 ], style = {
     'textAlign' : "center",

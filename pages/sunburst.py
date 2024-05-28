@@ -1,8 +1,7 @@
 import dash
 import pandas as pd
 import plotly.express as px
-import dash_bootstrap_components as dbc
-from dash import Dash, dcc, callback, html, Input, Output
+from dash import dcc, callback, html, Input, Output
 
 df = pd.read_csv('./datas/sunburst.csv')
 
@@ -10,6 +9,16 @@ dash.register_page(__name__)
 
 layout = html.Div([
     html.Div([
+        dcc.Link(html.Button("Home",
+                             style={
+                                 'backgroundColor':"#800080",
+                                 'color':"white",
+                                 'marginBottom':"20px",
+                                 'borderRadius':"8px",
+                                 'borderWidth': "thin",
+                                 'borderStyle':"solid",
+                                 'borderColor':"#C6C4C4",
+                                 }), href="/", refresh=True),
         dcc.Dropdown(
                 id='year-dropdown',
                 options=[{'label': year, 'value': year} for year in df['學年度'].unique()],
@@ -21,12 +30,6 @@ layout = html.Div([
             ),
             dcc.Graph(id="sunburst-chart", style={
                 'height':"450px",}),
-            
-            dcc.Link(html.Button("Home",
-                             style={
-                                 'color':"purple"
-                                 }), href="/", refresh=True),
-        
     ])
 ])
 
