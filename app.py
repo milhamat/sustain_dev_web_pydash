@@ -43,18 +43,7 @@ app.layout = html.Div([
     #### CONTAINER 1 ###########
     html.Div([
         html.Div([
-            # html.P('Student Distribution'),
-            dcc.Dropdown(
-                id='year-dropdown',
-                options=[{'label': year, 'value': year} for year in df['學年度'].unique()],
-                value=df['學年度'].unique()[0],
-                clearable=False,
-                style={
-                    'marginBottom':"8px",
-                }
-            ),
-            dcc.Graph(id="sunburst-chart", style={
-                'height':"450px",}),
+            
         ],style={
             'width': "50%",
             'height':"500px",
@@ -79,43 +68,6 @@ app.layout = html.Div([
     'backgroundColor' : "#F9F9F9",
     'display' : "flex",
 }),
-    #### CONTAINER 2 ###########
-    html.Div([
-        # html.P('Dash converts Python classes into HTML'),
-        # html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
-    ],style = {
-    'backgroundColor' : "#FFFFFF",
-    'height':"500px",
-    'margin':"20px",
-}),
-    #### CONTAINER 3 ###########
-    html.Div([
-        # html.P('Dash converts Python classes into HTML'),
-        # html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
-    ],style = {
-    'backgroundColor' : "#FFFFFF",
-    'height':"500px",
-    'margin':"20px",
-}),
-    #### CONTAINER 4 ###########
-    html.Div([
-        # html.P('Dash converts Python classes into HTML'),
-        # html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
-    ],style = {
-    'backgroundColor' : "#FFFFFF",
-    'height':"500px",
-    'margin':"20px",
-}),
-    #### CONTAINER 5 ###########
-    html.Div([
-        # html.P('Dash converts Python classes into HTML'),
-        # html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
-    ],style = {
-    'backgroundColor' : "#FFFFFF",
-    'height':"500px",
-    'margin':"20px",
-}),
-    
     # FOOTER ################################################
     html.Footer([
         html.Div([
@@ -144,22 +96,7 @@ app.layout = html.Div([
 })
 
 ##########################SUNBURST FUNCTION###############################
-@app.callback(
-    Output("sunburst-chart", "figure"), 
-    [Input("year-dropdown", "value")])
 
-
-def AcademicYearChart(selected_year):
-    filtered_df = df[df['學年度'] == selected_year]
-    student_counts = filtered_df.groupby(['學制', '學制/系科']).size().reset_index(name='Count')
-    fig = px.sunburst(student_counts, path=['學制', '學制/系科'], values='Count',
-                      title=f'{selected_year} 學年學生分佈'
-                    #   title=f'Student Distribution for Academic Year {selected_year}' 
-                      )
-    fig.update_layout(
-        margin = dict(t=25, l=25, r=25, b=10)
-    )
-    return fig
 #########################################################
 
 if __name__ == '__main__':
