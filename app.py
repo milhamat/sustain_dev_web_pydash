@@ -1,5 +1,4 @@
-# https://dash.plotly.com/tutorial
-
+import dash
 import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
