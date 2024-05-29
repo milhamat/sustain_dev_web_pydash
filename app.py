@@ -44,7 +44,7 @@ app.layout = html.Div([
             ]),
         ],style={
             'width': "100%",
-            'height':"800px",
+            'height':"1000px",
             'backgroundColor' : "#FFFFFF",
             'marginLeft':"20px",
             'marginRight':"20px",

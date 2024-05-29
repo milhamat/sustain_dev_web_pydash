@@ -117,7 +117,7 @@ def render_content(tab):
             ##########
                
         ], style={
-            
+            'display' : "flex",
             }),
         ])
         ##############################FACULTY################
