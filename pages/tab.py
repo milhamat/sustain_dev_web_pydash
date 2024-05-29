@@ -163,7 +163,7 @@ def render_content(tab):
                     ###### Container 4
                     html.Div([
                         html.Div([
-                            html.H1('Total student internship hours', # Student Distribution for Academic Year 
+                            html.H1('Gender Ratio', # Student Distribution for Academic Year 
                                 style={
                                     # 'textAlign':"center",
                                     'fontSize':"28px",
@@ -186,7 +186,7 @@ def render_content(tab):
                                                 'borderWidth': "thin",
                                                 'borderStyle':"solid",
                                                 'borderColor':"#C6C4C4",
-                                    }), href="/student/stdintern", refresh=True,),
+                                    }), href="/student/stdngenderratio", refresh=True,),
                                     # }), href="/stdBarchart", refresh=True,),
                             ], style={
                                 }),
