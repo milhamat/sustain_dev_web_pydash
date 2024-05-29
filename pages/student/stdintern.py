@@ -30,6 +30,7 @@ layout = html.Div([
                                  'borderStyle':"solid",
                                  'borderColor':"#C6C4C4",
                                  }), href="/", refresh=True),
+    
     dcc.Tabs(id="tabs", value='tab-110', children=[
         dcc.Tab(label='110學年度', value='tab-110'),
         dcc.Tab(label='111學年度', value='tab-111'),

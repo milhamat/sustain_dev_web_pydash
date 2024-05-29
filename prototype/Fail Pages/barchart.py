@@ -59,4 +59,4 @@ def update():
                 height=600, 
                 width=1000)
     
-    return fig
+    return dcc.Graph(figure=fig)

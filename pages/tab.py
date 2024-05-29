@@ -37,7 +37,7 @@ def render_content(tab):
                     ###### Container 1
                     html.Div([
                         html.Div([
-                            html.H1('學年學生分佈', # Student Distribution for Academic Year 
+                            html.H1('Student Distribution for Academic Year', # Student Distribution for Academic Year  # 學年學生分佈
                                 style={
                                     # 'textAlign':"center",
                                     'fontSize':"28px",
@@ -68,7 +68,7 @@ def render_content(tab):
                     'backgroundColor':"white",
                     'height':"180px",
                     'width':"350px",
-                    'marginTop':"40px",
+                    'marginTop':"20px",
                     'marginLeft':"15px",
                     'borderRadius':"8px",
                     'borderWidth': "thin",
@@ -109,7 +109,7 @@ def render_content(tab):
                     'backgroundColor':"white",
                     'height':"180px",
                     'width':"350px",
-                    'marginTop':"40px",
+                    'marginTop':"20px",
                     'marginLeft':"15px",
                     'borderRadius':"8px",
                     'borderWidth': "thin",
@@ -120,7 +120,7 @@ def render_content(tab):
                 ###### Container 3
                     html.Div([
                         html.Div([
-                            html.H1('Total student internship hours', # Student Distribution for Academic Year 
+                            html.H1('Total Student Internship Hours', # Student Distribution for Academic Year 
                                 style={
                                     # 'textAlign':"center",
                                     'fontSize':"28px",
@@ -144,7 +144,6 @@ def render_content(tab):
                                                 'borderStyle':"solid",
                                                 'borderColor':"#C6C4C4",
                                     }), href="/student/stdintern", refresh=True,),
-                                    # }), href="/stdBarchart", refresh=True,),
                             ], style={
                                 }),
                     
@@ -152,7 +151,7 @@ def render_content(tab):
                     'backgroundColor':"white",
                     'height':"180px",
                     'width':"350px",
-                    'marginTop':"40px",
+                    'marginTop':"20px",
                     'marginLeft':"15px",
                     'borderRadius':"8px",
                     'borderWidth': "thin",
@@ -187,7 +186,6 @@ def render_content(tab):
                                                 'borderStyle':"solid",
                                                 'borderColor':"#C6C4C4",
                                     }), href="/student/stdngenderratio", refresh=True,),
-                                    # }), href="/stdBarchart", refresh=True,),
                             ], style={
                                 }),
                     
@@ -195,7 +193,7 @@ def render_content(tab):
                     'backgroundColor':"white",
                     'height':"180px",
                     'width':"350px",
-                    'marginTop':"40px",
+                    'marginTop':"20px",
                     'marginLeft':"15px",
                     'borderRadius':"8px",
                     'borderWidth': "thin",
@@ -208,12 +206,12 @@ def render_content(tab):
                 
                 ##########
                 ################################################################
-                # container row one
+                # container row two
                 html.Div([
                     ###### Container 5
                     html.Div([
                         html.Div([
-                            html.H1('spread of work areas after graduation', # Student Distribution for Academic Year 
+                            html.H1('Spread of Work Areas After Graduation', # Student Distribution for Academic Year 
                                 style={
                                     # 'textAlign':"center",
                                     'fontSize':"28px",
@@ -237,7 +235,6 @@ def render_content(tab):
                                                 'borderStyle':"solid",
                                                 'borderColor':"#C6C4C4",
                                     }), href="/student/gradworkarea", refresh=True,),
-                                    # }), href="/stdBarchart", refresh=True,),
                             ], style={
                                 }),
                     
@@ -245,7 +242,7 @@ def render_content(tab):
                     'backgroundColor':"white",
                     'height':"180px",
                     'width':"350px",
-                    'marginTop':"40px",
+                    'marginTop':"20px",
                     'marginLeft':"15px",
                     'borderRadius':"8px",
                     'borderWidth': "thin",
@@ -253,12 +250,54 @@ def render_content(tab):
                     'borderColor':"#C6C4C4",
                 }),
                 ##########
+                    ###### Container 6
+                    html.Div([
+                        html.Div([
+                            html.H1('Graduation Job Type', # Student Distribution for Academic Year 
+                                style={
+                                    # 'textAlign':"center",
+                                    'fontSize':"28px",
+                                    }),
+                            ], style={
+                                # 'backgroundColor':"gray", # for debuging
+                                'marginTop':"10px",
+                                'marginLeft':"10px",
+                                'height':"125px",
+                                'width':"325px",
+                                }),
+                        html.Div([
+                            dcc.Link(html.Button("Detail", 
+                                            style={
+                                                'backgroundColor':"#800080",
+                                                'color':"white",
+                                                #  'marginTop':"5px",
+                                                'marginLeft':"80%",
+                                                'borderRadius':"8px",
+                                                'borderWidth': "thin",
+                                                'borderStyle':"solid",
+                                                'borderColor':"#C6C4C4",
+                                    }), href="/student/gradjobtype", refresh=True,),
+                            ], style={
+                                }),
                     
+                ], style={
+                    'backgroundColor':"white",
+                    'height':"180px",
+                    'width':"350px",
+                    'marginTop':"20px",
+                    'marginLeft':"15px",
+                    'borderRadius':"8px",
+                    'borderWidth': "thin",
+                    'borderStyle':"solid",
+                    'borderColor':"#C6C4C4",
+                }),
                 #########
                     
                 ], style={
                     'display' : "flex"
-                })
+                }),
+                # container row three
+                # html.Div([]), # in case if needed
                 
                 
         ], style={
@@ -302,8 +341,8 @@ def render_content(tab):
                 'backgroundColor':"white",
                 'height':"180px",
                 'width':"350px",
-                'marginTop':"40px",
-                'marginLeft':"20px",
+                'marginTop':"20px",
+                'marginLeft':"15px",
                 'borderRadius':"8px",
                 'borderWidth': "thin",
                 'borderStyle':"solid",
@@ -347,8 +386,8 @@ def render_content(tab):
                 'backgroundColor':"white",
                 'height':"180px",
                 'width':"350px",
-                'marginTop':"40px",
-                'marginLeft':"20px",
+                'marginTop':"20px",
+                'marginLeft':"15px",
                 'borderRadius':"8px",
                 'borderWidth': "thin",
                 'borderStyle':"solid",
