@@ -5,9 +5,8 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 
 df = pd.read_excel('./datas/學20.學生實習情形-以「系(所)」統計.xlsx')
-df = df.reindex(columns= ['學年度', '學制班別', '系所名稱', '實習總時數']) 
 
-df = df[['學年度', '學制班別', '系所名稱', '實習總時數']]  #'Academic Year', 'Academic Class', 'Department Name', 'Total Internship Hours'
+df = df[['學年度', '學制班別', '系所名稱', '實習總時數']]  
 df_110 = df[df['學年度'] == 110]
 df_111 = df[df['學年度'] == 111]
 
@@ -19,7 +18,6 @@ checklist_options = [
     {'label': '學士班(進修)', 'value': '學士班(進修)'},  #Bachelor's degree (further study)
     {'label': '碩士班(日間)', 'value': '碩士班(日間)'}  #Master's class (day time
 ]
-
 
 layout = html.Div([
     dcc.Link(html.Button("Home",
