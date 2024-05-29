@@ -9,11 +9,11 @@ layout = html.Div([
     html.Div([
                 dbc.Tabs(id="tabs",
                 children=[
-                    dbc.Tab(label="School Affair", tab_id="schafr"),
+                    dbc.Tab(label="Student", tab_id="stdent"),
                     dbc.Tab(label="Faculty", tab_id="facult"),
-                    dbc.Tab(label="Student", tab_id="stdent")
+                    dbc.Tab(label="School Affair", tab_id="schafr")
                 ],
-                active_tab="schafr",
+                active_tab="stdent",
                 ## dont know it's work or not
                 style={
                     'color':"purple",
@@ -28,10 +28,11 @@ layout = html.Div([
               Input('tabs','active_tab'))
 
 def render_content(tab):
-    ##############################SCHOOL AFFAIR################
-    if tab == 'schafr':
+    ##############################STUDENT################
+    if tab == 'stdent':
         return html.Div([
             html.Div([
+                # container row one
                 ###### Container 1
                 html.Div([
                     html.Div([
@@ -58,7 +59,7 @@ def render_content(tab):
                                             'borderWidth': "thin",
                                             'borderStyle':"solid",
                                             'borderColor':"#C6C4C4",
-                                }), href="/sunburst", refresh=True,),
+                                }), href="/student/sunburst", refresh=True,),
                         ], style={
                             }),
                 
@@ -99,7 +100,7 @@ def render_content(tab):
                                             'borderWidth': "thin",
                                             'borderStyle':"solid",
                                             'borderColor':"#C6C4C4",
-                                }), href="/sankey", refresh=True,),
+                                }), href="/student/sankey", refresh=True,),
                         ], style={
                             }),
                 
@@ -115,11 +116,54 @@ def render_content(tab):
                 'borderColor':"#C6C4C4",
             }),
             ##########
-               
+               ###### Container 3
+                html.Div([
+                    html.Div([
+                        html.H1('Total student internship hours', # Student Distribution for Academic Year 
+                            style={
+                                # 'textAlign':"center",
+                                'fontSize':"28px",
+                                }),
+                        ], style={
+                            # 'backgroundColor':"gray", # for debuging
+                            'marginTop':"10px",
+                            'marginLeft':"10px",
+                            'height':"125px",
+                            'width':"325px",
+                            }),
+                    html.Div([
+                        dcc.Link(html.Button("Detail", 
+                                        style={
+                                            'backgroundColor':"#800080",
+                                            'color':"white",
+                                            #  'marginTop':"5px",
+                                            'marginLeft':"80%",
+                                            'borderRadius':"8px",
+                                            'borderWidth': "thin",
+                                            'borderStyle':"solid",
+                                            'borderColor':"#C6C4C4",
+                                }), href="/student/stdintern", refresh=True,),
+                                # }), href="/stdBarchart", refresh=True,),
+                        ], style={
+                            }),
+                
+            ], style={
+                'backgroundColor':"white",
+                'height':"180px",
+                'width':"350px",
+                'marginTop':"40px",
+                'marginLeft':"20px",
+                'borderRadius':"8px",
+                'borderWidth': "thin",
+                'borderStyle':"solid",
+                'borderColor':"#C6C4C4",
+            }),
+                ##########
+                
         ], style={
             'display' : "flex",
             }),
-        ])
+        ]),
         ##############################FACULTY################
     elif tab == "facult":
         return html.Div([
@@ -168,8 +212,8 @@ def render_content(tab):
                 'borderColor':"#C6C4C4",
             })
         ])
-    ##############################STUDENT################
-    elif tab == "stdent":
+    ##############################SCHOOL AFFAIR################
+    elif tab == "schafr":
         return html.Div([
             html.Div([
                 html.Div([
