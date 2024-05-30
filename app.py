@@ -71,11 +71,11 @@ app.layout = html.Div([
 ], style = {
     'textAlign' : "center",
     'bottom':"0",
-    'marginBottom':"0",
+    'marginBottom':"5px",
+    # 'marginBottom':"0",
     'height': "100px",
     'backgroundColor' : "#800080",
     }),
-    
     
 ],style = {
     'backgroundColor' : "#F9F9F9",
