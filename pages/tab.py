@@ -492,11 +492,141 @@ def render_content(tab):
                         'borderWidth': "thin",
                         'borderStyle':"solid",
                         'borderColor':"#C6C4C4",
+                    }),
+                    ###############################
+                    ###### Container 2
+                    html.Div([
+                        html.Div([
+                            html.H1('Library Resources', 
+                                style={
+                                    # 'textAlign':"center",
+                                    'fontSize':"28px",
+                                    }),
+                            ], style={
+                                # 'backgroundColor':"gray", # for debuging
+                                'marginTop':"10px",
+                                'marginLeft':"10px",
+                                'height':"125px",
+                                'width':"325px",
+                                }),
+                        html.Div([
+                            dcc.Link(html.Button("Detail", 
+                                            style={
+                                                'backgroundColor':"#800080",
+                                                'color':"white",
+                                                #  'marginTop':"5px",
+                                                'marginLeft':"80%",
+                                                'borderRadius':"8px",
+                                                'borderWidth': "thin",
+                                                'borderStyle':"solid",
+                                                'borderColor':"#C6C4C4",
+                                    }), href="/schoolafair/libraryresources", refresh=True,),
+                            ], style={
+                            
+                                }),
+                        
+                    ], style={
+                        'backgroundColor':"white",
+                        'height':"180px",
+                        'width':"350px",
+                        'marginTop':"20px",
+                        'marginLeft':"15px",
+                        'borderRadius':"8px",
+                        'borderWidth': "thin",
+                        'borderStyle':"solid",
+                        'borderColor':"#C6C4C4",
+                    }),
+                    ###############################
+                    ###### Container 3
+                    html.Div([
+                        html.Div([
+                            html.H1('Library Resources', 
+                                style={
+                                    # 'textAlign':"center",
+                                    'fontSize':"28px",
+                                    }),
+                            ], style={
+                                # 'backgroundColor':"gray", # for debuging
+                                'marginTop':"10px",
+                                'marginLeft':"10px",
+                                'height':"125px",
+                                'width':"325px",
+                                }),
+                        html.Div([
+                            dcc.Link(html.Button("Detail", 
+                                            style={
+                                                'backgroundColor':"#800080",
+                                                'color':"white",
+                                                #  'marginTop':"5px",
+                                                'marginLeft':"80%",
+                                                'borderRadius':"8px",
+                                                'borderWidth': "thin",
+                                                'borderStyle':"solid",
+                                                'borderColor':"#C6C4C4",
+                                    }), href="/schoolafair/libraryresources", refresh=True,),
+                            ], style={
+                            
+                                }),
+                        
+                    ], style={
+                        'backgroundColor':"white",
+                        'height':"180px",
+                        'width':"350px",
+                        'marginTop':"20px",
+                        'marginLeft':"15px",
+                        'borderRadius':"8px",
+                        'borderWidth': "thin",
+                        'borderStyle':"solid",
+                        'borderColor':"#C6C4C4",
+                    }),
+                    ###############################
+                    ###### Container 4
+                    html.Div([
+                        html.Div([
+                            html.H1('Library Resources', 
+                                style={
+                                    # 'textAlign':"center",
+                                    'fontSize':"28px",
+                                    }),
+                            ], style={
+                                # 'backgroundColor':"gray", # for debuging
+                                'marginTop':"10px",
+                                'marginLeft':"10px",
+                                'height':"125px",
+                                'width':"325px",
+                                }),
+                        html.Div([
+                            dcc.Link(html.Button("Detail", 
+                                            style={
+                                                'backgroundColor':"#800080",
+                                                'color':"white",
+                                                #  'marginTop':"5px",
+                                                'marginLeft':"80%",
+                                                'borderRadius':"8px",
+                                                'borderWidth': "thin",
+                                                'borderStyle':"solid",
+                                                'borderColor':"#C6C4C4",
+                                    }), href="/schoolafair/libraryresources", refresh=True,),
+                            ], style={
+                            
+                                }),
+                        
+                    ], style={
+                        'backgroundColor':"white",
+                        'height':"180px",
+                        'width':"350px",
+                        'marginTop':"20px",
+                        'marginLeft':"15px",
+                        'borderRadius':"8px",
+                        'borderWidth': "thin",
+                        'borderStyle':"solid",
+                        'borderColor':"#C6C4C4",
                     })
                     ###############################
                     
         ], style={
             'display' : "flex"
             }),
+        # container row two
         
     ])
