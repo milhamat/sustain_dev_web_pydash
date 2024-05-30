@@ -78,7 +78,7 @@ def render_content(tab):
                 ###### Container 2
                     html.Div([
                         html.Div([
-                            html.H1('Sankey Enrollment', # Student Distribution for Academic Year 
+                            html.H1('Entry Path, Gender, and College', 
                                 style={
                                     # 'textAlign':"center",
                                     'fontSize':"28px",
@@ -120,7 +120,7 @@ def render_content(tab):
                 ###### Container 3
                     html.Div([
                         html.Div([
-                            html.H1('Total Student Internship Hours', # Student Distribution for Academic Year 
+                            html.H1('Total Student Internship Hours', 
                                 style={
                                     # 'textAlign':"center",
                                     'fontSize':"28px",
@@ -162,7 +162,7 @@ def render_content(tab):
                     ###### Container 4
                     html.Div([
                         html.Div([
-                            html.H1('Gender Ratio', # Student Distribution for Academic Year 
+                            html.H1('Gender Ratio', 
                                 style={
                                     # 'textAlign':"center",
                                     'fontSize':"28px",
@@ -211,7 +211,7 @@ def render_content(tab):
                     ###### Container 5
                     html.Div([
                         html.Div([
-                            html.H1('Spread of Work Areas After Graduation', # Student Distribution for Academic Year 
+                            html.H1('Spread of Work Areas After Graduation', 
                                 style={
                                     # 'textAlign':"center",
                                     'fontSize':"28px",
@@ -253,7 +253,7 @@ def render_content(tab):
                     ###### Container 6
                     html.Div([
                         html.Div([
-                            html.H1('Graduation Job Type', # Student Distribution for Academic Year 
+                            html.H1('Graduation Job Type', 
                                 style={
                                     # 'textAlign':"center",
                                     'fontSize':"28px",
@@ -293,6 +293,50 @@ def render_content(tab):
                     'borderColor':"#C6C4C4",
                 }),
                 #########
+                ###### Container 7
+                    html.Div([
+                        html.Div([
+                            html.H1('Number of Graduate by Department and Institutes', 
+                                style={
+                                    # 'textAlign':"center",
+                                    'fontSize':"28px",
+                                    }),
+                            ], style={
+                                # 'backgroundColor':"gray", # for debuging
+                                'marginTop':"10px",
+                                'marginLeft':"10px",
+                                'height':"125px",
+                                'width':"325px",
+                                }),
+                        html.Div([
+                            dcc.Link(html.Button("Detail", 
+                                            style={
+                                                'backgroundColor':"#800080",
+                                                'color':"white",
+                                                #  'marginTop':"5px",
+                                                'marginLeft':"80%",
+                                                'borderRadius':"8px",
+                                                'borderWidth': "thin",
+                                                'borderStyle':"solid",
+                                                'borderColor':"#C6C4C4",
+                                    }), href="/student/barchart", refresh=True,),
+                                    # }), href="/student/gradworkarea", refresh=True,),
+                            ], style={
+                                }),
+                    
+                ], style={
+                    'backgroundColor':"white",
+                    'height':"180px",
+                    'width':"350px",
+                    'marginTop':"20px",
+                    'marginLeft':"15px",
+                    'borderRadius':"8px",
+                    'borderWidth': "thin",
+                    'borderStyle':"solid",
+                    'borderColor':"#C6C4C4",
+                }),
+                #########
+                
                     
                 ], style={
                     'display' : "flex"
@@ -310,7 +354,7 @@ def render_content(tab):
         return html.Div([
             html.Div([
                 html.Div([
-                    html.H1('FACULTY', # Student Distribution for Academic Year 
+                    html.H1('FACULTY', 
                         style={
                             # 'textAlign':"center",
                             'fontSize':"28px",
@@ -355,7 +399,7 @@ def render_content(tab):
         return html.Div([
             html.Div([
                 html.Div([
-                    html.H1('STUDENT', # Student Distribution for Academic Year 
+                    html.H1('STUDENT', 
                         style={
                             # 'textAlign':"center",
                             'fontSize':"28px",
