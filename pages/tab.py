@@ -277,6 +277,7 @@ def render_content(tab):
                                                 'borderStyle':"solid",
                                                 'borderColor':"#C6C4C4",
                                     }), href="/student/gradjobtype", refresh=True,),
+                                    # }), href="/student/gradworkarea", refresh=True,),
                             ], style={
                                 }),
                     
