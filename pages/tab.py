@@ -357,7 +357,7 @@ def render_content(tab):
                     ###### Container 1
                     html.Div([
                         html.Div([
-                            html.H1('FACULTY', 
+                            html.H1('Student Teacher Ratio in Day Programs by Academic Year', 
                                 style={
                                     # 'textAlign':"center",
                                     'fontSize':"28px",
