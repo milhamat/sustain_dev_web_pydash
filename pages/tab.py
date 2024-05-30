@@ -60,7 +60,7 @@ def render_content(tab):
                                                 'borderWidth': "thin",
                                                 'borderStyle':"solid",
                                                 'borderColor':"#C6C4C4",
-                                    }), href="/student/sunburst", refresh=True,),
+                                    }), href="/student/stddistbyyear", refresh=True,),
                             ], style={
                                 }),
                     
@@ -101,7 +101,7 @@ def render_content(tab):
                                                 'borderWidth': "thin",
                                                 'borderStyle':"solid",
                                                 'borderColor':"#C6C4C4",
-                                    }), href="/student/sankey", refresh=True,),
+                                    }), href="/student/entrypathgender", refresh=True,),
                             ], style={
                                 }),
                     
@@ -319,7 +319,7 @@ def render_content(tab):
                                                 'borderWidth': "thin",
                                                 'borderStyle':"solid",
                                                 'borderColor':"#C6C4C4",
-                                    }), href="/student/barchart", refresh=True,),
+                                    }), href="/student/numgradbydepinst", refresh=True,),
                                     # }), href="/student/gradworkarea", refresh=True,),
                             ], style={
                                 }),

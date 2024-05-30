@@ -50,18 +50,18 @@ layout = html.Div([
         value=['金融財務類'],
         inline=True,
     ),
-    dcc.Tabs(id='tabs', value='1年', children=[
+    dcc.Tabs(id='tabs-job-type', value='1年', children=[
         dcc.Tab(label='畢業滿1年', value='1年'),#Graduated for 1 year
         dcc.Tab(label='畢業滿3年', value='3年'), #Graduated for 3 year
         # No information for 5 years after graduation
     ]),
-    html.Div(id='tabs-Content'),
+    html.Div(id='tabs-content-job-type'),
 ])
 
 # Define the callback function to update the content based on the value of the tabs
 @callback(
-    Output('tabs-Content', 'children'),
-    [Input('tabs', 'value'),
+    Output('tabs-content-job-type', 'children'),
+    [Input('tabs-job-type', 'value'),
      Input('job-types', 'value')]
 )
 def update_content(selected_tab, selected_job_types):
