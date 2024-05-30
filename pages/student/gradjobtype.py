@@ -47,7 +47,8 @@ layout = html.Div([
             {"label": "藝文與影音傳播類", "value": "藝文與影音傳播類"},
             {"label": "天然資源、食品與農業類", "value": "天然資源、食品與農業類"},
             ],
-        value=['金融財務類'],
+        # value=['金融財務類', '教育與訓練類'],
+        value=job_types,
         inline=True,
     ),
     dcc.Tabs(id='tabs-job-type', value='1年', children=[

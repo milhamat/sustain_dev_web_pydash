@@ -52,7 +52,7 @@ layout = html.Div([
 @callback(
     Output('tabs-content', 'children'),
     [Input('tabs', 'value'),
-     Input('checklist', 'value')]
+     Input('checklist', 'value')],
 )
 
 def render_content(tab, selected_classes):
