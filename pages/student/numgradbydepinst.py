@@ -1,8 +1,7 @@
 import dash
 import pandas as pd
 import plotly.express as px
-from dash import callback, dcc, html
-from dash.dependencies import Input, Output
+from dash import dcc, html
 
 data = pd.read_csv('./datas/barchart_std.csv')
 

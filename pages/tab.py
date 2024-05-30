@@ -497,7 +497,7 @@ def render_content(tab):
                     ###### Container 2
                     html.Div([
                         html.Div([
-                            html.H1('Library Resources', 
+                            html.H1('Brother and Sister Schools', 
                                 style={
                                     # 'textAlign':"center",
                                     'fontSize':"28px",
@@ -520,7 +520,7 @@ def render_content(tab):
                                                 'borderWidth': "thin",
                                                 'borderStyle':"solid",
                                                 'borderColor':"#C6C4C4",
-                                    }), href="/schoolafair/libraryresources", refresh=True,),
+                                    }), href="/schoolafair/brosischool", refresh=True,),
                             ], style={
                             
                                 }),
