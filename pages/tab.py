@@ -563,7 +563,7 @@ def render_content(tab):
                                                 'borderWidth': "thin",
                                                 'borderStyle':"solid",
                                                 'borderColor':"#C6C4C4",
-                                    }), href="/schoolafair/libraryresources", refresh=True,),
+                                    }), href="/schoolafair/nmstdfrtuition", refresh=True,),
                             ], style={
                             
                                 }),
