@@ -5,10 +5,13 @@ import plotly.graph_objects as go
 import pandas as pd
 
 # 讀取數據
+url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/regratenewenroll.csv'
+# df = pd.read_csv('./datas/sunburst.csv')
+data = pd.read_csv(url)
 # file_path = './新生(含境外生)註冊率-以「系(所)」統計.xlsx'
 # data = pd.read_excel(file_path, engine='openpyxl')
-file_path = './datas/新生(含境外生)註冊率-以「系(所)」統計.csv'
-data = pd.read_csv(file_path)
+# file_path = './datas/新生(含境外生)註冊率-以「系(所)」統計.csv'
+# data = pd.read_csv(file_path)
 
 dash.register_page(__name__)
 

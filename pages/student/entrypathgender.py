@@ -4,7 +4,9 @@ import plotly.express as px
 from dash import callback, dcc, html
 from dash.dependencies import Input, Output
 
-df = pd.read_csv('./datas/sankey_enroll.csv')
+url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/sankey_enroll.csv'
+df = pd.read_csv(url)
+# df = pd.read_csv('./datas/sankey_enroll.csv')
 
 # 獲取所有學年度(Get all academic years)
 available_years = df['End_Year'].unique().tolist()

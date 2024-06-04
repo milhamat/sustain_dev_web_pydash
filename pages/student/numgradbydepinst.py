@@ -3,7 +3,9 @@ import pandas as pd
 import plotly.express as px
 from dash import dcc, html
 
-data = pd.read_csv('./datas/barchart_std.csv')
+url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/barchart_std.csv'
+data = pd.read_csv(url)
+# data = pd.read_csv('./datas/barchart_std.csv')
 
 dash.register_page(__name__)
 

@@ -3,7 +3,9 @@ import pandas as pd
 import plotly.express as px
 from dash import dcc, callback, html, Input, Output
 
-df = pd.read_csv('./datas/sunburst.csv')
+url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/sunburst.csv'
+df = pd.read_csv(url)
+# df = pd.read_csv('./datas/sunburst.csv')
 
 dash.register_page(__name__)
 

@@ -1,0 +1,19 @@
+###STUDENT###
+entrypathgender-sankey_enroll
+gradjobtype-gradjobtype
+gradworkarea-(done)
+numgradbydepinst-barchart_std
+stddistbyyear-sunburst
+stdintern-學20.學生實習情形-以「系(所)」統計(stdintern)
+stdngenderratio-male_female_ratio
+
+###SCHOOL AFAIR###
+brosischool-112學年度-北商姊妹校名單(brosischool)
+libraryresources-5-1.圖書館統計(libraryresources)
+nmstdfrtuition
+regratenewenroll-新生(含境外生)註冊率-以「系(所)」統計(regratenewenroll)
+
+###FACULTY###
+numfulltimparttim-教1-1.專任教師數-以「系(所)」統計(full),教2-1.專任教師數-以「系(所)」統計(part)
+
+stdtchrratio-student_teacher_ratio

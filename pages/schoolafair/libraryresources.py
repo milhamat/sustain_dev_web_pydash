@@ -3,7 +3,9 @@ import pandas as pd
 from dash import dcc, html, Input, Output, callback
 import plotly.express as px
 
-df = pd.read_csv('./datas/5-1.圖書館統計.csv')
+url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/libraryresources.csv'
+df = pd.read_csv(url)
+# df = pd.read_csv('./datas/5-1.圖書館統計.csv')
 
 dash.register_page(__name__)
 

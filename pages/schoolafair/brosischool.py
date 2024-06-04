@@ -3,7 +3,9 @@ import pandas as pd
 import plotly.express as px
 from dash import callback, dcc, html
 
-df = pd.read_csv('./datas/112學年度-北商姊妹校名單.csv')
+url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/brosischool.csv'
+df = pd.read_csv(url)
+# df = pd.read_csv('./datas/112學年度-北商姊妹校名單.csv')
 
 # 計算每個國家的學校數量
 country_counts = df.groupby(['區域別', '國家']).size().reset_index(name='學校數量')

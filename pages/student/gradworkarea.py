@@ -3,15 +3,25 @@ from dash import dcc, html, callback
 from dash.dependencies import Input, Output
 import plotly.express as px
 import pandas as pd
-import json
+import json, requests
 
 dash.register_page(__name__)
 
-geojson_path = r'./datas/path_to_taiwan_geojson.json'
-data = pd.read_csv('./datas/grad_job.csv')
+url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/grad_job.csv'
+url_json = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/taiwanjson.json'
 
-with open(geojson_path, encoding='utf-8') as f:
-    geojson = json.load(f)
+geojson_path = url_json
+data = pd.read_csv(url)
+# geojson_path = r'./datas/path_to_taiwan_geojson.json'
+# data = pd.read_csv('./datas/grad_job.csv')
+
+resp = requests.get(geojson_path)
+geojson = json.loads(resp.text)
+
+# with open(geojson_path, encoding='utf-8') as f:
+#     # geojson = json.load(f)
+#     geojson = json.loads(resp.text)
+
 data_count = data.groupby(['工作所在地點_境內區域', '畢業滿_年']).size().reset_index(name='Count')
 
 
