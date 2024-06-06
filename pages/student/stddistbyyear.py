@@ -3,9 +3,10 @@ import pandas as pd
 import plotly.express as px
 from dash import dcc, callback, html, Input, Output
 
-url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/sunburst.csv'
-df = pd.read_csv(url)
-# df = pd.read_csv('./datas/sunburst.csv')
+# url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/sunburst.csv'
+# df = pd.read_csv(url)
+
+df = pd.read_csv('./datas/sunburst.csv')
 
 dash.register_page(__name__)
 
@@ -49,7 +50,7 @@ def AcademicYearChart(selected_year):
                     #   title=f'Student Distribution for Academic Year {selected_year}' 
                       )
     fig.update_layout(
-        margin = dict(t=25, l=25, r=25, b=10)
+        margin = dict(t=30, l=25, r=25, b=10)
     )
     return fig
 

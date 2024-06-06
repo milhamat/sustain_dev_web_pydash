@@ -7,19 +7,20 @@ import json, requests
 
 dash.register_page(__name__)
 
-url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/grad_job.csv'
-url_json = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/taiwanjson.json'
+# url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/grad_job.csv'
+# url_json = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/taiwanjson.json'
 
-geojson_path = url_json
-data = pd.read_csv(url)
-# geojson_path = r'./datas/path_to_taiwan_geojson.json'
-# data = pd.read_csv('./datas/grad_job.csv')
+# geojson_path = url_json
+# data = pd.read_csv(url)
 
-resp = requests.get(geojson_path)
-geojson = json.loads(resp.text)
+geojson_path = r'./datas/taiwanjson.json'
+data = pd.read_csv('./datas/grad_job.csv')
 
-# with open(geojson_path, encoding='utf-8') as f:
-#     # geojson = json.load(f)
+# resp = requests.get(geojson_path)
+# geojson = json.loads(resp.text)
+
+with open(geojson_path, encoding='utf-8') as f:
+    geojson = json.load(f)
 #     geojson = json.loads(resp.text)
 
 data_count = data.groupby(['工作所在地點_境內區域', '畢業滿_年']).size().reset_index(name='Count')

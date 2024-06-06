@@ -4,7 +4,12 @@ import plotly.express as px
 import dash_bootstrap_components as dbc
 from dash import Dash, dcc, html, Input, Output
 
-app = Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = Dash( __name__, 
+            use_pages=True, 
+            external_stylesheets=[dbc.themes.BOOTSTRAP],
+            meta_tags=[{'name': 'viewport',
+                        'content': 'width=device-width, initial-scale=1.0, maximum-scale=1.2, minimum-scale=0.5,'}]
+           )
 
 app.layout = html.Div([
     # NAVBAR ################################################

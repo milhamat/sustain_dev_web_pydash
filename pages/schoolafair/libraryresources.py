@@ -3,9 +3,10 @@ import pandas as pd
 from dash import dcc, html, Input, Output, callback
 import plotly.express as px
 
-url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/libraryresources.csv'
-df = pd.read_csv(url)
-# df = pd.read_csv('./datas/5-1.圖書館統計.csv')
+# url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/libraryresources.csv'
+# df = pd.read_csv(url)
+
+df = pd.read_csv('./datas/libraryresources.csv')
 
 dash.register_page(__name__)
 
@@ -38,7 +39,9 @@ layout = html.Div([
         options=[{'label': year, 'value': year} for year in df['學年度'].unique()],# '學年度' is 'Academic Year'
         value=df['學年度'].unique()[0]
     ),
-    dcc.Graph(id='sblib-chart')
+    dcc.Graph(id='sblib-chart', style={
+                'height':"450px",
+                'marginTop':"20px",}),
 ])
 
 # 回調函數，更新旭日圖 (Callback function to update the sunburst chart)
@@ -56,5 +59,8 @@ def update_chart(selected_year):
         values='數量',  # '數量' is 'Quantity'
         title=f'{selected_year} 學年度圖書館館藏分類',  # '學年度圖書館館藏分類' is 'Academic Year Library Collection Classification'
         color_discrete_sequence=px.colors.qualitative.Pastel
+    )
+    fig.update_layout(
+        margin = dict(t=30, l=25, r=25, b=10)
     )
     return fig

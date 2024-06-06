@@ -4,15 +4,15 @@ from dash.dependencies import Input, Output, State
 import plotly.graph_objects as go
 import pandas as pd
 
-urlOne = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/fulltime.csv'
-urlTwo = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/parttime.csv'
-data_full_time = pd.read_csv(urlOne)
-data_part_time = pd.read_csv(urlTwo)
+# urlOne = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/fulltime.csv'
+# urlTwo = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/parttime.csv'
+# data_full_time = pd.read_csv(urlOne)
+# data_part_time = pd.read_csv(urlTwo)
 
-# file_path_full_time = './datas/教1-1.專任教師數-以「系(所)」統計.csv'
-# file_path_part_time = './datas/教2-1.兼任教師數-以「系(所)」統計.csv'
-# data_full_time = pd.read_csv(file_path_full_time)
-# data_part_time = pd.read_csv(file_path_part_time)
+file_path_full_time = './datas/fulltime.csv'
+file_path_part_time = './datas/parttime.csv'
+data_full_time = pd.read_csv(file_path_full_time)
+data_part_time = pd.read_csv(file_path_part_time)
 
 categories = {
     "行政": ["體育室", "通識教育中心", "軍訓教官"],

@@ -4,9 +4,10 @@ from dash.dependencies import Input, Output
 import plotly.graph_objects as go
 import pandas as pd
 
-url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/student_teacher_ratio.csv'
-data = pd.read_csv(url)
-# data = pd.read_csv('./datas/student_teacher_ratio.csv')
+# url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/student_teacher_ratio.csv'
+# data = pd.read_csv(url)
+
+data = pd.read_csv('./datas/student_teacher_ratio.csv')
 
 dash.register_page(__name__)
 
