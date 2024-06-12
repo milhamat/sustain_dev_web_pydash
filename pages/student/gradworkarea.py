@@ -14,7 +14,9 @@ dash.register_page(__name__)
 # data = pd.read_csv(url)
 
 geojson_path = r'./datas/taiwanjson.json'
-data = pd.read_csv('./datas/grad_job.csv')
+# data = pd.read_csv('./datas/grad_job.csv')
+
+data = pd.read_parquet('./datas/grad_job.parquet')
 
 # resp = requests.get(geojson_path)
 # geojson = json.loads(resp.text)

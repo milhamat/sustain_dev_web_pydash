@@ -6,7 +6,9 @@ from dash import dcc, html
 # url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/barchart_std.csv'
 # data = pd.read_csv(url)
 
-data = pd.read_csv('./datas/barchart_std.csv')
+# data = pd.read_csv('./datas/barchart_std.csv')
+
+data = pd.read_parquet('./datas/barchart_std.parquet')
 
 dash.register_page(__name__)
 

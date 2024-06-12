@@ -7,7 +7,9 @@ import plotly.express as px
 # url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/stdintern.xlsx'
 # df = pd.read_excel(url)
 
-df = pd.read_excel('./datas/stdintern.xlsx')
+# df = pd.read_excel('./datas/stdintern.xlsx')
+
+df = pd.read_parquet('./datas/stdintern.parquet')
 
 df = df[['學年度', '學制班別', '系所名稱', '實習總時數']]  
 df_110 = df[df['學年度'] == 110]

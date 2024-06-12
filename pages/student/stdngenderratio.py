@@ -7,7 +7,9 @@ import plotly.graph_objects as go
 # url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/male_female_ratio.csv'
 # df = pd.read_csv(url)
 
-df = pd.read_csv('./datas/male_female_ratio.csv')
+# df = pd.read_csv('./datas/male_female_ratio.csv')
+
+df = pd.read_parquet('./datas/male_female_ratio.parquet')
 
 # 獲取不重複的年份和 Edu_Short (Get unique years and Edu_Short)
 unique_years = df['Years'].unique()

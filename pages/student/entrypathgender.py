@@ -6,7 +6,10 @@ from dash.dependencies import Input, Output
 
 # url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/sankey_enroll.csv'
 # df = pd.read_csv(url)
-df = pd.read_csv('./datas/sankey_enroll.csv')
+
+# df = pd.read_csv('./datas/sankey_enroll.csv')
+
+df = pd.read_parquet('./datas/sankey_enroll.parquet')
 
 # 獲取所有學年度(Get all academic years)
 available_years = df['End_Year'].unique().tolist()

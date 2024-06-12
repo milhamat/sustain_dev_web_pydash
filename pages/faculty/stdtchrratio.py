@@ -7,7 +7,9 @@ import pandas as pd
 # url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/student_teacher_ratio.csv'
 # data = pd.read_csv(url)
 
-data = pd.read_csv('./datas/student_teacher_ratio.csv')
+# data = pd.read_csv('./datas/student_teacher_ratio.csv')
+
+data = pd.read_parquet('./datas/student_teacher_ratio.parquet')
 
 dash.register_page(__name__)
 

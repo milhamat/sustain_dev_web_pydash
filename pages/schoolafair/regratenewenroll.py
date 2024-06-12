@@ -11,8 +11,9 @@ import pandas as pd
 # file_path = './新生(含境外生)註冊率-以「系(所)」統計.xlsx'
 # data = pd.read_excel(file_path, engine='openpyxl')
 
-file_path = './datas/regratenewenroll.csv'
-data = pd.read_csv(file_path)
+# data = pd.read_csv('./datas/regratenewenroll.csv')
+
+data = pd.read_parquet('./datas/regratenewenroll.parquet')
 
 dash.register_page(__name__)
 

@@ -6,7 +6,9 @@ from dash import dcc, callback, html, Input, Output
 # url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/sunburst.csv'
 # df = pd.read_csv(url)
 
-df = pd.read_csv('./datas/sunburst.csv')
+# df = pd.read_csv('./datas/sunburst.csv')
+
+df = pd.read_parquet('./datas/sunburst.parquet')
 
 dash.register_page(__name__)
 

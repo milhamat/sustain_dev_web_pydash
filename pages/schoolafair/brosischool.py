@@ -6,7 +6,9 @@ from dash import callback, dcc, html
 # url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/brosischool.csv'
 # df = pd.read_csv(url)
 
-df = pd.read_csv('./datas/brosischool.csv')
+# df = pd.read_csv('./datas/brosischool.csv')
+
+df = pd.read_parquet('./datas/brosischool.parquet')
 
 # 計算每個國家的學校數量
 country_counts = df.groupby(['區域別', '國家']).size().reset_index(name='學校數量')

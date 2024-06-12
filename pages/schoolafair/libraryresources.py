@@ -6,7 +6,9 @@ import plotly.express as px
 # url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/libraryresources.csv'
 # df = pd.read_csv(url)
 
-df = pd.read_csv('./datas/libraryresources.csv')
+# df = pd.read_csv('./datas/libraryresources.csv')
+
+df = pd.read_parquet('./datas/libraryresources.parquet')
 
 dash.register_page(__name__)
 

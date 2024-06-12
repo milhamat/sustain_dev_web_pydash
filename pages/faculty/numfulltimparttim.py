@@ -9,10 +9,15 @@ import pandas as pd
 # data_full_time = pd.read_csv(urlOne)
 # data_part_time = pd.read_csv(urlTwo)
 
-file_path_full_time = './datas/fulltime.csv'
-file_path_part_time = './datas/parttime.csv'
-data_full_time = pd.read_csv(file_path_full_time)
-data_part_time = pd.read_csv(file_path_part_time)
+# file_path_full_time = './datas/fulltime.csv'
+# file_path_part_time = './datas/parttime.csv'
+# data_full_time = pd.read_csv(file_path_full_time)
+# data_part_time = pd.read_csv(file_path_part_time)
+
+file_path_full_time = './datas/fulltime.parquet'
+file_path_part_time = './datas/parttime.parquet'
+data_full_time = pd.read_parquet(file_path_full_time)
+data_part_time = pd.read_parquet(file_path_part_time)
 
 categories = {
     "行政": ["體育室", "通識教育中心", "軍訓教官"],
