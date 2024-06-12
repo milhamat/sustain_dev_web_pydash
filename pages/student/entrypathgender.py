@@ -25,6 +25,7 @@ layout = html.Div([
                                  'borderStyle':"solid",
                                  'borderColor':"#C6C4C4",
                                  }), href="/", refresh=True),
+    
     html.H1("入學管道、性別與學院之間的桑基圖"),  # Sankey Diagram between Entry Path, Gender, and Institute
     html.H2("Sankey Diagram between Entry Path, Gender, and College"),  # 英文標題 (English Title)
     html.H4("來源資料:畢業流向問卷"),

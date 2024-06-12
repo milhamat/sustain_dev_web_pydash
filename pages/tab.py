@@ -33,8 +33,10 @@ def render_content(tab):
         return html.Div([
             html.Div([
                 # container row one
+                dbc.Row([
                 html.Div([
                     ###### Container 1
+                    # dbc.Col([
                     html.Div([
                         html.Div([
                             html.H1('Student Distribution for Academic Year', # Student Distribution for Academic Year  # 學年學生分佈
@@ -75,7 +77,9 @@ def render_content(tab):
                     'borderStyle':"solid",
                     'borderColor':"#C6C4C4",
                 }),
+            # ]),
                 ###### Container 2
+                # dbc.Col([
                     html.Div([
                         html.Div([
                             html.H1('Entry Path, Gender, and College', 
@@ -116,8 +120,10 @@ def render_content(tab):
                     'borderStyle':"solid",
                     'borderColor':"#C6C4C4",
                 }),
+            # ]),
                 ##########
                 ###### Container 3
+                dbc.Col([
                     html.Div([
                         html.Div([
                             html.H1('Total Student Internship Hours', 
@@ -158,8 +164,10 @@ def render_content(tab):
                     'borderStyle':"solid",
                     'borderColor':"#C6C4C4",
                 }),
+            ]),
                     ##########
                     ###### Container 4
+                    # dbc.Col([
                     html.Div([
                         html.Div([
                             html.H1('Gender Ratio', 
@@ -200,15 +208,18 @@ def render_content(tab):
                     'borderStyle':"solid",
                     'borderColor':"#C6C4C4",
                 }),
+            # ]),
                         ],style={
                             'display' : "flex",
                             }),
-                
+            ]),
                 ##########
                 ################################################################
                 # container row two
+                dbc.Row([
                 html.Div([
                     ###### Container 5
+                    # dbc.Col([
                     html.Div([
                         html.Div([
                             html.H1('Spread of Work Areas After Graduation', 
@@ -249,8 +260,10 @@ def render_content(tab):
                     'borderStyle':"solid",
                     'borderColor':"#C6C4C4",
                 }),
+            # ]),
                 ##########
                     ###### Container 6
+                    # dbc.Col([
                     html.Div([
                         html.Div([
                             html.H1('Graduation Job Type', 
@@ -292,8 +305,10 @@ def render_content(tab):
                     'borderStyle':"solid",
                     'borderColor':"#C6C4C4",
                 }),
+            # ]),
                 #########
                 ###### Container 7
+                # dbc.Col([
                     html.Div([
                         html.Div([
                             html.H1('Number of Graduate by Department and Institutes', 
@@ -335,12 +350,14 @@ def render_content(tab):
                     'borderStyle':"solid",
                     'borderColor':"#C6C4C4",
                 }),
+            # ]),
                 #########
                 
                     
                 ], style={
                     'display' : "flex"
                 }),
+            ]),
                 # container row three
                 # html.Div([]), # in case if needed
                 
@@ -353,8 +370,10 @@ def render_content(tab):
     elif tab == "facult":
         return html.Div([
             # container row one
+            dbc.Row([
                 html.Div([
                     ###### Container 1
+                    # dbc.Col([
                     html.Div([
                         html.Div([
                             html.H1('Student Teacher Ratio in Day Programs by Academic Year', 
@@ -396,8 +415,10 @@ def render_content(tab):
                         'borderStyle':"solid",
                         'borderColor':"#C6C4C4",
                     }),
+                # ]),
                     #############
                     ###### Container 2
+                    # dbc.Col([
                     html.Div([
                         html.Div([
                             html.H1('Number Full-time, Part-time Teacher', 
@@ -439,19 +460,24 @@ def render_content(tab):
                         'borderStyle':"solid",
                         'borderColor':"#C6C4C4",
                     }),
+                # ]),
                     ###########
                     
                 ], style={
                     'display':"flex",
                     }),
+                ]),
+            # container row Two
             
         ])
     ##############################SCHOOL AFFAIR################
     elif tab == "schafr":
         return html.Div([
             # container row one
+            dbc.Row([
                 html.Div([
                     ###### Container 1
+                    # dbc.Col([
                     html.Div([
                         html.Div([
                             html.H1('Library Resources', 
@@ -493,8 +519,10 @@ def render_content(tab):
                         'borderStyle':"solid",
                         'borderColor':"#C6C4C4",
                     }),
+                # ], xs=10, sm=5, md=5, lg=6, xl=5),
                     ###############################
                     ###### Container 2
+                    # dbc.Col([
                     html.Div([
                         html.Div([
                             html.H1('Brother and Sister Schools', 
@@ -536,8 +564,10 @@ def render_content(tab):
                         'borderStyle':"solid",
                         'borderColor':"#C6C4C4",
                     }),
+                # ], xs=10, sm=5, md=5, lg=6, xl=5),
                     ###############################
                     ###### Container 3
+                    # dbc.Col([
                     html.Div([
                         html.Div([
                             html.H1('Number of Students Free from Tuition and Fees', 
@@ -579,8 +609,10 @@ def render_content(tab):
                         'borderStyle':"solid",
                         'borderColor':"#C6C4C4",
                     }),
+                # ], xs=10, sm=5, md=5, lg=6, xl=5),
                     ###############################
                     ###### Container 4
+                    # dbc.Col([
                     html.Div([
                         html.Div([
                             html.H1('Regristration Rate of New Student Enrolled each Department', 
@@ -621,12 +653,14 @@ def render_content(tab):
                         'borderWidth': "thin",
                         'borderStyle':"solid",
                         'borderColor':"#C6C4C4",
-                    })
+                    }),
+                # ], xs=10, sm=5, md=5, lg=6, xl=5),
                     ###############################
                     
         ], style={
             'display' : "flex"
             }),
+                ]),
         # container row two
         
     ])
