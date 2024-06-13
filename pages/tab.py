@@ -41,7 +41,6 @@ def render_content(tab):
                         html.Div([
                             html.H1('Student Distribution for Academic Year', # Student Distribution for Academic Year  # 學年學生分佈
                                 style={
-                                    # 'textAlign':"center",
                                     'fontSize':"28px",
                                     }),
                             ], style={
@@ -56,7 +55,6 @@ def render_content(tab):
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
-                                                #  'marginTop':"5px",
                                                 'marginLeft':"80%",
                                                 'borderRadius':"8px",
                                                 'borderWidth': "thin",
@@ -84,7 +82,6 @@ def render_content(tab):
                         html.Div([
                             html.H1('Entry Path, Gender, and College', 
                                 style={
-                                    # 'textAlign':"center",
                                     'fontSize':"28px",
                                     }),
                             ], style={
@@ -99,7 +96,6 @@ def render_content(tab):
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
-                                                #  'marginTop':"5px",
                                                 'marginLeft':"80%",
                                                 'borderRadius':"8px",
                                                 'borderWidth': "thin",
@@ -128,7 +124,6 @@ def render_content(tab):
                         html.Div([
                             html.H1('Total Student Internship Hours', 
                                 style={
-                                    # 'textAlign':"center",
                                     'fontSize':"28px",
                                     }),
                             ], style={
@@ -143,7 +138,6 @@ def render_content(tab):
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
-                                                #  'marginTop':"5px",
                                                 'marginLeft':"80%",
                                                 'borderRadius':"8px",
                                                 'borderWidth': "thin",
@@ -172,7 +166,6 @@ def render_content(tab):
                         html.Div([
                             html.H1('Gender Ratio', 
                                 style={
-                                    # 'textAlign':"center",
                                     'fontSize':"28px",
                                     }),
                             ], style={
@@ -187,7 +180,6 @@ def render_content(tab):
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
-                                                #  'marginTop':"5px",
                                                 'marginLeft':"80%",
                                                 'borderRadius':"8px",
                                                 'borderWidth': "thin",
@@ -224,7 +216,6 @@ def render_content(tab):
                         html.Div([
                             html.H1('Spread of Work Areas After Graduation', 
                                 style={
-                                    # 'textAlign':"center",
                                     'fontSize':"28px",
                                     }),
                             ], style={
@@ -239,7 +230,6 @@ def render_content(tab):
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
-                                                #  'marginTop':"5px",
                                                 'marginLeft':"80%",
                                                 'borderRadius':"8px",
                                                 'borderWidth': "thin",
@@ -268,7 +258,6 @@ def render_content(tab):
                         html.Div([
                             html.H1('Graduation Job Type', 
                                 style={
-                                    # 'textAlign':"center",
                                     'fontSize':"28px",
                                     }),
                             ], style={
@@ -283,14 +272,12 @@ def render_content(tab):
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
-                                                #  'marginTop':"5px",
                                                 'marginLeft':"80%",
                                                 'borderRadius':"8px",
                                                 'borderWidth': "thin",
                                                 'borderStyle':"solid",
                                                 'borderColor':"#C6C4C4",
                                     }), href="/student/gradjobtype", refresh=True,),
-                                    # }), href="/student/gradworkarea", refresh=True,),
                             ], style={
                                 }),
                     
@@ -313,7 +300,6 @@ def render_content(tab):
                         html.Div([
                             html.H1('Number of Graduate by Department and Institutes', 
                                 style={
-                                    # 'textAlign':"center",
                                     'fontSize':"28px",
                                     }),
                             ], style={
@@ -328,14 +314,12 @@ def render_content(tab):
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
-                                                #  'marginTop':"5px",
                                                 'marginLeft':"80%",
                                                 'borderRadius':"8px",
                                                 'borderWidth': "thin",
                                                 'borderStyle':"solid",
                                                 'borderColor':"#C6C4C4",
                                     }), href="/student/numgradbydepinst", refresh=True,),
-                                    # }), href="/student/gradworkarea", refresh=True,),
                             ], style={
                                 }),
                     
@@ -378,7 +362,6 @@ def render_content(tab):
                         html.Div([
                             html.H1('Student Teacher Ratio in Day Programs by Academic Year', 
                                 style={
-                                    # 'textAlign':"center",
                                     'fontSize':"28px",
                                     }),
                             ], style={
@@ -393,7 +376,6 @@ def render_content(tab):
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
-                                                #  'marginTop':"5px",
                                                 'marginLeft':"80%",
                                                 'borderRadius':"8px",
                                                 'borderWidth': "thin",
@@ -423,7 +405,6 @@ def render_content(tab):
                         html.Div([
                             html.H1('Number Full-time, Part-time Teacher', 
                                 style={
-                                    # 'textAlign':"center",
                                     'fontSize':"28px",
                                     }),
                             ], style={
@@ -438,7 +419,6 @@ def render_content(tab):
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
-                                                #  'marginTop':"5px",
                                                 'marginLeft':"80%",
                                                 'borderRadius':"8px",
                                                 'borderWidth': "thin",
@@ -482,7 +462,6 @@ def render_content(tab):
                         html.Div([
                             html.H1('Library Resources', 
                                 style={
-                                    # 'textAlign':"center",
                                     'fontSize':"28px",
                                     }),
                             ], style={
@@ -497,7 +476,6 @@ def render_content(tab):
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
-                                                #  'marginTop':"5px",
                                                 'marginLeft':"80%",
                                                 'borderRadius':"8px",
                                                 'borderWidth': "thin",
@@ -527,7 +505,6 @@ def render_content(tab):
                         html.Div([
                             html.H1('Brother and Sister Schools', 
                                 style={
-                                    # 'textAlign':"center",
                                     'fontSize':"28px",
                                     }),
                             ], style={
@@ -542,7 +519,6 @@ def render_content(tab):
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
-                                                #  'marginTop':"5px",
                                                 'marginLeft':"80%",
                                                 'borderRadius':"8px",
                                                 'borderWidth': "thin",
@@ -572,7 +548,6 @@ def render_content(tab):
                         html.Div([
                             html.H1('Number of Students Free from Tuition and Fees', 
                                 style={
-                                    # 'textAlign':"center",
                                     'fontSize':"28px",
                                     }),
                             ], style={
@@ -587,7 +562,6 @@ def render_content(tab):
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
-                                                #  'marginTop':"5px",
                                                 'marginLeft':"80%",
                                                 'borderRadius':"8px",
                                                 'borderWidth': "thin",
@@ -617,7 +591,6 @@ def render_content(tab):
                         html.Div([
                             html.H1('Regristration Rate of New Student Enrolled each Department', 
                                 style={
-                                    # 'textAlign':"center",
                                     'fontSize':"28px",
                                     }),
                             ], style={
@@ -632,7 +605,6 @@ def render_content(tab):
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
-                                                #  'marginTop':"5px",
                                                 'marginLeft':"80%",
                                                 'borderRadius':"8px",
                                                 'borderWidth': "thin",
