@@ -33,7 +33,7 @@ def render_content(tab):
         return html.Div([
             html.Div([
                 # container row one
-                dbc.Row([
+            dbc.Row([
                 html.Div([
                     ###### Container 1
                     # dbc.Col([
@@ -75,7 +75,7 @@ def render_content(tab):
                     'borderStyle':"solid",
                     'borderColor':"#C6C4C4",
                 }),
-            # ]),
+                # ]),
                 ###### Container 2
                 # dbc.Col([
                     html.Div([
@@ -116,10 +116,10 @@ def render_content(tab):
                     'borderStyle':"solid",
                     'borderColor':"#C6C4C4",
                 }),
-            # ]),
+                # ]),
                 ##########
                 ###### Container 3
-                dbc.Col([
+                # dbc.Col([
                     html.Div([
                         html.Div([
                             html.H1('Total Student Internship Hours', 
@@ -157,8 +157,8 @@ def render_content(tab):
                     'borderWidth': "thin",
                     'borderStyle':"solid",
                     'borderColor':"#C6C4C4",
-                }),
-            ]),
+                    }),
+                # ]),
                     ##########
                     ###### Container 4
                     # dbc.Col([
@@ -640,7 +640,7 @@ def render_content(tab):
                 ###### Container 5
                 html.Div([
                         html.Div([
-                            html.H1('DropoutOne', 
+                            html.H1('Number of students dropping out of the top ten schools', 
                                 style={
                                     'fontSize':"28px",
                                     }),
@@ -680,7 +680,7 @@ def render_content(tab):
                 ###### Container 5
                 html.Div([
                         html.Div([
-                            html.H1('DropoutTwo', 
+                            html.H1('Number of dropouts withdrawals in the admission', 
                                 style={
                                     'fontSize':"28px",
                                     }),
