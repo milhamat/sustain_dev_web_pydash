@@ -1,7 +1,7 @@
 import dash
 import pandas as pd
 import plotly.express as px
-from dash import callback, dcc, html
+from dash import dcc, html
 
 # url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/brosischool.csv'
 # df = pd.read_csv(url)

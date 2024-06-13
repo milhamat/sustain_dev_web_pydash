@@ -11,8 +11,8 @@ dash.register_page(__name__)
 # fig = plt.hist(x)
 # fig = plt.show()
 
-file_path = './datas/freetuition.parquet'
-df = pd.read_parquet(file_path)
+file_path = './datas/freetuition.csv'
+df = pd.read_csv(file_path)
 
 # Process the data
 years = df['學年度'].unique()
