@@ -6,11 +6,6 @@ import plotly.graph_objects as go
 
 dash.register_page(__name__)
 
-# x = np.random.normal(170, 10, 250)
-
-# fig = plt.hist(x)
-# fig = plt.show()
-
 file_path = './datas/freetuition.csv'
 df = pd.read_csv(file_path)
 
@@ -46,7 +41,7 @@ for i, category in enumerate(data[years[0]].keys()):
 
 # Update the layout
 fig.update_layout(
-    title='不同學年度的學雜費減免人數',
+    # title='不同學年度的學雜費減免人數',
     xaxis=dict(
         title='學年度',
         tickvals=[r + bar_width * ((len(data[years[0]]) - 1) / 2) for r in range(len(years))],
@@ -80,7 +75,8 @@ layout = html.Div([
                                  'borderStyle':"solid",
                                  'borderColor':"#C6C4C4",
                                  }), href="/", refresh=True),
-    # html.H1("Still Under Construct"),
+    html.H2("不同學年度的學雜費減免人數"),
+    
     dcc.Graph(figure=fig)
 ])
 

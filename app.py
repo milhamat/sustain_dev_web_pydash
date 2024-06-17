@@ -60,6 +60,7 @@ app.layout = html.Div([
     'backgroundColor' : "#F9F9F9",
     'display' : "flex",
         }),
+    
     # FOOTER ################################################
     html.Footer([
         html.Div([
@@ -95,5 +96,5 @@ app.layout = html.Div([
 
 if __name__ == '__main__':
     app.run(debug=True,
-            dev_tools_ui=False # use it when there is an undetected error
+            dev_tools_ui=True # use it when there is an undetected error
             )

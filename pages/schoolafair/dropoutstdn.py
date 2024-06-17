@@ -17,7 +17,6 @@ df_rest = pd.read_parquet(file_rest_path)
 filtered_out_df = df_out[df_out['退學學年'].between(108, 112)]
 filtered_rest_df = df_rest[df_rest['休學學年'].between(108, 112)]
 
-
 layout = html.Div([
     dcc.Link(html.Button("Home",
                              style={
@@ -52,6 +51,7 @@ layout = html.Div([
     [Input('edu-short-checklist', 'value')],
     State('edu-short-checklist', 'options')
 )
+
 def update_checklist(selected_values, options):
     all_options = [option['value'] for option in options if option['value'] != 'clear']
     if 'clear' in selected_values:
@@ -64,6 +64,7 @@ def update_checklist(selected_values, options):
     Output('bar-chart', 'figure'),
     [Input('status-dropdown', 'value'), Input('edu-short-checklist', 'value')]
 )
+
 def update_bar_chart(selected_status, selected_edu_short):
     if 'clear' in selected_edu_short:
         selected_edu_short = []

@@ -10,7 +10,7 @@ layout = html.Div([
                 dbc.Tabs(id="tabs",
                 children=[
                     dbc.Tab(label="Student", tab_id="stdent"),
-                    dbc.Tab(label="Faculty", tab_id="facult"),
+                    # dbc.Tab(label="Faculty", tab_id="facult"),
                     dbc.Tab(label="School Affair", tab_id="schafr")
                 ],
                 active_tab="stdent",
@@ -351,105 +351,105 @@ def render_content(tab):
             }),
         ]),
         ##############################FACULTY################
-    elif tab == "facult":
-        return html.Div([
-            # container row one
-            dbc.Row([
-                html.Div([
-                    ###### Container 1
-                    # dbc.Col([
-                    html.Div([
-                        html.Div([
-                            html.H1('Student Teacher Ratio in Day Programs by Academic Year', 
-                                style={
-                                    'fontSize':"28px",
-                                    }),
-                            ], style={
-                                # 'backgroundColor':"gray", # for debuging
-                                'marginTop':"10px",
-                                'marginLeft':"10px",
-                                'height':"125px",
-                                'width':"325px",
-                                }),
-                        html.Div([
-                            dcc.Link(html.Button("Detail", 
-                                            style={
-                                                'backgroundColor':"#800080",
-                                                'color':"white",
-                                                'marginLeft':"80%",
-                                                'borderRadius':"8px",
-                                                'borderWidth': "thin",
-                                                'borderStyle':"solid",
-                                                'borderColor':"#C6C4C4",
-                                    }), href="/faculty/stdtchrratio", refresh=True,),
-                            ], style={
+    # elif tab == "facult":
+    #     return html.Div([
+    #         # container row one
+    #         dbc.Row([
+    #             html.Div([
+    #                 ###### Container 1
+    #                 # dbc.Col([
+    #                 html.Div([
+    #                     html.Div([
+    #                         html.H1('Student Teacher Ratio in Day Programs by Academic Year', 
+    #                             style={
+    #                                 'fontSize':"28px",
+    #                                 }),
+    #                         ], style={
+    #                             # 'backgroundColor':"gray", # for debuging
+    #                             'marginTop':"10px",
+    #                             'marginLeft':"10px",
+    #                             'height':"125px",
+    #                             'width':"325px",
+    #                             }),
+    #                     html.Div([
+    #                         dcc.Link(html.Button("Detail", 
+    #                                         style={
+    #                                             'backgroundColor':"#800080",
+    #                                             'color':"white",
+    #                                             'marginLeft':"80%",
+    #                                             'borderRadius':"8px",
+    #                                             'borderWidth': "thin",
+    #                                             'borderStyle':"solid",
+    #                                             'borderColor':"#C6C4C4",
+    #                                 }), href="/faculty/stdtchrratio", refresh=True,),
+    #                         ], style={
                                 
-                                }),
+    #                             }),
                         
-                    ], style={
-                        'backgroundColor':"white",
-                        'height':"180px",
-                        'width':"350px",
-                        'marginTop':"20px",
-                        'marginLeft':"15px",
-                        'borderRadius':"8px",
-                        'borderWidth': "thin",
-                        'borderStyle':"solid",
-                        'borderColor':"#C6C4C4",
-                    }),
-                # ]),
-                    #############
-                    ###### Container 2
-                    # dbc.Col([
-                    html.Div([
-                        html.Div([
-                            html.H1('Number Full-time, Part-time Teacher', 
-                                style={
-                                    'fontSize':"28px",
-                                    }),
-                            ], style={
-                                # 'backgroundColor':"gray", # for debuging
-                                'marginTop':"10px",
-                                'marginLeft':"10px",
-                                'height':"125px",
-                                'width':"325px",
-                                }),
-                        html.Div([
-                            dcc.Link(html.Button("Detail", 
-                                            style={
-                                                'backgroundColor':"#800080",
-                                                'color':"white",
-                                                'marginLeft':"80%",
-                                                'borderRadius':"8px",
-                                                'borderWidth': "thin",
-                                                'borderStyle':"solid",
-                                                'borderColor':"#C6C4C4",
-                                    }), href="/faculty/numfulltimparttim", refresh=True,),
-                            ], style={
+    #                 ], style={
+    #                     'backgroundColor':"white",
+    #                     'height':"180px",
+    #                     'width':"350px",
+    #                     'marginTop':"20px",
+    #                     'marginLeft':"15px",
+    #                     'borderRadius':"8px",
+    #                     'borderWidth': "thin",
+    #                     'borderStyle':"solid",
+    #                     'borderColor':"#C6C4C4",
+    #                 }),
+    #             # ]),
+    #                 #############
+    #                 ###### Container 2
+    #                 # dbc.Col([
+    #                 html.Div([
+    #                     html.Div([
+    #                         html.H1('Number Full-time, Part-time Teacher', 
+    #                             style={
+    #                                 'fontSize':"28px",
+    #                                 }),
+    #                         ], style={
+    #                             # 'backgroundColor':"gray", # for debuging
+    #                             'marginTop':"10px",
+    #                             'marginLeft':"10px",
+    #                             'height':"125px",
+    #                             'width':"325px",
+    #                             }),
+    #                     html.Div([
+    #                         dcc.Link(html.Button("Detail", 
+    #                                         style={
+    #                                             'backgroundColor':"#800080",
+    #                                             'color':"white",
+    #                                             'marginLeft':"80%",
+    #                                             'borderRadius':"8px",
+    #                                             'borderWidth': "thin",
+    #                                             'borderStyle':"solid",
+    #                                             'borderColor':"#C6C4C4",
+    #                                 }), href="/faculty/numfulltimparttim", refresh=True,),
+    #                         ], style={
                                 
-                                }),
+    #                             }),
                         
-                    ], style={
-                        'backgroundColor':"white",
-                        'height':"180px",
-                        'width':"350px",
-                        'marginTop':"20px",
-                        'marginLeft':"15px",
-                        'borderRadius':"8px",
-                        'borderWidth': "thin",
-                        'borderStyle':"solid",
-                        'borderColor':"#C6C4C4",
-                    }),
-                # ]),
-                    ###########
+    #                 ], style={
+    #                     'backgroundColor':"white",
+    #                     'height':"180px",
+    #                     'width':"350px",
+    #                     'marginTop':"20px",
+    #                     'marginLeft':"15px",
+    #                     'borderRadius':"8px",
+    #                     'borderWidth': "thin",
+    #                     'borderStyle':"solid",
+    #                     'borderColor':"#C6C4C4",
+    #                 }),
+    #             # ]),
+    #                 ###########
                     
-                ], style={
-                    'display':"flex",
-                    }),
-                ]),
-            # container row Two
+    #             ], style={
+    #                 'display':"flex",
+    #                 }),
+    #             ]),
+    #         # container row Two
             
-        ])
+    #     ])
     ##############################SCHOOL AFFAIR################
     elif tab == "schafr":
         return html.Div([
@@ -719,6 +719,91 @@ def render_content(tab):
                     }),
                 #####################
                 # container xx
+                ###### Container 1
+                    # dbc.Col([
+                    html.Div([
+                        html.Div([
+                            html.H1('Student Teacher Ratio in Day Programs by Academic Year', 
+                                style={
+                                    'fontSize':"28px",
+                                    }),
+                            ], style={
+                                # 'backgroundColor':"gray", # for debuging
+                                'marginTop':"10px",
+                                'marginLeft':"10px",
+                                'height':"125px",
+                                'width':"325px",
+                                }),
+                        html.Div([
+                            dcc.Link(html.Button("Detail", 
+                                            style={
+                                                'backgroundColor':"#800080",
+                                                'color':"white",
+                                                'marginLeft':"80%",
+                                                'borderRadius':"8px",
+                                                'borderWidth': "thin",
+                                                'borderStyle':"solid",
+                                                'borderColor':"#C6C4C4",
+                                    }), href="/faculty/stdtchrratio", refresh=True,),
+                            ], style={
+                                
+                                }),
+                        
+                    ], style={
+                        'backgroundColor':"white",
+                        'height':"180px",
+                        'width':"350px",
+                        'marginTop':"20px",
+                        'marginLeft':"15px",
+                        'borderRadius':"8px",
+                        'borderWidth': "thin",
+                        'borderStyle':"solid",
+                        'borderColor':"#C6C4C4",
+                    }),
+                # ]),
+                    #############
+                    ###### Container 2
+                    # dbc.Col([
+                    html.Div([
+                        html.Div([
+                            html.H1('Number Full-time, Part-time Teacher', 
+                                style={
+                                    'fontSize':"28px",
+                                    }),
+                            ], style={
+                                # 'backgroundColor':"gray", # for debuging
+                                'marginTop':"10px",
+                                'marginLeft':"10px",
+                                'height':"125px",
+                                'width':"325px",
+                                }),
+                        html.Div([
+                            dcc.Link(html.Button("Detail", 
+                                            style={
+                                                'backgroundColor':"#800080",
+                                                'color':"white",
+                                                'marginLeft':"80%",
+                                                'borderRadius':"8px",
+                                                'borderWidth': "thin",
+                                                'borderStyle':"solid",
+                                                'borderColor':"#C6C4C4",
+                                    }), href="/faculty/numfulltimparttim", refresh=True,),
+                            ], style={
+                                
+                                }),
+                        
+                    ], style={
+                        'backgroundColor':"white",
+                        'height':"180px",
+                        'width':"350px",
+                        'marginTop':"20px",
+                        'marginLeft':"15px",
+                        'borderRadius':"8px",
+                        'borderWidth': "thin",
+                        'borderStyle':"solid",
+                        'borderColor':"#C6C4C4",
+                    }),
+                ##########################
                 ],style={
                     'display':"flex",}),
             ]),

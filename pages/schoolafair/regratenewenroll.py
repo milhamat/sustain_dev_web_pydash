@@ -4,14 +4,6 @@ from dash.dependencies import Input, Output
 import plotly.graph_objects as go
 import pandas as pd
 
-# 讀取數據
-# url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/regratenewenroll.csv'
-# data = pd.read_csv(url)
-
-# file_path = './新生(含境外生)註冊率-以「系(所)」統計.xlsx'
-# data = pd.read_excel(file_path, engine='openpyxl')
-
-# data = pd.read_csv('./datas/regratenewenroll.csv')
 
 data = pd.read_parquet('./datas/regratenewenroll.parquet')
 
@@ -48,7 +40,7 @@ layout = html.Div([
                                  'borderColor':"#C6C4C4",
                                  }), href="/", refresh=True),
     
-    html.H1("各學年度各系新生註冊人數與註冊率"),
+    html.H2("各學年度各系新生註冊人數與註冊率"),
     html.Div([
         html.Label("選擇日間/進修:"),
         create_checklist('day-night-selector', list(filtered_data['日間/進修'].unique()), list(filtered_data['日間/進修'].unique()))

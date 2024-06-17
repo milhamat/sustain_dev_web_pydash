@@ -4,15 +4,6 @@ from dash.dependencies import Input, Output, State
 import plotly.graph_objects as go
 import pandas as pd
 
-# urlOne = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/fulltime.csv'
-# urlTwo = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/parttime.csv'
-# data_full_time = pd.read_csv(urlOne)
-# data_part_time = pd.read_csv(urlTwo)
-
-# file_path_full_time = './datas/fulltime.csv'
-# file_path_part_time = './datas/parttime.csv'
-# data_full_time = pd.read_csv(file_path_full_time)
-# data_part_time = pd.read_csv(file_path_part_time)
 
 file_path_full_time = './datas/fulltime.parquet'
 file_path_part_time = './datas/parttime.parquet'
@@ -43,7 +34,7 @@ layout = html.Div([
                                  'borderColor':"#C6C4C4",
                                  }), href="/", refresh=True),
     
-    html.H1("各學年度日間學制專/兼任教師人數"), # Number of Full-time/Part-time Teachers in Daytime Programs by Academic Year
+    html.H2("各學年度日間學制專/兼任教師人數"), # Number of Full-time/Part-time Teachers in Daytime Programs by Academic Year
     html.Div([
         html.Label("選擇分類:"), # Category Selection
         dcc.Checklist(

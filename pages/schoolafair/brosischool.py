@@ -3,11 +3,6 @@ import pandas as pd
 import plotly.express as px
 from dash import dcc, html
 
-# url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/brosischool.csv'
-# df = pd.read_csv(url)
-
-# df = pd.read_csv('./datas/brosischool.csv')
-
 df = pd.read_parquet('./datas/brosischool.parquet')
 
 # 計算每個國家的學校數量
@@ -25,7 +20,8 @@ fig = px.choropleth(country_counts,
                     color_continuous_scale=px.colors.sequential.Plasma,
                     labels={'學校數量':'學校數量'},
                     projection="natural earth",
-                    title="大學國際姊妹校分布圖")
+                    # title="大學國際姊妹校分布圖"
+                    )
 
 layout = html.Div([
     dcc.Link(html.Button("Home",
@@ -38,5 +34,9 @@ layout = html.Div([
                                  'borderStyle':"solid",
                                  'borderColor':"#C6C4C4",
                                  }), href="/", refresh=True),
-    dcc.Graph(figure=fig)
+    html.H2("大學國際姊妹校分布圖"),
+    dcc.Graph(figure=fig, 
+              style={
+                  'marginLeft': "10px",
+                             })
 ])

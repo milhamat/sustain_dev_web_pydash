@@ -4,10 +4,6 @@ from dash.dependencies import Input, Output
 import plotly.graph_objects as go
 import pandas as pd
 
-# url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/student_teacher_ratio.csv'
-# data = pd.read_csv(url)
-
-# data = pd.read_csv('./datas/student_teacher_ratio.csv')
 
 data = pd.read_parquet('./datas/student_teacher_ratio.parquet')
 
@@ -25,7 +21,7 @@ layout = html.Div([
                                  'borderColor':"#C6C4C4",
                                  }), href="/", refresh=True),
     
-    html.H1("各學年度日間學制師生比與師生人數"),
+    html.H2("各學年度日間學制師生比與師生人數"),
     dcc.Graph(id='dual-axis-bar-line-chart')
 ])
 

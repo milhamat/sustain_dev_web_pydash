@@ -9,7 +9,7 @@ import plotly.express as px
 
 # df = pd.read_excel('./datas/stdintern.xlsx')
 
-df = pd.read_parquet('./datas/stdintern.parquet')
+df = pd.read_excel('./datas/std_intern.xlsx')
 
 df = df[['學年度', '學制班別', '系所名稱', '實習總時數']]  
 df_110 = df[df['學年度'] == 110]
@@ -36,13 +36,13 @@ layout = html.Div([
                                  'borderColor':"#C6C4C4",
                                  }), href="/", refresh=True),
     
-    dcc.Tabs(id="tabs", value='tab-110', children=[
+    dcc.Tabs(id="tabs-intern", value='tab-110', children=[
         dcc.Tab(label='110學年度', value='tab-110'),
         dcc.Tab(label='111學年度', value='tab-111'),
     ]),
     html.Div([
         dcc.Checklist(
-            id='checklist',
+            id='checklist-intern',
             options=checklist_options,
             value=[checklist_options[0]['value']] ,
              inline=True,
@@ -51,13 +51,13 @@ layout = html.Div([
              }
         )
     ]),
-    html.Div(id='tabs-content')
+    html.Div(id='tabs-content-intern')
 ])
 
 @callback(
-    Output('tabs-content', 'children'),
-    [Input('tabs', 'value'),
-     Input('checklist', 'value')],
+    Output('tabs-content-intern', 'children'),
+    [Input('tabs-intern', 'value'),
+     Input('checklist-intern', 'value')],
 )
 
 def render_content(tab, selected_classes):
