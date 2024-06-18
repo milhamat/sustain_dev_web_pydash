@@ -10,33 +10,51 @@ app = Dash( __name__,
             meta_tags=[{'name': 'viewport',
                         'content': 'width=device-width, initial-scale=1.0, maximum-scale=1.2, minimum-scale=0.5,'}]
            )
+
 server = app.server
 
 app.layout = html.Div([
     # NAVBAR ################################################
     html.Div([
         html.Div([], style={
-            'height':"25px",
-            'backgroundColor' : "#5B005C",
+            # 'height':"25px",
+            'backgroundColor' : "#FFFFFF", #"#5B005C",
             }),
         html.Div([
-            html.P('校務永續發展中心',
-                   style={
-                       'color':"white",
-                       'fontSize':"40px",
-                       'fontWeight': "bold",
-                   })
-            ], style={
-            'height':"70px",
-            'backgroundColor' : "#800080",
-            }),
-        html.Img(src=app.get_asset_url("logo.png"),
+            html.Img(src=app.get_asset_url("logo.png"),
                  style={
-                     'height':"90px",
+                     'marginLeft':"30%",
+                     'height':"75px", #90px
                      'width':"300px",
                      }),
+            html.P('校務永續發展中心',
+                   style={
+                       'textAlign':"center",
+                       'color':"#800080",
+                       'fontSize':"36px",
+                       'fontWeight': "bold",
+                   }),
+            dcc.Dropdown(['中漢語', 'English'],
+                         '中漢語',
+                         clearable=False,
+                         style={
+                             'marginLeft':"15%",
+                             'width':"150px",
+                             }),
+            ], style={
+            # 'height':"70px",
+            'marginTop':"10px",
+            'display' : "flex",
+            'flexDirection': 'row',
+            'backgroundColor' : "#FFFFFF", #"#800080",
+            }),
+        # html.Img(src=app.get_asset_url("logo.png"),
+        #          style={
+        #              'height':"90px",
+        #              'width':"300px",
+        #              }),
         ],style={
-            'height':"200px",
+            'height':"90px",
             'backgroundColor' : "#FFFFFF",
             'marginBottom':"20px",
         }),
@@ -96,5 +114,5 @@ app.layout = html.Div([
 
 if __name__ == '__main__':
     app.run(debug=True,
-            dev_tools_ui=True # use it when there is an undetected error
+            dev_tools_ui=False # use it when there is an undetected error
             )
