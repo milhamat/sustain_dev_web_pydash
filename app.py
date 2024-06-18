@@ -34,8 +34,9 @@ app.layout = html.Div([
                        'fontSize':"36px",
                        'fontWeight': "bold",
                    }),
-            dcc.Dropdown(['中漢語', 'English'],
-                         '中漢語',
+            dcc.Dropdown(id='lang-in',
+                        options=['中漢語', 'English'],
+                        value='中漢語',
                          clearable=False,
                          style={
                              'marginLeft':"15%",
@@ -65,6 +66,7 @@ app.layout = html.Div([
         html.Div([
             html.Div([
                 dash.page_container,
+                html.P(id='lang-out'),
             ]),
         ],style={
             'width': "100%",
@@ -107,6 +109,12 @@ app.layout = html.Div([
 })
 
 ##########################SUNBURST FUNCTION###############################
+@app.callback(
+    Output('lang-out', 'children'),
+    Input('lang-in', 'value')
+)
+def lang_process(value):
+    return f'{value}'
 
 #########################################################
 
