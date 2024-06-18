@@ -122,5 +122,5 @@ def lang_process(value):
 
 if __name__ == '__main__':
     app.run(debug=True,
-            dev_tools_ui=False # use it when there is an undetected error
+            dev_tools_ui=True # use it when there is an undetected error
             )
