@@ -39,7 +39,10 @@ layout = html.Div([
         value=list(set(filtered_out_df['Edu_Short'].unique()) | set(filtered_rest_df['Edu_Short'].unique()))[0],
         inline=True
     ),
-    html.Div(id='bar-chart-drp')
+    html.Div(id='bar-chart-drp', style={
+            'overflowY':"scroll",
+            'height':"850px",
+        })
 ])
 
 @callback(
@@ -72,8 +75,11 @@ def update_bar_charts(selected_status, selected_edu_short):
         
         fig.update_layout(yaxis={'categoryorder': 'total ascending'})
 
-        charts.append(html.Div(dcc.Graph(figure=fig), style={
-            # 'overflow':'scroll',
-        }))
+        charts.append(html.Div(dcc.Graph(figure=fig), 
+        #                        style={
+        #     'overflowY':"scroll",
+        #     'height':"500px",
+        # }
+        ))
 
     return charts
