@@ -46,19 +46,6 @@ layout = html.Div([
             ]),
 ])
 
-#########################TRANSLATE TAB########################################
-# @callback(
-#     Output('stddistbyyear-lang-out','children'),
-#     Input('stddistbyyear-jongwen','n_clicks'),
-#     Input('stddistbyyear-eng','n_clicks')
-# )
-
-# def change_lang(btn1, btn2):
-#     if "eng" == ctx.triggered_id:
-#         return "Student Distribution for Academic Year"
-#     else:
-#         return "學年學生分佈"
-
 ########################TAB CONTAINERS########################################
 @callback(Output('tab-Out','children'),
          Input('tabs','active_tab'),
@@ -67,13 +54,22 @@ layout = html.Div([
 
 def render_content(tab, btn1, btn2):
     ##############################STUDENT################
+    font = "32px"
     def lang_translate(id_triger):
         container = []
-        if "tab-eng" == id_triger:
-            container = ["Student Distribution for Academic Year", "Entry Path, Gender, and College", ""]
+        if "tab-eng" == id_triger: #"",
+            container = ["Student Distribution for Academic Year", "Entry Path, Gender, and College", "Total Student Internship Hours","Gender Ratio",
+                         "Spread of Work Areas After Graduation","Graduation Job Type","Number of Graduate by Department and Institutes","Association Suspension with Departments",
+                         "Number of students dropping out of the top ten schools","Number of dropouts withdrawals in the admission","Library Resources","Brother and Sister Schools",
+                         "Number of Students Free from Tuition and Fees","Registration Rate of New Student Enrolled each Department","Student Teacher Ratio in Day Programs by Academic Year","Number Full-time, Part-time Teacher",
+                         "Detail"]
             return container
         else:
-            container = ["學年學生分佈", "入學途徑, 性別和大學", ""]
+            container = ["學年學生分佈", "入學途徑, 性別和大學", "學生實習總時數","性別比例",
+                         "畢業後工作領域分佈","畢業工作類型","各系畢業生人數","與部門的關聯暫停",
+                         "退學學生數排名前十的學校","入學中退學人數","圖書館資源","兄弟姊妹學校",
+                         "免學費學生人數","各系新生報到率","按學年劃分的日間課程師生比例","專職、兼職教師人數",
+                         "細節"]
             return container
     
     translate = lang_translate(ctx.triggered_id)
@@ -90,7 +86,7 @@ def render_content(tab, btn1, btn2):
                         html.Div([
                             html.H1(translate[0], # Student Distribution for Academic Year  # 學年學生分佈
                                 style={
-                                    'fontSize':"36px", #"28px"
+                                    'fontSize':font, #"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -100,7 +96,7 @@ def render_content(tab, btn1, btn2):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("細節", #Detail
+                            dcc.Link(html.Button(translate[16], #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -131,7 +127,7 @@ def render_content(tab, btn1, btn2):
                         html.Div([
                             html.H1(translate[1],  #Entry Path, Gender, and College
                                 style={
-                                    'fontSize':"36px",#"28px"
+                                    'fontSize':font,#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -141,7 +137,7 @@ def render_content(tab, btn1, btn2):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("細節", #Detail
+                            dcc.Link(html.Button(translate[16], #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -171,9 +167,9 @@ def render_content(tab, btn1, btn2):
                 # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('學生實習總時數', #Total Student Internship Hours
+                            html.H1(translate[2], #Total Student Internship Hours
                                 style={
-                                    'fontSize':"36px",#"28px"
+                                    'fontSize':font,#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -183,7 +179,7 @@ def render_content(tab, btn1, btn2):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("細節", #Detail
+                            dcc.Link(html.Button(translate[16], #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -213,9 +209,9 @@ def render_content(tab, btn1, btn2):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('性別比例', #Gender Ratio
+                            html.H1(translate[3], #Gender Ratio
                                 style={
-                                    'fontSize':"36px",#"28px"
+                                    'fontSize':font,#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -225,7 +221,7 @@ def render_content(tab, btn1, btn2):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("細節", #Detail
+                            dcc.Link(html.Button(translate[16], #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -263,9 +259,9 @@ def render_content(tab, btn1, btn2):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('畢業後工作領域分佈', #Spread of Work Areas After Graduation
+                            html.H1(translate[4], #Spread of Work Areas After Graduation
                                 style={
-                                    'fontSize':"36px",#"28px"
+                                    'fontSize':font,#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -275,7 +271,7 @@ def render_content(tab, btn1, btn2):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("細節", #Detail
+                            dcc.Link(html.Button(translate[16], #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -305,9 +301,9 @@ def render_content(tab, btn1, btn2):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('畢業工作類型', #Graduation Job Type
+                            html.H1(translate[5], #Graduation Job Type
                                 style={
-                                    'fontSize':"36px",#"28px"
+                                    'fontSize':font,#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -317,7 +313,7 @@ def render_content(tab, btn1, btn2):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("細節", #Detail
+                            dcc.Link(html.Button(translate[16], #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -347,9 +343,9 @@ def render_content(tab, btn1, btn2):
                 # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('各系畢業生人數', #Number of Graduate by Department and Institutes
+                            html.H1(translate[6], #Number of Graduate by Department and Institutes
                                 style={
-                                    'fontSize':"36px",#"28px"
+                                    'fontSize':font,#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -359,7 +355,7 @@ def render_content(tab, btn1, btn2):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("細節", #Detail
+                            dcc.Link(html.Button(translate[16], #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -389,9 +385,9 @@ def render_content(tab, btn1, btn2):
                 # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('與部門的關聯暫停', #Association Suspension with Departments
+                            html.H1(translate[7], #Association Suspension with Departments
                                 style={
-                                    'fontSize':"36px",#"28px"
+                                    'fontSize':font,#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -401,7 +397,7 @@ def render_content(tab, btn1, btn2):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("細節", #Detail
+                            dcc.Link(html.Button(translate[16], #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -440,9 +436,9 @@ def render_content(tab, btn1, btn2):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('退學學生數排名前十的學校', # Number of students dropping out of the top ten schools
+                            html.H1(translate[8], # Number of students dropping out of the top ten schools
                                 style={
-                                    'fontSize':"36px",#"28px"
+                                    'fontSize':font,#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -452,7 +448,7 @@ def render_content(tab, btn1, btn2):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("細節", #Detail
+                            dcc.Link(html.Button(translate[16], #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -479,9 +475,9 @@ def render_content(tab, btn1, btn2):
                  ###### Container 10
                     html.Div([
                         html.Div([
-                            html.H1('入學中退學人數', # Number of dropouts withdrawals in the admission
+                            html.H1(translate[9], # Number of dropouts withdrawals in the admission
                                 style={
-                                    'fontSize':"36px",#"28px"
+                                    'fontSize':font,#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -491,7 +487,7 @@ def render_content(tab, btn1, btn2):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("細節", #Detail
+                            dcc.Link(html.Button(translate[16], #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -538,9 +534,9 @@ def render_content(tab, btn1, btn2):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('圖書館資源', #Library Resources
+                            html.H1(translate[10], #Library Resources
                                 style={
-                                    'fontSize':"36px",#"28px"
+                                    'fontSize':font,#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -550,7 +546,7 @@ def render_content(tab, btn1, btn2):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("細節", #Detail
+                            dcc.Link(html.Button(translate[16], #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -581,9 +577,9 @@ def render_content(tab, btn1, btn2):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('兄弟姊妹學校', #Brother and Sister Schools
+                            html.H1(translate[11], #Brother and Sister Schools
                                 style={
-                                    'fontSize':"36px",#"28px"
+                                    'fontSize':font,#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -593,7 +589,7 @@ def render_content(tab, btn1, btn2):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("細節", #Detail
+                            dcc.Link(html.Button(translate[16], #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -624,9 +620,9 @@ def render_content(tab, btn1, btn2):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('免學費學生人數', #Number of Students Free from Tuition and Fees
+                            html.H1(translate[12], #Number of Students Free from Tuition and Fees
                                 style={
-                                    'fontSize':"36px",#"28px"
+                                    'fontSize':font,#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -636,7 +632,7 @@ def render_content(tab, btn1, btn2):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("細節", #Detail
+                            dcc.Link(html.Button(translate[16], #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -667,9 +663,9 @@ def render_content(tab, btn1, btn2):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('各系新生報到率', #Registration Rate of New Student Enrolled each Department
+                            html.H1(translate[13], #Registration Rate of New Student Enrolled each Department
                                 style={
-                                    'fontSize':"36px",#"28px"
+                                    'fontSize':font,#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -679,7 +675,7 @@ def render_content(tab, btn1, btn2):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("細節", #Detail
+                            dcc.Link(html.Button(translate[16], #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -722,9 +718,9 @@ def render_content(tab, btn1, btn2):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('按學年劃分的日間課程師生比例', #Student Teacher Ratio in Day Programs by Academic Year
+                            html.H1(translate[14], #Student Teacher Ratio in Day Programs by Academic Year
                                 style={
-                                    'fontSize':"36px",#"28px"
+                                    'fontSize':font,#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -734,7 +730,7 @@ def render_content(tab, btn1, btn2):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("細節", #Detail
+                            dcc.Link(html.Button(translate[16], #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -765,9 +761,9 @@ def render_content(tab, btn1, btn2):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('專職、兼職教師人數', #Number Full-time, Part-time Teacher
+                            html.H1(translate[15], #Number Full-time, Part-time Teacher
                                 style={
-                                    'fontSize':"36px",#"28px"
+                                    'fontSize':font,#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -777,7 +773,7 @@ def render_content(tab, btn1, btn2):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("細節", #Detail
+                            dcc.Link(html.Button(translate[16], #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
