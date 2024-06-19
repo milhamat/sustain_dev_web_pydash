@@ -33,9 +33,8 @@ layout = html.Div([
         
                 dbc.Tabs(id="tabs",
                 children=[
-                    dbc.Tab(label="Student", tab_id="stdent"),
-                    # dbc.Tab(label="Faculty", tab_id="facult"),
-                    dbc.Tab(label="School Affair", tab_id="schafr")
+                    dbc.Tab(label="學生", tab_id="stdent"), #Student
+                    dbc.Tab(label="學校事務", tab_id="schafr") #School Affair
                 ],
                 active_tab="stdent",
                 ## dont know it's work or not
@@ -83,7 +82,7 @@ def render_content(tab):
                         html.Div([
                             html.H1('學年學生分佈', # Student Distribution for Academic Year  # 學年學生分佈
                                 style={
-                                    'fontSize':"28px",
+                                    'fontSize':"36px", #"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -122,9 +121,9 @@ def render_content(tab):
                 # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('Entry Path, Gender, and College', 
+                            html.H1('入學途徑、性別和大學',  #Entry Path, Gender, and College
                                 style={
-                                    'fontSize':"28px",
+                                    'fontSize':"36px",#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -164,9 +163,9 @@ def render_content(tab):
                 # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('Total Student Internship Hours', 
+                            html.H1('學生實習總時數', #Total Student Internship Hours
                                 style={
-                                    'fontSize':"28px",
+                                    'fontSize':"36px",#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -206,9 +205,9 @@ def render_content(tab):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('Gender Ratio', 
+                            html.H1('性別比例', #Gender Ratio
                                 style={
-                                    'fontSize':"28px",
+                                    'fontSize':"36px",#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -256,9 +255,9 @@ def render_content(tab):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('Spread of Work Areas After Graduation', 
+                            html.H1('畢業後工作領域分佈', #Spread of Work Areas After Graduation
                                 style={
-                                    'fontSize':"28px",
+                                    'fontSize':"36px",#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -298,9 +297,9 @@ def render_content(tab):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('Graduation Job Type', 
+                            html.H1('畢業工作類型', #Graduation Job Type
                                 style={
-                                    'fontSize':"28px",
+                                    'fontSize':"36px",#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -340,9 +339,9 @@ def render_content(tab):
                 # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('Number of Graduate by Department and Institutes', 
+                            html.H1('各系畢業生人數', #Number of Graduate by Department and Institutes
                                 style={
-                                    'fontSize':"28px",
+                                    'fontSize':"36px",#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -382,9 +381,9 @@ def render_content(tab):
                 # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('Association Suspension with Departments', 
+                            html.H1('與部門的關聯暫停', #Association Suspension with Departments
                                 style={
-                                    'fontSize':"28px",
+                                    'fontSize':"36px",#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -433,9 +432,9 @@ def render_content(tab):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('Number of students dropping out of the top ten schools', # Student Distribution for Academic Year  # 學年學生分佈
+                            html.H1('退學學生數排名前十的學校', # Number of students dropping out of the top ten schools
                                 style={
-                                    'fontSize':"28px",
+                                    'fontSize':"36px",#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -472,9 +471,9 @@ def render_content(tab):
                  ###### Container 10
                     html.Div([
                         html.Div([
-                            html.H1('Number of dropouts withdrawals in the admission', # Student Distribution for Academic Year  # 學年學生分佈
+                            html.H1('入學中退學人數', # Number of dropouts withdrawals in the admission
                                 style={
-                                    'fontSize':"28px",
+                                    'fontSize':"36px",#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -520,106 +519,7 @@ def render_content(tab):
             # 'display' : "flex",
             }),
         ]),
-        ##############################FACULTY################
-    # elif tab == "facult":
-    #     return html.Div([
-    #         # container row one
-    #         dbc.Row([
-    #             html.Div([
-    #                 ###### Container 1
-    #                 # dbc.Col([
-    #                 html.Div([
-    #                     html.Div([
-    #                         html.H1('Student Teacher Ratio in Day Programs by Academic Year', 
-    #                             style={
-    #                                 'fontSize':"28px",
-    #                                 }),
-    #                         ], style={
-    #                             # 'backgroundColor':"gray", # for debuging
-    #                             'marginTop':"10px",
-    #                             'marginLeft':"10px",
-    #                             'height':"125px",
-    #                             'width':"325px",
-    #                             }),
-    #                     html.Div([
-    #                         dcc.Link(html.Button("Detail", 
-    #                                         style={
-    #                                             'backgroundColor':"#800080",
-    #                                             'color':"white",
-    #                                             'marginLeft':"80%",
-    #                                             'borderRadius':"8px",
-    #                                             'borderWidth': "thin",
-    #                                             'borderStyle':"solid",
-    #                                             'borderColor':"#C6C4C4",
-    #                                 }), href="/faculty/stdtchrratio", refresh=True,),
-    #                         ], style={
-                                
-    #                             }),
-                        
-    #                 ], style={
-    #                     'backgroundColor':"white",
-    #                     'height':"180px",
-    #                     'width':"350px",
-    #                     'marginTop':"20px",
-    #                     'marginLeft':"15px",
-    #                     'borderRadius':"8px",
-    #                     'borderWidth': "thin",
-    #                     'borderStyle':"solid",
-    #                     'borderColor':"#C6C4C4",
-    #                 }),
-    #             # ]),
-    #                 #############
-    #                 ###### Container 2
-    #                 # dbc.Col([
-    #                 html.Div([
-    #                     html.Div([
-    #                         html.H1('Number Full-time, Part-time Teacher', 
-    #                             style={
-    #                                 'fontSize':"28px",
-    #                                 }),
-    #                         ], style={
-    #                             # 'backgroundColor':"gray", # for debuging
-    #                             'marginTop':"10px",
-    #                             'marginLeft':"10px",
-    #                             'height':"125px",
-    #                             'width':"325px",
-    #                             }),
-    #                     html.Div([
-    #                         dcc.Link(html.Button("Detail", 
-    #                                         style={
-    #                                             'backgroundColor':"#800080",
-    #                                             'color':"white",
-    #                                             'marginLeft':"80%",
-    #                                             'borderRadius':"8px",
-    #                                             'borderWidth': "thin",
-    #                                             'borderStyle':"solid",
-    #                                             'borderColor':"#C6C4C4",
-    #                                 }), href="/faculty/numfulltimparttim", refresh=True,),
-    #                         ], style={
-                                
-    #                             }),
-                        
-    #                 ], style={
-    #                     'backgroundColor':"white",
-    #                     'height':"180px",
-    #                     'width':"350px",
-    #                     'marginTop':"20px",
-    #                     'marginLeft':"15px",
-    #                     'borderRadius':"8px",
-    #                     'borderWidth': "thin",
-    #                     'borderStyle':"solid",
-    #                     'borderColor':"#C6C4C4",
-    #                 }),
-    #             # ]),
-    #                 ###########
-                    
-    #             ], style={
-    #                 'display':"flex",
-    #                 }),
-    #             ]),
-    #         # container row Two
-            
-    #     ])
+        
     ##############################SCHOOL AFFAIR################
     elif tab == "schafr":
         return html.Div([
@@ -630,9 +530,9 @@ def render_content(tab):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('Library Resources', 
+                            html.H1('圖書館資源', #Library Resources
                                 style={
-                                    'fontSize':"28px",
+                                    'fontSize':"36px",#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -673,9 +573,9 @@ def render_content(tab):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('Brother and Sister Schools', 
+                            html.H1('兄弟姊妹學校', #Brother and Sister Schools
                                 style={
-                                    'fontSize':"28px",
+                                    'fontSize':"36px",#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -716,9 +616,9 @@ def render_content(tab):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('Number of Students Free from Tuition and Fees', 
+                            html.H1('免學費學生人數', #Number of Students Free from Tuition and Fees
                                 style={
-                                    'fontSize':"28px",
+                                    'fontSize':"36px",#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -759,9 +659,9 @@ def render_content(tab):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('Regristration Rate of New Student Enrolled each Department', 
+                            html.H1('各系新生報到率', #Registration Rate of New Student Enrolled each Department
                                 style={
-                                    'fontSize':"28px",
+                                    'fontSize':"36px",#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -808,97 +708,15 @@ def render_content(tab):
         dbc.Row([
             html.Div([
                 
-                ###### Container 5
-                # html.Div([
-                #         html.Div([
-                #             html.H1('Number of students dropping out of the top ten schools', 
-                #                 style={
-                #                     'fontSize':"28px",
-                #                     }),
-                #             ], style={
-                #                 # 'backgroundColor':"gray", # for debuging
-                #                 'marginTop':"10px",
-                #                 'marginLeft':"10px",
-                #                 'height':"125px",
-                #                 'width':"325px",
-                #                 }),
-                #         html.Div([
-                #             dcc.Link(html.Button("Detail", 
-                #                             style={
-                #                                 'backgroundColor':"#800080",
-                #                                 'color':"white",
-                #                                 'marginLeft':"80%",
-                #                                 'borderRadius':"8px",
-                #                                 'borderWidth': "thin",
-                #                                 'borderStyle':"solid",
-                #                                 'borderColor':"#C6C4C4",
-                #                     }), href="/schoolafair/dropoutstdn", refresh=True,),
-                #             ], style={
-                            
-                #                 }),
-                        
-                #     ], style={
-                #         'backgroundColor':"white",
-                #         'height':"180px",
-                #         'width':"350px",
-                #         'marginTop':"20px",
-                #         'marginLeft':"15px",
-                #         'borderRadius':"8px",
-                #         'borderWidth': "thin",
-                #         'borderStyle':"solid",
-                #         'borderColor':"#C6C4C4",
-                #     }),
-                
-                ###### Container 6
-                # html.Div([
-                #         html.Div([
-                #             html.H1('Number of dropouts withdrawals in the admission', 
-                #                 style={
-                #                     'fontSize':"28px",
-                #                     }),
-                #             ], style={
-                #                 # 'backgroundColor':"gray", # for debuging
-                #                 'marginTop':"10px",
-                #                 'marginLeft':"10px",
-                #                 'height':"125px",
-                #                 'width':"325px",
-                #                 }),
-                #         html.Div([
-                #             dcc.Link(html.Button("Detail", 
-                #                             style={
-                #                                 'backgroundColor':"#800080",
-                #                                 'color':"white",
-                #                                 'marginLeft':"80%",
-                #                                 'borderRadius':"8px",
-                #                                 'borderWidth': "thin",
-                #                                 'borderStyle':"solid",
-                #                                 'borderColor':"#C6C4C4",
-                #                     }), href="/schoolafair/dropoutstdnsix", refresh=True,),
-                #             ], style={
-                            
-                #                 }),
-                        
-                #     ], style={
-                #         'backgroundColor':"white",
-                #         'height':"180px",
-                #         'width':"350px",
-                #         'marginTop':"20px",
-                #         'marginLeft':"15px",
-                #         'borderRadius':"8px",
-                #         'borderWidth': "thin",
-                #         'borderStyle':"solid",
-                #         'borderColor':"#C6C4C4",
-                #     }),
-                
                 #####################
                 # container xx
-                ###### Container 7
+                ###### Container 5
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('Student Teacher Ratio in Day Programs by Academic Year', 
+                            html.H1('按學年劃分的日間課程師生比例', #Student Teacher Ratio in Day Programs by Academic Year
                                 style={
-                                    'fontSize':"28px",
+                                    'fontSize':"36px",#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
@@ -935,13 +753,13 @@ def render_content(tab):
                     }),
                 # ]),
                     #############
-                    ###### Container 8
+                    ###### Container 6
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('Number Full-time, Part-time Teacher', 
+                            html.H1('專職、兼職教師人數', #Number Full-time, Part-time Teacher
                                 style={
-                                    'fontSize':"28px",
+                                    'fontSize':"36px",#"28px"
                                     }),
                             ], style={
                                 # 'backgroundColor':"gray", # for debuging
