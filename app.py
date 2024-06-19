@@ -4,7 +4,7 @@ import plotly.express as px
 import dash_bootstrap_components as dbc
 from dash import Dash, dcc, html, Input, Output
 
-switch_lang = ""
+# switch_lang = ""
 
 app = Dash( __name__, 
             use_pages=True, 
@@ -39,14 +39,14 @@ app.layout = html.Div([
                        'fontSize':"36px",
                        'fontWeight': "bold",
                    }),
-            dcc.Dropdown(id='lang-in',
-                        options=['中漢語', 'English'],
-                        value='中漢語',
-                         clearable=False,
-                         style={
-                             'marginLeft':"15%",
-                             'width':"150px",
-                             }),
+            # dcc.Dropdown(id='lang-in',
+            #             options=['中漢語', 'English'],
+            #             value='中漢語',
+            #              clearable=False,
+            #              style={
+            #                  'marginLeft':"15%",
+            #                  'width':"150px",
+            #                  }),
             ], style={
             'height':"70px",
             'marginTop':"10px",
@@ -71,8 +71,9 @@ app.layout = html.Div([
         html.Div([
             html.Div([
                 dash.page_container,
-                html.P(id='lang-out'),
+                # html.P(id='lang-out'),
             ], style={
+                'width':"100%",
                 # 'overflow':'scroll',
                 }),
         ],style={
@@ -116,17 +117,17 @@ app.layout = html.Div([
 })
 
 ##########################SUNBURST FUNCTION###############################
-@app.callback(
-    Output('lang-out', 'children'),
-    Input('lang-in', 'value')
-)
-def lang_process(value):
-    global switch_lang
-    if value=="English":
-        switch_lang = "eng"
-    else:
-        switch_lang = "jongwen"
-    return switch_lang
+# @app.callback(
+#     Output('lang-out', 'children'),
+#     Input('lang-in', 'value')
+# )
+# def lang_process(value):
+#     global switch_lang
+#     if value=="English":
+#         switch_lang = "eng"
+#     else:
+#         switch_lang = "jongwen"
+#     return switch_lang
     # return f'{value}'
 
 #########################################################

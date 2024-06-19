@@ -18,7 +18,10 @@ layout = html.Div([
                 style={
                     'color':"purple",
                 }),
-                html.Div(id='tab-Out'),
+                html.Div(id='tab-Out',
+                         style={
+                             'width':"100%",
+                             }),
             ], style={
                     'width': "100%",
              }),
@@ -336,7 +339,48 @@ def render_content(tab):
                 }),
             # ]),
                 #########
-                
+                ###### Container 8
+                # dbc.Col([
+                    html.Div([
+                        html.Div([
+                            html.H1('test 8', 
+                                style={
+                                    'fontSize':"28px",
+                                    }),
+                            ], style={
+                                # 'backgroundColor':"gray", # for debuging
+                                'marginTop':"10px",
+                                'marginLeft':"10px",
+                                'height':"125px",
+                                'width':"325px",
+                                }),
+                        html.Div([
+                            dcc.Link(html.Button("Detail", 
+                                            style={
+                                                'backgroundColor':"#800080",
+                                                'color':"white",
+                                                'marginLeft':"80%",
+                                                'borderRadius':"8px",
+                                                'borderWidth': "thin",
+                                                'borderStyle':"solid",
+                                                'borderColor':"#C6C4C4",
+                                    }), href="/student/assosusdept", refresh=True,),
+                            ], style={
+                                }),
+                    
+                ], style={
+                    'backgroundColor':"white",
+                    'height':"180px",
+                    'width':"350px",
+                    'marginTop':"20px",
+                    'marginLeft':"15px",
+                    'borderRadius':"8px",
+                    'borderWidth': "thin",
+                    'borderStyle':"solid",
+                    'borderColor':"#C6C4C4",
+                }),
+                ####################
+                    
                     
                 ], style={
                     'display' : "flex"
@@ -344,6 +388,94 @@ def render_content(tab):
             ]),
                 # container row three
                 # html.Div([]), # in case if needed
+                dbc.Row([
+                html.Div([
+                    ###### Container 9
+                    # dbc.Col([
+                    html.Div([
+                        html.Div([
+                            html.H1('test 9', # Student Distribution for Academic Year  # 學年學生分佈
+                                style={
+                                    'fontSize':"28px",
+                                    }),
+                            ], style={
+                                # 'backgroundColor':"gray", # for debuging
+                                'marginTop':"10px",
+                                'marginLeft':"10px",
+                                'height':"125px",
+                                'width':"325px",
+                                }),
+                        html.Div([
+                            dcc.Link(html.Button("Detail", 
+                                            style={
+                                                'backgroundColor':"#800080",
+                                                'color':"white",
+                                                'marginLeft':"80%",
+                                                'borderRadius':"8px",
+                                                'borderWidth': "thin",
+                                                'borderStyle':"solid",
+                                                'borderColor':"#C6C4C4",
+                                    }), href="/student/stddistbyyear", refresh=True,),
+                            ], style={
+                                }),
+                    
+                ], style={
+                    'backgroundColor':"white",
+                    'height':"180px",
+                    'width':"350px",
+                    'marginTop':"20px",
+                    'marginLeft':"15px",
+                    'borderRadius':"8px",
+                    'borderWidth': "thin",
+                    'borderStyle':"solid",
+                    'borderColor':"#C6C4C4",
+                }),
+                 ###### Container 10
+                    # dbc.Col([
+                    html.Div([
+                        html.Div([
+                            html.H1('Test 10', # Student Distribution for Academic Year  # 學年學生分佈
+                                style={
+                                    'fontSize':"28px",
+                                    }),
+                            ], style={
+                                # 'backgroundColor':"gray", # for debuging
+                                'marginTop':"10px",
+                                'marginLeft':"10px",
+                                'height':"125px",
+                                'width':"325px",
+                                }),
+                        html.Div([
+                            dcc.Link(html.Button("Detail", 
+                                            style={
+                                                'backgroundColor':"#800080",
+                                                'color':"white",
+                                                'marginLeft':"80%",
+                                                'borderRadius':"8px",
+                                                'borderWidth': "thin",
+                                                'borderStyle':"solid",
+                                                'borderColor':"#C6C4C4",
+                                    }), href="/student/stddistbyyear", refresh=True,),
+                            ], style={
+                                }),
+                    
+                ], style={
+                    'backgroundColor':"white",
+                    'height':"180px",
+                    'width':"350px",
+                    'marginTop':"20px",
+                    'marginLeft':"15px",
+                    'borderRadius':"8px",
+                    'borderWidth': "thin",
+                    'borderStyle':"solid",
+                    'borderColor':"#C6C4C4",
+                }),   
+                    
+            ], style={
+            'display' : "flex"
+        }),
+        ]),
+                # container row four
                 
                 
         ], style={
