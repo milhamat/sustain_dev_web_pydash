@@ -68,12 +68,15 @@ layout = html.Div([
 def render_content(tab, btn1, btn2):
     ##############################STUDENT################
     def lang_translate(id_triger):
+        container = []
         if "tab-eng" == id_triger:
-            return ["Student Distribution for Academic Year","test"]
+            container = ["Student Distribution for Academic Year", "Entry Path, Gender, and College", ""]
+            return container
         else:
-            return ["學年學生分佈","分佈"]
+            container = ["學年學生分佈", "入學途徑, 性別和大學", ""]
+            return container
     
-    tanslate = lang_translate(ctx.triggered_id)
+    translate = lang_translate(ctx.triggered_id)
     
     if tab == 'stdent':
         return html.Div([
@@ -85,7 +88,7 @@ def render_content(tab, btn1, btn2):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1([tanslate][0], # Student Distribution for Academic Year  # 學年學生分佈
+                            html.H1(translate[0], # Student Distribution for Academic Year  # 學年學生分佈
                                 style={
                                     'fontSize':"36px", #"28px"
                                     }),
@@ -126,7 +129,7 @@ def render_content(tab, btn1, btn2):
                 # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('入學途徑、性別和大學',  #Entry Path, Gender, and College
+                            html.H1(translate[1],  #Entry Path, Gender, and College
                                 style={
                                     'fontSize':"36px",#"28px"
                                     }),
