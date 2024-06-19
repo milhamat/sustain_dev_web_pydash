@@ -6,12 +6,6 @@ import plotly.express as px
 
 dash.register_page(__name__)
 
-# url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/gradjobtype.csv'
-# df = pd.read_csv(url)
-
-# df = pd.read_csv('./datas/gradjobtype.csv') #學生基本資料_在學成績_畢業流向問卷
-# df = pd.read_csv('./datas/學生基本資料_在學成績_畢業流向問卷.csv')
-
 df = pd.read_parquet('./datas/gradjobtype.parquet')
 
 #Type of work occupation

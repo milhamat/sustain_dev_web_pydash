@@ -4,11 +4,6 @@ from dash import callback, dcc, html
 from dash.dependencies import Input, Output
 import plotly.express as px
 
-# url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/stdintern.xlsx'
-# df = pd.read_excel(url)
-
-# df = pd.read_excel('./datas/stdintern.xlsx')
-
 df = pd.read_excel('./datas/std_intern.xlsx')
 
 df = df[['學年度', '學制班別', '系所名稱', '實習總時數']]  

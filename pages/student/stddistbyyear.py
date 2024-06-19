@@ -2,12 +2,6 @@ import dash
 import pandas as pd
 import plotly.express as px
 from dash import dcc, callback, html, Input, Output, ctx
-# from app import switch_lang 
-
-# url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/sunburst.csv'
-# df = pd.read_csv(url)
-
-# df = pd.read_csv('./datas/sunburst.csv')
 
 lang = ""
 

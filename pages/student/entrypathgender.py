@@ -4,11 +4,6 @@ import plotly.express as px
 from dash import callback, dcc, html
 from dash.dependencies import Input, Output
 
-# url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/sankey_enroll.csv'
-# df = pd.read_csv(url)
-
-# df = pd.read_csv('./datas/sankey_enroll.csv')
-
 df = pd.read_parquet('./datas/sankey_enroll.parquet')
 
 # 獲取所有學年度(Get all academic years)
@@ -30,7 +25,7 @@ layout = html.Div([
                                  }), href="/", refresh=True),
     
     html.H1("入學管道、性別與學院之間的桑基圖"),  # Sankey Diagram between Entry Path, Gender, and Institute
-    html.H2("Sankey Diagram between Entry Path, Gender, and College"),  # 英文標題 (English Title)
+    # html.H2("Sankey Diagram between Entry Path, Gender, and College"),  # 英文標題 (English Title)
     html.H4("來源資料:畢業流向問卷"),
     html.Label("選取學年度 (Select Academic Year):"),
     dcc.Dropdown(
