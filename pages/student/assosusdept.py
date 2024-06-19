@@ -19,6 +19,17 @@ edu_short_options = [{'label': x, 'value': x} for x in df['Edu_Short'].unique()]
 
 # Dash 應用的 HTML 布局
 layout = html.Div([
+    dcc.Link(html.Button("Home",
+                             style={
+                                 'backgroundColor':"#800080",
+                                 'color':"white",
+                                 'marginBottom':"20px",
+                                 'borderRadius':"8px",
+                                 'borderWidth': "thin",
+                                 'borderStyle':"solid",
+                                 'borderColor':"#C6C4C4",
+                                 }), href="/", refresh=True),
+    
     html.H1('大學休學原因與學系之間的熱圖及分佈情況', style={'text-align': 'center'}),
     html.H3('學制選取:', style={'margin-top': '20px', 'text-align': 'left'}),
     dcc.Checklist(

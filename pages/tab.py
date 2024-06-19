@@ -343,7 +343,7 @@ def render_content(tab):
                 # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('test 8', 
+                            html.H1('Association Suspension with Departments', 
                                 style={
                                     'fontSize':"28px",
                                     }),
@@ -431,7 +431,6 @@ def render_content(tab):
                     'borderColor':"#C6C4C4",
                 }),
                  ###### Container 10
-                    # dbc.Col([
                     html.Div([
                         html.Div([
                             html.H1('Test 10', # Student Distribution for Academic Year  # 學年學生分佈
@@ -809,7 +808,7 @@ def render_content(tab):
                         'borderStyle':"solid",
                         'borderColor':"#C6C4C4",
                     }),
-                ###### Container 5
+                ###### Container 6
                 html.Div([
                         html.Div([
                             html.H1('Number of dropouts withdrawals in the admission', 
@@ -851,7 +850,7 @@ def render_content(tab):
                     }),
                 #####################
                 # container xx
-                ###### Container 1
+                ###### Container 7
                     # dbc.Col([
                     html.Div([
                         html.Div([
@@ -876,7 +875,7 @@ def render_content(tab):
                                                 'borderWidth': "thin",
                                                 'borderStyle':"solid",
                                                 'borderColor':"#C6C4C4",
-                                    }), href="/faculty/stdtchrratio", refresh=True,),
+                                    }), href="/schoolafair/stdtchrratio", refresh=True,),
                             ], style={
                                 
                                 }),
@@ -894,7 +893,7 @@ def render_content(tab):
                     }),
                 # ]),
                     #############
-                    ###### Container 2
+                    ###### Container 8
                     # dbc.Col([
                     html.Div([
                         html.Div([
@@ -919,7 +918,7 @@ def render_content(tab):
                                                 'borderWidth': "thin",
                                                 'borderStyle':"solid",
                                                 'borderColor':"#C6C4C4",
-                                    }), href="/faculty/numfulltimparttim", refresh=True,),
+                                    }), href="/schoolafair/numfulltimparttim", refresh=True,),
                             ], style={
                                 
                                 }),
