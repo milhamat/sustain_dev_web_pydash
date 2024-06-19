@@ -92,7 +92,7 @@ def render_content(tab):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("Detail", 
+                            dcc.Link(html.Button("細節", #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -133,7 +133,7 @@ def render_content(tab):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("Detail", 
+                            dcc.Link(html.Button("細節", #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -175,7 +175,7 @@ def render_content(tab):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("Detail", 
+                            dcc.Link(html.Button("細節", #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -217,7 +217,7 @@ def render_content(tab):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("Detail", 
+                            dcc.Link(html.Button("細節", #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -267,7 +267,7 @@ def render_content(tab):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("Detail", 
+                            dcc.Link(html.Button("細節", #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -309,7 +309,7 @@ def render_content(tab):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("Detail", 
+                            dcc.Link(html.Button("細節", #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -351,7 +351,7 @@ def render_content(tab):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("Detail", 
+                            dcc.Link(html.Button("細節", #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -393,7 +393,7 @@ def render_content(tab):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("Detail", 
+                            dcc.Link(html.Button("細節", #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -444,7 +444,7 @@ def render_content(tab):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("Detail", 
+                            dcc.Link(html.Button("細節", #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -483,7 +483,7 @@ def render_content(tab):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("Detail", 
+                            dcc.Link(html.Button("細節", #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -542,7 +542,7 @@ def render_content(tab):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("Detail", 
+                            dcc.Link(html.Button("細節", #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -585,7 +585,7 @@ def render_content(tab):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("Detail", 
+                            dcc.Link(html.Button("細節", #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -628,7 +628,7 @@ def render_content(tab):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("Detail", 
+                            dcc.Link(html.Button("細節", #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -671,7 +671,7 @@ def render_content(tab):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("Detail", 
+                            dcc.Link(html.Button("細節", #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -726,7 +726,7 @@ def render_content(tab):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("Detail", 
+                            dcc.Link(html.Button("細節", #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
@@ -769,7 +769,7 @@ def render_content(tab):
                                 'width':"325px",
                                 }),
                         html.Div([
-                            dcc.Link(html.Button("Detail", 
+                            dcc.Link(html.Button("細節", #Detail
                                             style={
                                                 'backgroundColor':"#800080",
                                                 'color':"white",
