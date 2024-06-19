@@ -1,12 +1,36 @@
 import dash
 import plotly.express as px
 import dash_bootstrap_components as dbc
-from dash import callback, dcc, html, Input, Output
+from dash import callback, dcc, html, Input, Output, ctx
 
 dash.register_page(__name__, path='/')
 
 layout = html.Div([
     html.Div([
+                # dcc.Link(html.Button("中漢語",
+                #                     id="jongwen",
+                #                     style={
+                #                         'backgroundColor':"#800080",
+                #                         'color':"white",
+                #                         'marginBottom':"10px",
+                #                         'borderRadius':"8px",
+                #                         'borderWidth': "thin",
+                #                         'borderStyle':"solid",
+                #                         'borderColor':"#C6C4C4",
+                #                         }), href=""),
+                # dcc.Link(html.Button("English",
+                #                     id="eng",
+                #                     style={
+                #                         'backgroundColor':"#800080",
+                #                         'color':"white",
+                #                         'marginBottom':"10px",
+                #                         'marginLeft':"5px",
+                #                         'borderRadius':"8px",
+                #                         'borderWidth': "thin",
+                #                         'borderStyle':"solid",
+                #                         'borderColor':"#C6C4C4",
+                #                         }), href=""),
+        
                 dbc.Tabs(id="tabs",
                 children=[
                     dbc.Tab(label="Student", tab_id="stdent"),
@@ -18,6 +42,7 @@ layout = html.Div([
                 style={
                     'color':"purple",
                 }),
+                
                 html.Div(id='tab-Out',
                          style={
                              'width':"100%",
@@ -27,6 +52,20 @@ layout = html.Div([
              }),
 ])
 
+#########################TRANSLATE TAB########################################
+# @callback(
+#     Output('stddistbyyear-lang-out','children'),
+#     Input('stddistbyyear-jongwen','n_clicks'),
+#     Input('stddistbyyear-eng','n_clicks')
+# )
+
+# def change_lang(btn1, btn2):
+#     if "eng" == ctx.triggered_id:
+#         return "Student Distribution for Academic Year"
+#     else:
+#         return "學年學生分佈"
+
+########################TAB CONTAINERS########################################
 @callback(Output('tab-Out','children'),
               Input('tabs','active_tab'))
 
@@ -42,7 +81,7 @@ def render_content(tab):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('Student Distribution for Academic Year', # Student Distribution for Academic Year  # 學年學生分佈
+                            html.H1('學年學生分佈', # Student Distribution for Academic Year  # 學年學生分佈
                                 style={
                                     'fontSize':"28px",
                                     }),
@@ -394,7 +433,7 @@ def render_content(tab):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('test 9', # Student Distribution for Academic Year  # 學年學生分佈
+                            html.H1('Number of students dropping out of the top ten schools', # Student Distribution for Academic Year  # 學年學生分佈
                                 style={
                                     'fontSize':"28px",
                                     }),
@@ -415,7 +454,7 @@ def render_content(tab):
                                                 'borderWidth': "thin",
                                                 'borderStyle':"solid",
                                                 'borderColor':"#C6C4C4",
-                                    }), href="/student/stddistbyyear", refresh=True,),
+                                    }), href="/student/dropoutstdn", refresh=True,),
                             ], style={
                                 }),
                     
@@ -433,7 +472,7 @@ def render_content(tab):
                  ###### Container 10
                     html.Div([
                         html.Div([
-                            html.H1('Test 10', # Student Distribution for Academic Year  # 學年學生分佈
+                            html.H1('Number of dropouts withdrawals in the admission', # Student Distribution for Academic Year  # 學年學生分佈
                                 style={
                                     'fontSize':"28px",
                                     }),
@@ -454,7 +493,7 @@ def render_content(tab):
                                                 'borderWidth': "thin",
                                                 'borderStyle':"solid",
                                                 'borderColor':"#C6C4C4",
-                                    }), href="/student/stddistbyyear", refresh=True,),
+                                    }), href="/student/dropoutstdnsix", refresh=True,),
                             ], style={
                                 }),
                     
@@ -768,86 +807,89 @@ def render_content(tab):
         ###############################################################
         dbc.Row([
             html.Div([
+                
                 ###### Container 5
-                html.Div([
-                        html.Div([
-                            html.H1('Number of students dropping out of the top ten schools', 
-                                style={
-                                    'fontSize':"28px",
-                                    }),
-                            ], style={
-                                # 'backgroundColor':"gray", # for debuging
-                                'marginTop':"10px",
-                                'marginLeft':"10px",
-                                'height':"125px",
-                                'width':"325px",
-                                }),
-                        html.Div([
-                            dcc.Link(html.Button("Detail", 
-                                            style={
-                                                'backgroundColor':"#800080",
-                                                'color':"white",
-                                                'marginLeft':"80%",
-                                                'borderRadius':"8px",
-                                                'borderWidth': "thin",
-                                                'borderStyle':"solid",
-                                                'borderColor':"#C6C4C4",
-                                    }), href="/schoolafair/dropoutstdn", refresh=True,),
-                            ], style={
+                # html.Div([
+                #         html.Div([
+                #             html.H1('Number of students dropping out of the top ten schools', 
+                #                 style={
+                #                     'fontSize':"28px",
+                #                     }),
+                #             ], style={
+                #                 # 'backgroundColor':"gray", # for debuging
+                #                 'marginTop':"10px",
+                #                 'marginLeft':"10px",
+                #                 'height':"125px",
+                #                 'width':"325px",
+                #                 }),
+                #         html.Div([
+                #             dcc.Link(html.Button("Detail", 
+                #                             style={
+                #                                 'backgroundColor':"#800080",
+                #                                 'color':"white",
+                #                                 'marginLeft':"80%",
+                #                                 'borderRadius':"8px",
+                #                                 'borderWidth': "thin",
+                #                                 'borderStyle':"solid",
+                #                                 'borderColor':"#C6C4C4",
+                #                     }), href="/schoolafair/dropoutstdn", refresh=True,),
+                #             ], style={
                             
-                                }),
+                #                 }),
                         
-                    ], style={
-                        'backgroundColor':"white",
-                        'height':"180px",
-                        'width':"350px",
-                        'marginTop':"20px",
-                        'marginLeft':"15px",
-                        'borderRadius':"8px",
-                        'borderWidth': "thin",
-                        'borderStyle':"solid",
-                        'borderColor':"#C6C4C4",
-                    }),
+                #     ], style={
+                #         'backgroundColor':"white",
+                #         'height':"180px",
+                #         'width':"350px",
+                #         'marginTop':"20px",
+                #         'marginLeft':"15px",
+                #         'borderRadius':"8px",
+                #         'borderWidth': "thin",
+                #         'borderStyle':"solid",
+                #         'borderColor':"#C6C4C4",
+                #     }),
+                
                 ###### Container 6
-                html.Div([
-                        html.Div([
-                            html.H1('Number of dropouts withdrawals in the admission', 
-                                style={
-                                    'fontSize':"28px",
-                                    }),
-                            ], style={
-                                # 'backgroundColor':"gray", # for debuging
-                                'marginTop':"10px",
-                                'marginLeft':"10px",
-                                'height':"125px",
-                                'width':"325px",
-                                }),
-                        html.Div([
-                            dcc.Link(html.Button("Detail", 
-                                            style={
-                                                'backgroundColor':"#800080",
-                                                'color':"white",
-                                                'marginLeft':"80%",
-                                                'borderRadius':"8px",
-                                                'borderWidth': "thin",
-                                                'borderStyle':"solid",
-                                                'borderColor':"#C6C4C4",
-                                    }), href="/schoolafair/dropoutstdnsix", refresh=True,),
-                            ], style={
+                # html.Div([
+                #         html.Div([
+                #             html.H1('Number of dropouts withdrawals in the admission', 
+                #                 style={
+                #                     'fontSize':"28px",
+                #                     }),
+                #             ], style={
+                #                 # 'backgroundColor':"gray", # for debuging
+                #                 'marginTop':"10px",
+                #                 'marginLeft':"10px",
+                #                 'height':"125px",
+                #                 'width':"325px",
+                #                 }),
+                #         html.Div([
+                #             dcc.Link(html.Button("Detail", 
+                #                             style={
+                #                                 'backgroundColor':"#800080",
+                #                                 'color':"white",
+                #                                 'marginLeft':"80%",
+                #                                 'borderRadius':"8px",
+                #                                 'borderWidth': "thin",
+                #                                 'borderStyle':"solid",
+                #                                 'borderColor':"#C6C4C4",
+                #                     }), href="/schoolafair/dropoutstdnsix", refresh=True,),
+                #             ], style={
                             
-                                }),
+                #                 }),
                         
-                    ], style={
-                        'backgroundColor':"white",
-                        'height':"180px",
-                        'width':"350px",
-                        'marginTop':"20px",
-                        'marginLeft':"15px",
-                        'borderRadius':"8px",
-                        'borderWidth': "thin",
-                        'borderStyle':"solid",
-                        'borderColor':"#C6C4C4",
-                    }),
+                #     ], style={
+                #         'backgroundColor':"white",
+                #         'height':"180px",
+                #         'width':"350px",
+                #         'marginTop':"20px",
+                #         'marginLeft':"15px",
+                #         'borderRadius':"8px",
+                #         'borderWidth': "thin",
+                #         'borderStyle':"solid",
+                #         'borderColor':"#C6C4C4",
+                #     }),
+                
                 #####################
                 # container xx
                 ###### Container 7
