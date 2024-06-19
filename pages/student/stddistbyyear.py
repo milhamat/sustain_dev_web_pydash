@@ -2,6 +2,7 @@ import dash
 import pandas as pd
 import plotly.express as px
 from dash import dcc, callback, html, Input, Output
+# from app import switch_lang 
 
 # url = 'https://raw.githubusercontent.com/milhamat/NtubDashboardDatas/main/sunburst.csv'
 # df = pd.read_csv(url)
@@ -33,8 +34,10 @@ layout = html.Div([
                     'marginBottom':"8px",
                 }
             ),
-            dcc.Graph(id="sunburst-chart", style={
+        dcc.Graph(id="sunburst-chart", style={
                 'height':"450px",}),
+        # html.P(switch_lang)
+            
     ])
 ])
 

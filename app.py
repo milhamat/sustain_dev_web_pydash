@@ -4,6 +4,8 @@ import plotly.express as px
 import dash_bootstrap_components as dbc
 from dash import Dash, dcc, html, Input, Output
 
+switch_lang = ""
+
 app = Dash( __name__, 
             use_pages=True, 
             external_stylesheets=[dbc.themes.BOOTSTRAP],
@@ -29,6 +31,9 @@ app.layout = html.Div([
                      }),
             html.P('校務永續發展中心',
                    style={
+                    #    'display':"table-cell",
+                       'marginLeft':"0px",
+                       'verticalAlign':"middle",
                        'textAlign':"center",
                        'color':"#800080",
                        'fontSize':"36px",
@@ -43,7 +48,7 @@ app.layout = html.Div([
                              'width':"150px",
                              }),
             ], style={
-            # 'height':"70px",
+            'height':"70px",
             'marginTop':"10px",
             'display' : "flex",
             'flexDirection': 'row',
@@ -116,7 +121,13 @@ app.layout = html.Div([
     Input('lang-in', 'value')
 )
 def lang_process(value):
-    return f'{value}'
+    global switch_lang
+    if value=="English":
+        switch_lang = "eng"
+    else:
+        switch_lang = "jongwen"
+    return switch_lang
+    # return f'{value}'
 
 #########################################################
 
