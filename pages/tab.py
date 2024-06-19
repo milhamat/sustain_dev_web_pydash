@@ -33,8 +33,8 @@ layout = html.Div([
         
                 dbc.Tabs(id="tabs",
                 children=[
-                    dbc.Tab(label="學生", tab_id="stdent"), #Student
-                    dbc.Tab(label="學校事務", tab_id="schafr") #School Affair
+                    dbc.Tab(label="Student", tab_id="stdent"), #Student 學生
+                    dbc.Tab(label="School Affair", tab_id="schafr") #School Affair 學校事務
                 ],
                 active_tab="stdent",
                 ## dont know it's work or not
