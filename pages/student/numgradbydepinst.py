@@ -3,9 +3,9 @@ import pandas as pd
 import plotly.express as px
 from dash import dcc, html
 
-data = pd.read_parquet('./datas/barchart_std.parquet')
-
 dash.register_page(__name__)
+
+data = pd.read_parquet('./datas/barchart_std.parquet')
 
 # STEP 2: 過濾出已畢業的學生
 graduated_data = data[data['Status'] == '畢業']

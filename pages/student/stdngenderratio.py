@@ -4,13 +4,13 @@ from dash.dependencies import Input, Output, State
 import pandas as pd
 import plotly.graph_objects as go
 
+dash.register_page(__name__)
+
 df = pd.read_parquet('./datas/male_female_ratio.parquet')
 
 # 獲取不重複的年份和 Edu_Short (Get unique years and Edu_Short)
 unique_years = df['Years'].unique()
 unique_edu_short = df['Edu_Short'].unique()
-
-dash.register_page(__name__)
 
 # 設定應用佈局 (Set app layout)
 layout = html.Div([

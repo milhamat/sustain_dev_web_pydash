@@ -3,11 +3,11 @@ import pandas as pd
 import plotly.express as px
 from dash import dcc, callback, html, Input, Output, ctx
 
+dash.register_page(__name__)
+
 lang = ""
 
 df = pd.read_parquet('./datas/sunburst.parquet')
-
-dash.register_page(__name__)
 
 layout = html.Div([
     html.Div([

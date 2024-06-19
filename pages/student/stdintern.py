@@ -4,13 +4,13 @@ from dash import callback, dcc, html
 from dash.dependencies import Input, Output
 import plotly.express as px
 
+dash.register_page(__name__)
+
 df = pd.read_excel('./datas/std_intern.xlsx')
 
 df = df[['學年度', '學制班別', '系所名稱', '實習總時數']]  
 df_110 = df[df['學年度'] == 110]
 df_111 = df[df['學年度'] == 111]
-
-dash.register_page(__name__)
 
 checklist_options = [
     {'label': '學士班(日間)', 'value': '學士班(日間)'},  #Bachelor's Degree (Daytime)

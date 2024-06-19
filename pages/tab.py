@@ -7,29 +7,29 @@ dash.register_page(__name__, path='/')
 
 layout = html.Div([
     html.Div([
-                # dcc.Link(html.Button("中漢語",
-                #                     id="jongwen",
-                #                     style={
-                #                         'backgroundColor':"#800080",
-                #                         'color':"white",
-                #                         'marginBottom':"10px",
-                #                         'borderRadius':"8px",
-                #                         'borderWidth': "thin",
-                #                         'borderStyle':"solid",
-                #                         'borderColor':"#C6C4C4",
-                #                         }), href=""),
-                # dcc.Link(html.Button("English",
-                #                     id="eng",
-                #                     style={
-                #                         'backgroundColor':"#800080",
-                #                         'color':"white",
-                #                         'marginBottom':"10px",
-                #                         'marginLeft':"5px",
-                #                         'borderRadius':"8px",
-                #                         'borderWidth': "thin",
-                #                         'borderStyle':"solid",
-                #                         'borderColor':"#C6C4C4",
-                #                         }), href=""),
+                dcc.Link(html.Button("中漢語",
+                                    id="tab-jongwen",
+                                    style={
+                                        'backgroundColor':"#800080",
+                                        'color':"white",
+                                        'marginBottom':"10px",
+                                        'borderRadius':"8px",
+                                        'borderWidth': "thin",
+                                        'borderStyle':"solid",
+                                        'borderColor':"#C6C4C4",
+                                        }), href=""),
+                dcc.Link(html.Button("English",
+                                    id="tab-eng",
+                                    style={
+                                        'backgroundColor':"#800080",
+                                        'color':"white",
+                                        'marginBottom':"10px",
+                                        'marginLeft':"5px",
+                                        'borderRadius':"8px",
+                                        'borderWidth': "thin",
+                                        'borderStyle':"solid",
+                                        'borderColor':"#C6C4C4",
+                                        }), href=""),
         
                 dbc.Tabs(id="tabs",
                 children=[
@@ -42,13 +42,8 @@ layout = html.Div([
                     'color':"purple",
                 }),
                 
-                html.Div(id='tab-Out',
-                         style={
-                             'width':"100%",
-                             }),
-            ], style={
-                    'width': "100%",
-             }),
+                html.Div(id='tab-Out'),
+            ]),
 ])
 
 #########################TRANSLATE TAB########################################
@@ -66,10 +61,20 @@ layout = html.Div([
 
 ########################TAB CONTAINERS########################################
 @callback(Output('tab-Out','children'),
-              Input('tabs','active_tab'))
+         Input('tabs','active_tab'),
+         Input('tab-jongwen','n_clicks'),
+         Input('tab-eng','n_clicks'))
 
-def render_content(tab):
+def render_content(tab, btn1, btn2):
     ##############################STUDENT################
+    def lang_translate(id_triger):
+        if "tab-eng" == id_triger:
+            return ["Student Distribution for Academic Year","test"]
+        else:
+            return ["學年學生分佈","分佈"]
+    
+    tanslate = lang_translate(ctx.triggered_id)
+    
     if tab == 'stdent':
         return html.Div([
             html.Div([
@@ -80,7 +85,7 @@ def render_content(tab):
                     # dbc.Col([
                     html.Div([
                         html.Div([
-                            html.H1('學年學生分佈', # Student Distribution for Academic Year  # 學年學生分佈
+                            html.H1([tanslate][0], # Student Distribution for Academic Year  # 學年學生分佈
                                 style={
                                     'fontSize':"36px", #"28px"
                                     }),

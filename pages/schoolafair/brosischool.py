@@ -3,12 +3,12 @@ import pandas as pd
 import plotly.express as px
 from dash import dcc, html
 
+dash.register_page(__name__)
+
 df = pd.read_parquet('./datas/brosischool.parquet')
 
 # 計算每個國家的學校數量
 country_counts = df.groupby(['區域別', '國家']).size().reset_index(name='學校數量')
-
-dash.register_page(__name__)
 
 # 生成 choropleth 地圖
 fig = px.choropleth(country_counts,

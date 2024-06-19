@@ -72,10 +72,7 @@ app.layout = html.Div([
             html.Div([
                 dash.page_container,
                 # html.P(id='lang-out'),
-            ], style={
-                'width':"100%",
-                # 'overflow':'scroll',
-                }),
+            ]),
         ],style={
             'width': "100%",
             'height':"1000px",

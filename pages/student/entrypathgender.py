@@ -4,12 +4,12 @@ import plotly.express as px
 from dash import callback, dcc, html
 from dash.dependencies import Input, Output
 
+dash.register_page(__name__)
+
 df = pd.read_parquet('./datas/sankey_enroll.parquet')
 
 # 獲取所有學年度(Get all academic years)
 available_years = df['End_Year'].unique().tolist()
-
-dash.register_page(__name__)
 
 # 設定佈局 (Set layout)
 layout = html.Div([
