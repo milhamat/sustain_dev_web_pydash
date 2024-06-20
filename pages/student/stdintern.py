@@ -1,26 +1,34 @@
 import pandas as pd
 import dash
-from dash import callback, dcc, html
-from dash.dependencies import Input, Output
+from dash import callback, dcc, html, Input, Output, ctx, no_update
+# from dash.dependencies import 
 import plotly.express as px
 
 dash.register_page(__name__)
 
-df = pd.read_excel('./datas/std_intern.xlsx')
+# df = pd.read_excel('./datas/std_intern.xlsx')
 
-df = df[['學年度', '學制班別', '系所名稱', '實習總時數']]  
-df_110 = df[df['學年度'] == 110]
-df_111 = df[df['學年度'] == 111]
+# # df = df[['學年度', '學制班別', '系所名稱', '實習總時數']]  
+# df_110 = df[df['學年度'] == 110]
+# df_111 = df[df['學年度'] == 111]
 
-checklist_options = [
-    {'label': '學士班(日間)', 'value': '學士班(日間)'},  #Bachelor's Degree (Daytime)
-    {'label': '五專', 'value': '五專'},  #Five specialties
-    {'label': '學士班(進修)', 'value': '學士班(進修)'},  #Bachelor's degree (further study)
-    {'label': '碩士班(日間)', 'value': '碩士班(日間)'}  #Master's class (day time
-]
+# checklist_options = [
+#     {'label': '學士班(日間)', 'value': '學士班(日間)'},  #Bachelor's Degree (Daytime)
+#     {'label': '五專', 'value': '五專'},  #Five specialties
+#     {'label': '學士班(進修)', 'value': '學士班(進修)'},  #Bachelor's degree (further study)
+#     {'label': '碩士班(日間)', 'value': '碩士班(日間)'}  #Master's class (day time
+# ]
+
+# checklist_options = []
+
+all_option = {
+    '中漢語' : ['學士班(日間)','五專','學士班(進修)','碩士班(日間)'],
+    'English' : ["Bachelor's Degree (Daytime)","Five specialties","Bachelor's degree (further study)","Master's class (day time)"],
+}
 
 layout = html.Div([
-    dcc.Link(html.Button("Home",
+    html.Div([
+        dcc.Link(html.Button("Home",
                              style={
                                  'backgroundColor':"#800080",
                                  'color':"white",
@@ -31,43 +39,251 @@ layout = html.Div([
                                  'borderColor':"#C6C4C4",
                                  }), href="/", refresh=True),
     
+        dcc.RadioItems(id='lang_checklist', 
+                    options=[{'label':k, 'value':k} for k in all_option.keys()],
+                    value="中漢語",
+                    inline=True,
+                    style={
+                        'marginBottom':"20px",
+                        'marginLeft':"90%",
+                        }
+                    ),
+        
+    ], style={
+        'display' : "flex",
+    }),
+    
     dcc.Tabs(id="tabs-intern", value='tab-110', children=[
         dcc.Tab(label='110學年度', value='tab-110'),
         dcc.Tab(label='111學年度', value='tab-111'),
     ]),
+    
     html.Div([
         dcc.Checklist(
             id='checklist-intern',
-            options=checklist_options,
-            value=[checklist_options[0]['value']] ,
+            # options=checklist_options,
+            value=[],#[checklist_options[0]['value']] ,
              inline=True,
              style = {
                  'marginTop':"10px"
              }
         )
     ]),
+    
     html.Div(id='tabs-content-intern')
 ])
 
+########################################################################
+@callback(
+    Output('checklist-intern', 'options'),
+    Input('lang_checklist', 'value')
+)
+
+def set_lang(select):
+    if not select:
+        return no_update
+    else:
+        return [{'label': i, 'value': i} for i in all_option[select]]
+########################################################################
 @callback(
     Output('tabs-content-intern', 'children'),
-    [Input('tabs-intern', 'value'),
+    [Input('lang_checklist','value'),
+     Input('tabs-intern', 'value'),
      Input('checklist-intern', 'value')],
 )
 
-def render_content(tab, selected_classes):
-    if tab == 'tab-110':
-        filtered_df = df_110[df_110['學制班別'].isin(selected_classes)]  #Academic class
-        pivot_table = filtered_df.pivot_table(index='學制班別', columns='系所名稱', values='實習總時數', aggfunc='sum').reset_index()
-        fig = px.bar(pivot_table.melt(id_vars='學制班別', var_name='系所名稱', value_name='實習總時數'),
-                     x='學制班別', y='實習總時數', color='系所名稱', barmode='group',
-                     title=f'110學年度 {", ".join(selected_classes)} 各系所名稱的實習總時數')
-    elif tab == 'tab-111':
-        filtered_df = df_111[df_111['學制班別'].isin(selected_classes)]
-        pivot_table = filtered_df.pivot_table(index='學制班別', columns='系所名稱', values='實習總時數', aggfunc='sum').reset_index()
-        fig = px.bar(pivot_table.melt(id_vars='學制班別', var_name='系所名稱', value_name='實習總時數'),
-                     x='學制班別', y='實習總時數', color='系所名稱', barmode='group',
-                     title=f'111學年度 {", ".join(selected_classes)} 各系所名稱的實習總時數')
+def render_content(select, tab, selected_classes):
+    if select == "English":
+        df = pd.read_excel('./datas/std_intern_eng.xlsx')
+        df_110 = df[df['Academic Year'] == 110]
+        df_111 = df[df['Academic Year'] == 111]
+            
+        if tab == 'tab-110':
+            filtered_df = df_110[df_110['Academic Class'].isin(selected_classes)]  # Academic class
+            pivot_table = filtered_df.pivot_table(index='Academic Class', columns='Department Name', values='Total Internship Hours', aggfunc='sum').reset_index()
+            melted_df = pivot_table.melt(id_vars='Academic Class', var_name='Department Name', value_name='Total Internship Hours')
 
+            # Sort the data by Total Internship Hours
+            melted_df = melted_df.sort_values(by='Total Internship Hours', ascending=True)
+
+            fig = px.bar(melted_df,
+                        x='Academic Class', y='Total Internship Hours', color='Department Name', barmode='group',
+                        title=f'110 Academic Year {", ".join(selected_classes)} Total number of hours of internships in the name of each department',
+                        color_discrete_sequence=px.colors.qualitative.Plotly)
+                
+        elif tab == 'tab-111':
+            filtered_df = df_111[df_111['Academic Class'].isin(selected_classes)]
+            pivot_table = filtered_df.pivot_table(index='Academic Class', columns='Department Name', values='Total Internship Hours', aggfunc='sum').reset_index()
+            melted_df = pivot_table.melt(id_vars='Academic Class', var_name='Department Name', value_name='Total Internship Hours')
+
+            # Sort the data by Total Internship Hours
+            melted_df = melted_df.sort_values(by='Total Internship Hours', ascending=True)
+
+            fig = px.bar(melted_df,
+                        x='Academic Class', y='Total Internship Hours', color='Department Name', barmode='group',
+                        title=f'111 Academic Year {", ".join(selected_classes)} Total number of hours of internships in the name of each department',
+                        color_discrete_sequence=px.colors.qualitative.Plotly)
+
+            # Add vertical lines to separate different academic classes
+            fig.update_layout(
+                shapes=[
+                    dict(
+                        type="line",
+                        x0=i - 0.5,
+                        x1=i - 0.5,
+                        y0=0,
+                        y1=1,
+                        xref='x',
+                        yref='paper',
+                        line=dict(color="Black", width=1, dash="dot")
+                    ) for i in range(1, len(pivot_table['Academic Class'].unique()))
+                ]
+            )
+        # return fig
+    
+    else:
+        df = pd.read_excel('./datas/std_intern.xlsx') 
+        df_110 = df[df['學年度'] == 110]
+        df_111 = df[df['學年度'] == 111]
+        
+        if tab == 'tab-110':
+            filtered_df = df_110[df_110['學制班別'].isin(selected_classes)]  #Academic class
+            pivot_table = filtered_df.pivot_table(index='學制班別', columns='系所名稱', values='實習總時數', aggfunc='sum').reset_index()
+            fig = px.bar(pivot_table.melt(id_vars='學制班別', var_name='系所名稱', value_name='實習總時數'),
+                        x='學制班別', y='實習總時數', color='系所名稱', barmode='group',
+                        title=f'110學年度 {", ".join(selected_classes)} 各系所名稱的實習總時數')
+        elif tab == 'tab-111':
+            filtered_df = df_111[df_111['學制班別'].isin(selected_classes)]
+            pivot_table = filtered_df.pivot_table(index='學制班別', columns='系所名稱', values='實習總時數', aggfunc='sum').reset_index()
+            fig = px.bar(pivot_table.melt(id_vars='學制班別', var_name='系所名稱', value_name='實習總時數'),
+                        x='學制班別', y='實習總時數', color='系所名稱', barmode='group',
+                        title=f'111學年度 {", ".join(selected_classes)} 各系所名稱的實習總時數')
+        # return fig
     return dcc.Graph(figure=fig)
+#########################################################################
+
+# @callback(
+#      Output('checklist-intern', 'options'),
+#      Input('stdintern-jongwen','n_clicks'),
+#      Input('stdintern-eng','n_clicks')
+# )
+
+# def render_content(btn1, btn2):
+#     global checklist_options
+#     check_opti = []
+#     if "stdintern-eng" == ctx.triggered_id:
+#         check_opti = [
+#             {'label': "Bachelor's Degree (Daytime)", 'value': "Bachelor's Degree (Daytime)"},
+#             {'label': 'Five specialties', 'value': 'Five specialties'},
+#             {'label': "Bachelor's degree (further study)", 'value': "Bachelor's degree (further study)"},
+#             {'label': "Master's class (day time)", 'value': "Master's class (day time)"}
+        
+#         ]
+#         checklist_options = check_opti
+#         return checklist_options
+    
+#     else:
+#         check_opti = [ 
+#             {'label': '學士班(日間)', 'value': '學士班(日間)'},  #Bachelor's Degree (Daytime)
+#             {'label': '五專', 'value': '五專'},  #Five specialties
+#             {'label': '學士班(進修)', 'value': '學士班(進修)'},  #Bachelor's degree (further study)
+#             {'label': '碩士班(日間)', 'value': '碩士班(日間)'}  #Master's class (day time
+#         ]
+#         checklist_options = check_opti
+#         return checklist_options
+        
+# @callback(
+    # Output('tabs-content-intern', 'children'),
+    # [Input('tabs-intern', 'value'),
+    #  Input('checklist-intern', 'value'),
+    #  Input('stdintern-jongwen','n_clicks'),
+    #  Input('stdintern-eng','n_clicks')],
+    
+#     # Output('tabs-content-intern', 'children'),
+#     # [Input('tabs-intern', 'value'),],
+# )
+
+# def render_content(tab, selected_classes, btn1, btn2):
+# def render_content(tab, selected_classes):
+    
+#     def figure(id_triger, pointer):
+#         if "stdintern-eng" == id_triger:
+#             df = pd.read_excel('./datas/std_intern_eng.xlsx')
+#             df_110 = df[df['Academic Year'] == 110]
+#             df_111 = df[df['Academic Year'] == 111]
+            
+#             if tab == 'tab-110':
+#                 filtered_df = df_110[df_110['Academic Class'].isin(pointer)]  # Academic class
+#                 pivot_table = filtered_df.pivot_table(index='Academic Class', columns='Department Name', values='Total Internship Hours', aggfunc='sum').reset_index()
+#                 melted_df = pivot_table.melt(id_vars='Academic Class', var_name='Department Name', value_name='Total Internship Hours')
+
+#                 # Sort the data by Total Internship Hours
+#                 melted_df = melted_df.sort_values(by='Total Internship Hours', ascending=True)
+
+#                 fig_eng = px.bar(melted_df,
+#                             x='Academic Class', y='Total Internship Hours', color='Department Name', barmode='group',
+#                             # title=f'110 Academic Year {", ".join(pointer)} Total number of hours of internships in the name of each department',
+#                             color_discrete_sequence=px.colors.qualitative.Plotly)
+                
+#             elif tab == 'tab-111':
+#                 filtered_df = df_111[df_111['Academic Class'].isin(pointer)]
+#                 pivot_table = filtered_df.pivot_table(index='Academic Class', columns='Department Name', values='Total Internship Hours', aggfunc='sum').reset_index()
+#                 melted_df = pivot_table.melt(id_vars='Academic Class', var_name='Department Name', value_name='Total Internship Hours')
+
+#                 # Sort the data by Total Internship Hours
+#                 melted_df = melted_df.sort_values(by='Total Internship Hours', ascending=True)
+
+#                 fig_eng = px.bar(melted_df,
+#                             x='Academic Class', y='Total Internship Hours', color='Department Name', barmode='group',
+#                             # title=f'111 Academic Year {", ".join(pointer)} Total number of hours of internships in the name of each department',
+#                             color_discrete_sequence=px.colors.qualitative.Plotly)
+
+#                 # Add vertical lines to separate different academic classes
+#                 fig_eng.update_layout(
+#                     shapes=[
+#                         dict(
+#                             type="line",
+#                             x0=i - 0.5,
+#                             x1=i - 0.5,
+#                             y0=0,
+#                             y1=1,
+#                             xref='x',
+#                             yref='paper',
+#                             line=dict(color="Black", width=1, dash="dot")
+#                         ) for i in range(1, len(pivot_table['Academic Class'].unique()))
+#                     ]
+#                 )
+#             return fig_eng
+
+#         else:
+#             df = pd.read_excel('./datas/std_intern.xlsx') 
+#             df_110 = df[df['學年度'] == 110]
+#             df_111 = df[df['學年度'] == 111]
+            
+#             if tab == 'tab-110':
+#                 filtered_df = df_110[df_110['學制班別'].isin(pointer)]  #Academic class
+#                 pivot_table = filtered_df.pivot_table(index='學制班別', columns='系所名稱', values='實習總時數', aggfunc='sum').reset_index()
+#                 fig_jong = px.bar(pivot_table.melt(id_vars='學制班別', var_name='系所名稱', value_name='實習總時數'),
+#                             x='學制班別', y='實習總時數', color='系所名稱', barmode='group',
+#                             )# title=f'110學年度 {", ".join(pointer)} 各系所名稱的實習總時數')
+#             elif tab == 'tab-111':
+#                 filtered_df = df_111[df_111['學制班別'].isin(pointer)]
+#                 pivot_table = filtered_df.pivot_table(index='學制班別', columns='系所名稱', values='實習總時數', aggfunc='sum').reset_index()
+#                 fig_jong = px.bar(pivot_table.melt(id_vars='學制班別', var_name='系所名稱', value_name='實習總時數'),
+#                             x='學制班別', y='實習總時數', color='系所名稱', barmode='group',
+#                             )# title=f'111學年度 {", ".join(pointer)} 各系所名稱的實習總時數')
+#             return fig_jong
+
+#     return dcc.Graph(figure=figure(ctx.triggered_id, selected_classes))  
+        # html.Div([
+        # dcc.Checklist(
+        #     id='checklist-intern',
+        #     options=checklist_options,
+        #     value=[checklist_options[0]['value']] ,
+        #      inline=True,
+        #      style = {
+        #          'marginTop':"10px"
+        #          }
+        #     )
+        # ]), dcc.Graph(figure=figure(ctx.triggered_id))
 
