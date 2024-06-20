@@ -5,31 +5,20 @@ from dash import callback, dcc, html, Input, Output, ctx
 
 dash.register_page(__name__, path='/')
 
+lang = ["中漢語", 'English']
+
 layout = html.Div([
     html.Div([
-                dcc.Link(html.Button("中漢語",
-                                    id="tab-jongwen",
-                                    style={
-                                        'backgroundColor':"#800080",
-                                        'color':"white",
-                                        'marginBottom':"10px",
-                                        'borderRadius':"8px",
-                                        'borderWidth': "thin",
-                                        'borderStyle':"solid",
-                                        'borderColor':"#C6C4C4",
-                                        }), href=""),
-                dcc.Link(html.Button("English",
-                                    id="tab-eng",
-                                    style={
-                                        'backgroundColor':"#800080",
-                                        'color':"white",
-                                        'marginBottom':"10px",
-                                        'marginLeft':"5px",
-                                        'borderRadius':"8px",
-                                        'borderWidth': "thin",
-                                        'borderStyle':"solid",
-                                        'borderColor':"#C6C4C4",
-                                        }), href=""),
+                dcc.RadioItems(id='tab_lang_checklist', 
+                            options=lang,
+                            value="中漢語",
+                            labelStyle={"margin":"0.2rem"},
+                            inline=True,
+                            style={
+                                    # 'marginBottom':"20px",
+                                    'marginLeft':"90%",
+                                    }
+                            ),
         
                 dbc.Tabs(id="tabs",
                 children=[
@@ -49,15 +38,15 @@ layout = html.Div([
 ########################TAB CONTAINERS########################################
 @callback(Output('tab-Out','children'),
          Input('tabs','active_tab'),
-         Input('tab-jongwen','n_clicks'),
-         Input('tab-eng','n_clicks'))
+         Input('tab_lang_checklist', 'value')
+         )
 
-def render_content(tab, btn1, btn2):
+def render_content(tab, select):
     ##############################STUDENT################
     font = "32px"
     def lang_translate(id_triger):
         container = []
-        if "tab-eng" == id_triger: #"",
+        if id_triger == "English": #"",
             container = ["Student Distribution for Academic Year", "Entry Path, Gender, and College", "Total Student Internship Hours","Gender Ratio",
                          "Spread of Work Areas After Graduation","Graduation Job Type","Number of Graduate by Department and Institutes","Association Suspension with Departments",
                          "Number of students dropping out of the top ten schools","Number of dropouts withdrawals in the admission","Library Resources","Brother and Sister Schools",
@@ -72,7 +61,7 @@ def render_content(tab, btn1, btn2):
                          "細節"]
             return container
     
-    translate = lang_translate(ctx.triggered_id)
+    translate = lang_translate(select)
     
     if tab == 'stdent':
         return html.Div([
