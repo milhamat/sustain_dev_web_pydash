@@ -31,7 +31,7 @@ layout = html.Div([
                        inline=True,
                        style={
                             # 'marginBottom':"20px",
-                            'marginLeft':"85%",
+                            'marginLeft':"86%",
                             }
                     ),
         
