@@ -13,29 +13,30 @@ app.layout = html.Div([
         dbc.Col(html.Div([
                         html.Img(src=app.get_asset_url("logo.png"),
                                 style={
-                                    'height':"75px", 
-                                    'width':"230px",
+                                    'marginTop':"5px",
+                                    'marginLeft':"5px",
+                                    'height':"70px", 
+                                    'width':"70px",#"230px",
                                     }),
-        ],style={'backgroundColor':'purple',}), 
-          width=2
-                ),
-        dbc.Col(html.Div([
+                        
                         html.P('校務永續發展中心',
                                             style={
-                                                'marginLeft':"20px",
-                                                'height':"75px", 
+                                                'marginTop':"5px",
+                                                'marginLeft':"10px",
+                                                'height':"70px", 
                                                 'color':"#800080",
                                                 'fontSize':"36px",
                                                 'fontWeight': "bold",
                                             }),
-        ],style={'backgroundColor':'white',}), 
-        #   width=4
-                )
+                        
+                        ],style={'backgroundColor':'white',
+                                 'display':'flex'
+                                 }), 
+                ),
         ],
         className="g-0",
+        justify='first',
         style={
-            # 'display' : "flex",
-            'height':"75px", 
             'backgroundColor':'white',
                             }),
     

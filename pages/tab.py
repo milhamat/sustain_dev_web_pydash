@@ -34,9 +34,11 @@ layout = html.Div([
                          ),
             ]),
 ])
+########################TAB LABEL########################################
 @callback(Output('tabs', 'children'),
           Input('tab_lang_checklist', 'value')
           )
+
 def change_tab(select):
     if select == "English":
         return dbc.Tab(label="Student", tab_id="stdent"),dbc.Tab(label="School Affair", tab_id="schafr") 

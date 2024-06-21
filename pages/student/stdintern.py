@@ -1,10 +1,14 @@
-import pandas as pd
 import dash
-from dash import callback, dcc, html, Input, Output, ctx, no_update
+import pandas as pd
+import dash_bootstrap_components as dbc
+from dash import callback, dcc, html, Input, Output, no_update
 # from dash.dependencies import 
 import plotly.express as px
 
-dash.register_page(__name__)
+dash.register_page(__name__,
+                   external_stylesheets=[dbc.themes.BOOTSTRAP],
+                   meta_tags=[{'name': 'viewport',
+                        'content': 'width=device-width, initial-scale=1.0, maximum-scale=1.2, minimum-scale=0.5,'}])
 
 all_option = {
     '中漢語' : ['學士班(日間)','五專','學士班(進修)','碩士班(日間)'],
@@ -17,7 +21,7 @@ layout = html.Div([
                              style={
                                  'backgroundColor':"#800080",
                                  'color':"white",
-                                 'marginBottom':"20px",
+                                #  'marginBottom':"20px",
                                  'borderRadius':"8px",
                                  'borderWidth': "thin",
                                  'borderStyle':"solid",
@@ -30,19 +34,24 @@ layout = html.Div([
                        labelStyle={"margin":"0.2rem"},
                        inline=True,
                        style={
-                            # 'marginBottom':"20px",
-                            'marginLeft':"86%",
+                            'marginTop':"5px",
+                            # 'marginLeft':"86%",
                             }
                     ),
         
     ], style={
-        'display' : "flex",
+        # 'display' : "flex",
     }),
     
-    dcc.Tabs(id="tabs-intern", value='tab-110', children=[
-        dcc.Tab(label='110學年度', value='tab-110'),
-        dcc.Tab(label='111學年度', value='tab-111'),
-    ]),
+    dcc.Tabs(id="tabs-intern", value='tab-110', 
+             children=[
+                dcc.Tab(label='110學年度', value='tab-110'),
+                dcc.Tab(label='111學年度', value='tab-111'),
+                ],
+             style={
+                    'marginTop':"5px",
+                    }
+             ),
     
     html.Div([
         dcc.Checklist(
@@ -59,6 +68,7 @@ layout = html.Div([
     
     html.Div(id='tabs-content-intern')
 ])
+
 
 ########################################################################
 @callback(
