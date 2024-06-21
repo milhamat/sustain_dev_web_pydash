@@ -109,6 +109,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
@@ -146,6 +147,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
@@ -183,6 +185,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
@@ -220,6 +223,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
@@ -265,6 +269,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
@@ -302,6 +307,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
@@ -339,6 +345,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
@@ -376,6 +383,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
@@ -421,6 +429,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
@@ -458,6 +467,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
@@ -486,6 +496,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
@@ -537,6 +548,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
@@ -574,6 +586,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
@@ -611,6 +624,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
@@ -648,6 +662,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
@@ -693,6 +708,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
@@ -730,6 +746,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
@@ -758,6 +775,7 @@ def render_content(tab, select):
                     ],
                                  style={
                                  'marginTop':"20px",
+                                 'marginLeft':"10px",
                                  'height':"180px",
                                  'width':"350px",
                                  'borderRadius':"8px",
