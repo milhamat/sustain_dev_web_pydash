@@ -43,7 +43,12 @@ layout = html.Div([
         value=[edu_short for edu_short in filtered_out_df['Edu_Short'].unique()],
         inline=True
     ),
-    dcc.Graph(id='bar-chart')
+    dcc.Graph(id='bar-chart'),
+    html.P("Teamwork by Sandy, Emily, Debbie, and Ilham , directed by Prof. Ching-Shih Tsou. All rights reserved",
+               style={
+                   'marginTop' : "10px",
+                   'textAlign' : "center",
+                   }),
 ])
 
 @callback(

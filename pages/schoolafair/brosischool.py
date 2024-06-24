@@ -38,5 +38,10 @@ layout = html.Div([
     dcc.Graph(figure=fig, 
               style={
                   'marginLeft': "10px",
-                             })
+                             }),
+    html.P("Teamwork by Sandy, Emily, Debbie, and Ilham , directed by Prof. Ching-Shih Tsou. All rights reserved",
+               style={
+                   'marginTop' : "10px",
+                   'textAlign' : "center",
+                   }),
 ])

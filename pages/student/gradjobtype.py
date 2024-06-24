@@ -56,6 +56,11 @@ layout = html.Div([
         # No information for 5 years after graduation
     ]),
     html.Div(id='tabs-content-job-type'),
+    html.P("Teamwork by Sandy, Emily, Debbie, and Ilham , directed by Prof. Ching-Shih Tsou. All rights reserved",
+               style={
+                   'marginTop' : "10px",
+                   'textAlign' : "center",
+                   }),
 ])
 
 # Define the callback function to update the content based on the value of the tabs

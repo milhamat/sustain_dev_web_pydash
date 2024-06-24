@@ -42,7 +42,12 @@ layout = html.Div([
     html.Div(id='bar-chart-drp', style={
             'overflowY':"scroll",
             'height':"850px",
-        })
+        }),
+    html.P("Teamwork by Sandy, Emily, Debbie, and Ilham , directed by Prof. Ching-Shih Tsou. All rights reserved",
+               style={
+                   'marginTop' : "10px",
+                   'textAlign' : "center",
+                   }),
 ])
 
 @callback(

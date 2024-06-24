@@ -77,7 +77,12 @@ layout = html.Div([
                                  }), href="/", refresh=True),
     html.H2("不同學年度的學雜費減免人數"),
     
-    dcc.Graph(figure=fig)
+    dcc.Graph(figure=fig),
+    html.P("Teamwork by Sandy, Emily, Debbie, and Ilham , directed by Prof. Ching-Shih Tsou. All rights reserved",
+               style={
+                   'marginTop' : "10px",
+                   'textAlign' : "center",
+                   }),
 ])
 
 

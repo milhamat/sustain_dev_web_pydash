@@ -22,7 +22,12 @@ layout = html.Div([
                                  }), href="/", refresh=True),
     
     html.H2("各學年度日間學制師生比與師生人數"),
-    dcc.Graph(id='dual-axis-bar-line-chart')
+    dcc.Graph(id='dual-axis-bar-line-chart'),
+    html.P("Teamwork by Sandy, Emily, Debbie, and Ilham , directed by Prof. Ching-Shih Tsou. All rights reserved",
+               style={
+                   'marginTop' : "10px",
+                   'textAlign' : "center",
+                   }),
 ])
 
 @callback(

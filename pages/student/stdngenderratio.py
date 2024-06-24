@@ -45,7 +45,12 @@ layout = html.Div([
             labelStyle={'display': 'inline-block'}
         )
     ]),
-    dcc.Graph(id='radar-chart')
+    dcc.Graph(id='radar-chart'),
+    html.P("Teamwork by Sandy, Emily, Debbie, and Ilham , directed by Prof. Ching-Shih Tsou. All rights reserved",
+               style={
+                   'textAlign' : "center",
+                   'marginTop' : "10px",
+                   }),
 ])
 
 # 設定回調函數(Set callback function)

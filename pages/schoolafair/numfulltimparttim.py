@@ -62,7 +62,12 @@ layout = html.Div([
             labelStyle={'display': 'inline-block'}
         )
     ]),
-    dcc.Graph(id='line-chart')
+    dcc.Graph(id='line-chart'),
+    html.P("Teamwork by Sandy, Emily, Debbie, and Ilham , directed by Prof. Ching-Shih Tsou. All rights reserved",
+               style={
+                   'marginTop' : "10px",
+                   'textAlign' : "center",
+                   }),
 ])
 
 def update_checklist(selected_options, all_options):

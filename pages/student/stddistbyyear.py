@@ -57,30 +57,14 @@ layout = html.Div([
             ),
         dcc.Graph(id="sunburst-chart", style={
                 'height':"450px",}),
-        # html.P(switch_lang)
-        # html.P(f"{lang} : lang Here"),
-        # html.P(id='lang-out', style={
-        #     'color':"purple",
-        #     }),   
+        html.P("Teamwork by Sandy, Emily, Debbie, and Ilham , directed by Prof. Ching-Shih Tsou. All rights reserved",
+               style={
+                   'textAlign' : "center",
+                   'marginTop' : "30px",
+                   }),  
     ])
 ])
 
-##
-# @callback(
-#     Output('lang-out','children'),
-#     Input('jongwen','n_clicks'),
-#     Input('eng','n_clicks')
-# )
-
-# def change_lang(btn1, btn2):
-#     global lang
-#     if "eng" == ctx.triggered_id:
-#         lang = "Taiwan"
-#         return "eng"
-#     else:
-#         lang = "USA"
-#         return "jongwen"
-##
 
 @callback(
     Output("sunburst-chart", "figure"), 

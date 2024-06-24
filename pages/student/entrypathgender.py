@@ -44,7 +44,12 @@ layout = html.Div([
         value=5,  # Default to top 5
         labelStyle={'display': 'block'}
     ),
-    dcc.Graph(id='parallel-categories-graph')
+    dcc.Graph(id='parallel-categories-graph'),
+    html.P("Teamwork by Sandy, Emily, Debbie, and Ilham , directed by Prof. Ching-Shih Tsou. All rights reserved",
+               style={
+                   'marginTop' : "10px",
+                   'textAlign' : "center",
+                   }),
 ])
 
 # 設置回調函數 (Set callback function)

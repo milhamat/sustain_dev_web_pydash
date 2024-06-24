@@ -37,6 +37,11 @@ layout = html.Div([
     ),
     dcc.Graph(id='bar-graph'),
     dcc.Graph(id='map-graph'),
+    html.P("Teamwork by Sandy, Emily, Debbie, and Ilham , directed by Prof. Ching-Shih Tsou. All rights reserved",
+               style={
+                   'marginTop' : "10px",
+                   'textAlign' : "center",
+                   }),
     
 ])
 

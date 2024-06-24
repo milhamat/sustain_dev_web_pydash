@@ -44,7 +44,12 @@ layout = html.Div([
     #     html.Button('取消全選', id='deselect-all-button-asso', n_clicks=0)
     # ], style={'text-align': 'center', 'margin': '10px'}),
     
-    dcc.Graph(id='heatmap-graph-asso')
+    dcc.Graph(id='heatmap-graph-asso'),
+    html.P("Teamwork by Sandy, Emily, Debbie, and Ilham , directed by Prof. Ching-Shih Tsou. All rights reserved",
+               style={
+                   'marginTop' : "10px",
+                   'textAlign' : "center",
+                   }),
 ])
 
 # Callbacks to handle the select-all and deselect-all functionality

@@ -53,7 +53,12 @@ layout = html.Div([
         html.Label("選擇系所名稱:"),
         create_checklist('department-selector', list(filtered_data['系所名稱'].unique()), list(filtered_data['系所名稱'].unique()))
     ]),
-    dcc.Graph(id='stacked-bar-line-chart')
+    dcc.Graph(id='stacked-bar-line-chart'),
+    html.P("Teamwork by Sandy, Emily, Debbie, and Ilham , directed by Prof. Ching-Shih Tsou. All rights reserved",
+               style={
+                   'marginTop' : "10px",
+                   'textAlign' : "center",
+                   }),
 ])
 
 def update_checklist(selected_options, all_options):

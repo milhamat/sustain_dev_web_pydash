@@ -50,7 +50,12 @@ layout = html.Div([
                                  'borderStyle':"solid",
                                  'borderColor':"#C6C4C4",
                                  }), href="/", refresh=True),
-    dcc.Graph(figure=fig)
+    dcc.Graph(figure=fig),
+    html.P("Teamwork by Sandy, Emily, Debbie, and Ilham , directed by Prof. Ching-Shih Tsou. All rights reserved",
+               style={
+                   'marginTop' : "10px",
+                   'textAlign' : "center",
+                   }),
 ])
 
 

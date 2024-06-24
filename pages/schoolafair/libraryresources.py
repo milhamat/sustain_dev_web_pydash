@@ -41,6 +41,11 @@ layout = html.Div([
     dcc.Graph(id='sblib-chart', style={
                 'height':"450px",
                 'marginTop':"5px",}),
+    html.P("Teamwork by Sandy, Emily, Debbie, and Ilham , directed by Prof. Ching-Shih Tsou. All rights reserved",
+               style={
+                   'marginTop' : "10px",
+                   'textAlign' : "center",
+                   }),
 ])
 
 # 回調函數，更新旭日圖 (Callback function to update the sunburst chart)
