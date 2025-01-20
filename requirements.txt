@@ -3,3 +3,4 @@ dash_bootstrap_components==1.6.0
 pandas==2.2.3
 plotly==5.17.0
 Requests==2.32.3
+gunicorn==23.0.0
